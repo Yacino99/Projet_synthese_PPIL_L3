@@ -165,6 +165,7 @@ int main()
         p->dessiner(socket);
         int nnn;
         cout << "type any character -:" ;
+        // henry
         cin >>nnn;
 
     }catch(Erreur e)
@@ -172,7 +173,7 @@ int main()
         cout << e.message;
     }
 
-    cout << "Fin du programme !!!"<<endl;
+    cout << "Fin du programme :) !!!"<<endl;
 
 
     return 0;
