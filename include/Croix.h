@@ -34,15 +34,7 @@ public:
     }
 
     // dans le projet on met un parametre pour dessiner
-    virtual void dessiner(Socket *ss)const
-    {
-
-        ostringstream oss;
-        oss << (string)*this;
-        string requete = oss.str();
-        ss->sendMessage(requete.c_str());
-
-    }
+    virtual void dessiner(Socket *ss)const;
 
     double calculerAire() const;
     Vecteur2D getCentreSymetrie() const;
@@ -64,44 +56,13 @@ inline ostream& operator << (ostream& os, const Croix& m) {
     return os << (string)m;
 }
 
-Croix::operator string() const
-{
-    ostringstream os;
-
-    os << "croix ( " << a.x << " , " <<
-       a.y << " , " << b.x << " , " << b.y << " )" << this->couleur;
 
 
-    return os.str();
-}
 
-inline void Croix::translation(const Vecteur2D &u)
-{
-    a = a + u;
-    b = b + u;
-}
 
-inline void Croix::homothetie(const Vecteur2D &u, double k) {
-    a =  (a - u)*k  + u;
-    b =  (b - u)*k  + u;
-}
 
-//Vecteur OB’ = R * (vecteur OB – vecteur OC) + vecteur OC
-inline void Croix::rotation(const Vecteur2D &u, const double angle) {
-    Matrice22 M(Vecteur2D(cos(angle),-sin(angle)) , Vecteur2D(sin(angle), cos(angle)));
-    b =  M * (b - u) + u ;
-    a =  M * (a - u) + u ;
-}
 
-double Croix::calculerAire() const {
-    return 0;
-}
 
-Vecteur2D Croix::getCentreSymetrie() const {
-    double x = (a.x+b.x)/2;
-    double y = (a.y+b.y)/2;
-    return Vecteur2D(x,y);
-}
 
 
 #endif //PROJETT_CROIX_H
