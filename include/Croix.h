@@ -48,7 +48,8 @@ public:
     void homothetie(const Vecteur2D& u,double k) ;
     void rotation(const Vecteur2D &u, const double angle );
 
-
+    // DP Visitor pour la sauvegarde
+    void *accepte(const VisiteurSauvegarde * visiteur) const;
 };
 
 

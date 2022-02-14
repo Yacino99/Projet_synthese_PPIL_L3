@@ -10,7 +10,10 @@
 #include "Socket.h"
 #include "Vecteur2D.h"
 #include "Transformable.h"
+
 using namespace std;
+
+class VisiteurSauvegarde;
 
 class Formes : public Transformable
 {
@@ -38,6 +41,9 @@ public:
 
     inline friend ostream& operator << (ostream& os, const Formes* m);
     virtual ~Formes(){}
+
+    // DP Visitor pour la sauvegarde
+    virtual void * accepte(const VisiteurSauvegarde * visiteur) const = 0;
 };
 
 inline ostream& operator << (ostream& os, const Formes* m)

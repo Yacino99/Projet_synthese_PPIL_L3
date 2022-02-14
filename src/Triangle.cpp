@@ -4,6 +4,7 @@
 
 #include "Triangle.h"
 #include "Matrice22.h"
+#include "VisiteurSauvegarde.h"
 
 void Triangle::dessiner(Socket *ss) const
 {
@@ -77,4 +78,8 @@ Vecteur2D Triangle::getCentreSymetrie() const {
     return Vecteur2D(x,y);
 }
 
+
+void *Triangle::accepte(const VisiteurSauvegarde *visiteur) const {
+    return visiteur->sauvegarde(this);
+}
 

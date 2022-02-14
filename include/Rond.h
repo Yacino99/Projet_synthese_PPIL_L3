@@ -48,6 +48,9 @@ public:
 
     operator string() const;
 	friend ostream& operator << (ostream& os, const Rond& m);
+
+    // DP Visitor pour la sauvegarde
+    void *accepte(const VisiteurSauvegarde * visiteur) const;
 };
 
 

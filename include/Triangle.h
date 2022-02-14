@@ -44,6 +44,9 @@ public:
     void translation(const Vecteur2D& u);
     explicit operator string() const override;
     friend ostream& operator << (ostream& os, const Triangle& m);
+
+    // DP Visitor pour la sauvegarde
+    void *accepte(const VisiteurSauvegarde * visiteur) const;
 };
 
 

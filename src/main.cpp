@@ -17,6 +17,10 @@ using namespace std;
 #include "Polygone.h"
 #include "test.h"
 
+#include "VisiteurSauvegarde.h"
+#include "VisiteurSauvegardeTxt.h"
+
+
 #pragma comment(lib,"ws2_32.lib") // specifique  a visual studio et Clion
 
 # define M_PIl          3.141592653589793238462643383279502884L
@@ -97,11 +101,10 @@ int main()
 
         cout << " on est la" << endl;
 
-
-        /*
         Formes * f1 ,*f2 , *f3;
         f1= new Rond (300, 300, 30.0, socket, "blue");
         f2 = new Croix(30, 100, 100, 30, socket, "red");
+
         // test du rond
         f1->dessiner(socket);
         f1->translation(u1*15);
@@ -124,13 +127,13 @@ int main()
       //  f3->rotation(Vecteur2D(0,0), M_PIl);
         f3->dessiner(socket);
         cout << f3 << " Aire = " << f3->calculerAire() << endl;
-     */
+
         Formes* gros = new Rond(Vecteur2D(400,400) ,100 , socket , "red");
         gros->dessiner(socket);
         gros->rotation(Vecteur2D(400,400),M_PIl);
         gros->dessiner(socket);
 
-        Formes * f3;
+        //Formes * f3;
         f3 =  new Triangle(Vecteur2D(30,200), Vecteur2D(90,200), Vecteur2D(45,50), socket, "green");
         Vecteur2D centreTri( (30+90+45)/3,(200+200+50)/3);
         // f3->dessiner(socket);
@@ -140,7 +143,6 @@ int main()
         //f3->setColor("red");
         // f3->rotation(f3->getCentreSymetrie(), M_PIl/2);
         //f3->dessiner(socket);
-
 
         //test croix rotation
        /* Formes * f2 = new Croix(30, 100, 100, 30, socket, "red");

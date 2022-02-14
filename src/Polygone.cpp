@@ -5,6 +5,7 @@
 #include "Polygone.h"
 #include "Vecteur2D.h"
 #include "Matrice22.h"
+#include "VisiteurSauvegarde.h"
 
 void Polygone::dessiner(Socket *ss) const
 {
@@ -100,6 +101,10 @@ Vecteur2D Polygone::getCentreSymetrie() const {
     }
 
     return Vecteur2D(x/tab_vect.size(),y/tab_vect.size());
+}
+
+void *Polygone::accepte(const VisiteurSauvegarde *visiteur) const {
+    return visiteur->sauvegarde(this);
 }
 
 

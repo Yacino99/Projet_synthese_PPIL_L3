@@ -41,6 +41,9 @@ public:
     operator string() const;
     Polygone& addPoint(const Vecteur2D* v);
     friend ostream& operator << (ostream& os, const Polygone& m);
+
+    // DP Visitor pour la sauvegarde
+    void *accepte(const VisiteurSauvegarde * visiteur) const;
 };
 
 inline ostream& operator<<(ostream& os, const Polygone& m)

@@ -3,6 +3,7 @@
 //
 
 #include "Croix.h"
+#include "VisiteurSauvegarde.h"
 
 void Croix::dessiner(Socket *ss) const
 {
@@ -51,6 +52,10 @@ void Croix::rotation(const Vecteur2D &u, const double angle) {
     Matrice22 M(Vecteur2D(cos(angle),-sin(angle)) , Vecteur2D(sin(angle), cos(angle)));
     b =  M * (b - u) + u ;
     a =  M * (a - u) + u ;
+}
+
+void *Croix::accepte(const VisiteurSauvegarde *visiteur) const {
+    return visiteur->sauvegarde(this);
 }
 
 

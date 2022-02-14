@@ -4,6 +4,7 @@
 
 #include "Rond.h"
 #include "Matrice22.h"
+#include "VisiteurSauvegarde.h"
 
 void Rond::dessiner(Socket *ss) const
 {
@@ -51,4 +52,7 @@ Vecteur2D Rond::getCentreSymetrie() const {
     return v;
 }
 
+void *Rond::accepte(const VisiteurSauvegarde *visiteur) const {
+    return visiteur->sauvegarde(this);
+}
 
