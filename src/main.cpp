@@ -15,6 +15,7 @@ using namespace std;
 #include "Croix.h"
 #include "Triangle.h"
 #include "Polygone.h"
+#include "test.h"
 
 #pragma comment(lib,"ws2_32.lib") // specifique  a visual studio et Clion
 
@@ -46,7 +47,8 @@ void testMatrice(){
 int main()
 {
     //testMatrice();
-
+    test t;
+    t.sayHi();
 
     cout << "essai des vecteurs 2D \n";
 
@@ -55,7 +57,7 @@ int main()
     cout << " u1 = " <<  u1 << endl;
     cout << " u2 = " <<  u2 << endl;
     cout << " u1 - u2 = " <<  u1-u2 << endl;
-    cout << " 5*u1 = " <<  5*u1 << endl;
+    cout << " 5*u1 = " <<  u1*5 << endl;
 
     cout << "Determinant de u1 et u3 = " << u1.determinant(u3) << endl;
     cout << u1 << " . " << u2 << " = " << u1*u2<<endl; // produit scalaire de deux vecteurs
@@ -164,7 +166,7 @@ int main()
         p->rotation(p->getCentreSymetrie(),M_PIl/2);
         p->dessiner(socket);
         int nnn;
-        cout << "type any character -:" ;
+        cout << "type any character -:-" ;
         // henry
         cin >>nnn;
 

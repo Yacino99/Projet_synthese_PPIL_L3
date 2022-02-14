@@ -68,7 +68,7 @@ inline void Rond::translation(const Vecteur2D& u)
 }
 
 inline void Rond::homothetie(const Vecteur2D &u, double k) {
-    v = k * (v - u) + u;
+    v = (v - u)*k  + u;
     rayon *= k;
 }
 

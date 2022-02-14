@@ -67,9 +67,9 @@ inline void Triangle::translation(const Vecteur2D& u)
 }
 
 inline void Triangle::homothetie(const Vecteur2D &u, double k) {
-    a = k * (a - u) + u;
-    b = k * (b - u) + u;
-    c = k * (c - u) + u;
+    a =  (a - u)*k  + u;
+    b =  (b - u)*k  + u;
+    c =  (c - u)*k  + u;
 }
 
 Triangle::operator string() const

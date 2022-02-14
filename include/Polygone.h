@@ -2,6 +2,8 @@
 // Created by user on 11/02/2022.
 //
 
+#pragma once
+
 #ifndef PROJETT_POLYGONE_H
 #define PROJETT_POLYGONE_H
 
@@ -12,6 +14,7 @@
 #include "Socket.h"
 #include "Formes.h"
 #include "Vecteur2D.h"
+#include "Matrice22.h"
 using namespace std;
 
 class Polygone : public Formes {
@@ -46,7 +49,7 @@ public:
     friend ostream& operator << (ostream& os, const Polygone& m);
 };
 
-inline ostream& operator<<(ostream& os, const Polygone& m)
+ostream& operator<<(ostream& os, const Polygone& m)
 {
     return os << (string)m;
 }
@@ -107,7 +110,7 @@ inline void Polygone::homothetie(const Vecteur2D& u, double k)
 {
     //b = k * (b - u) + u;
     for (int i = 0; i < tab_vect.size(); i++)
-        *tab_vect[i] = k * ( *tab_vect[i] - u ) + u ;
+        *tab_vect[i] =  ( *tab_vect[i] - u )*k  + u ;
 
 }
 
@@ -138,6 +141,7 @@ Vecteur2D Polygone::getCentreSymetrie() const {
 
     return Vecteur2D(x/tab_vect.size(),y/tab_vect.size());
 }
+
 
 
 #endif //PROJETT_POLYGONE_H

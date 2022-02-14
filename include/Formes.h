@@ -36,7 +36,7 @@ public:
     virtual operator string() const  = 0;
     virtual Formes* clone() const = 0;
 
-    friend ostream& operator << (ostream& os, const Formes* m);
+    inline friend ostream& operator << (ostream& os, const Formes* m);
     virtual ~Formes(){}
 };
 

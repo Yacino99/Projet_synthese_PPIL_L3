@@ -48,7 +48,7 @@ public:
     Vecteur2D getCentreSymetrie() const;
     Croix* clone() const { return new Croix(*this); }
     virtual ~Croix() { delete s; }
-    friend ostream& operator << (ostream& os, const Croix* m);
+    friend ostream& operator << (ostream& os, const Croix& m);
     operator string() const;
 
 
@@ -82,8 +82,8 @@ inline void Croix::translation(const Vecteur2D &u)
 }
 
 inline void Croix::homothetie(const Vecteur2D &u, double k) {
-    a = k * (a - u) + u;
-    b = k * (b - u) + u;
+    a =  (a - u)*k  + u;
+    b =  (b - u)*k  + u;
 }
 
 //Vecteur OB’ = R * (vecteur OB – vecteur OC) + vecteur OC
