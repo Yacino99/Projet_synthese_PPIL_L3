@@ -54,7 +54,7 @@ void Croix::rotation(const Vecteur2D &u, const double angle) {
     a =  M * (a - u) + u ;
 }
 
-void *Croix::accepte(const VisiteurSauvegarde *visiteur) const {
+const void *Croix::accepte(const VisiteurSauvegarde *visiteur) const {
     return visiteur->sauvegarde(this);
 }
 

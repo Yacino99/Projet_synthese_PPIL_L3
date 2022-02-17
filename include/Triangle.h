@@ -46,7 +46,7 @@ public:
     friend ostream& operator << (ostream& os, const Triangle& m);
 
     // DP Visitor pour la sauvegarde
-    void *accepte(const VisiteurSauvegarde * visiteur) const;
+    const void *accepte(const VisiteurSauvegarde * visiteur) const;
 };
 
 

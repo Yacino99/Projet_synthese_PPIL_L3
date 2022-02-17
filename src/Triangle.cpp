@@ -79,7 +79,7 @@ Vecteur2D Triangle::getCentreSymetrie() const {
 }
 
 
-void *Triangle::accepte(const VisiteurSauvegarde *visiteur) const {
+const void *Triangle::accepte(const VisiteurSauvegarde *visiteur) const {
     return visiteur->sauvegarde(this);
 }
 

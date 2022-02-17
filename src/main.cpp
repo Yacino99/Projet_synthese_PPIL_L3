@@ -151,6 +151,13 @@ int main()
         f2->dessiner(socket);
 */
 
+       // Sauvegarde des formes
+        cout << "================================== Sauvegarde des formes dans un fichier text : ==================================" << endl;
+        f1->accepte(new VisiteurSauvegardeTxt);
+        f2->accepte(new VisiteurSauvegardeTxt);
+        f3->accepte(new VisiteurSauvegardeTxt);
+        cout << "==================================================================================================================" << endl;
+
 
         Vecteur2D a(120, 40), b(140, 70), c(150, 80);
         Vecteur2D d(190, 60), e(60, 125), f(90, 125);

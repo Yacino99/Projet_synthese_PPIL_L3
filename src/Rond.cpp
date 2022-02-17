@@ -52,7 +52,7 @@ Vecteur2D Rond::getCentreSymetrie() const {
     return v;
 }
 
-void *Rond::accepte(const VisiteurSauvegarde *visiteur) const {
+const void *Rond::accepte(const VisiteurSauvegarde *visiteur) const {
     return visiteur->sauvegarde(this);
 }
 

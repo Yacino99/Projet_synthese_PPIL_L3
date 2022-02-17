@@ -43,7 +43,7 @@ public:
     virtual ~Formes(){}
 
     // DP Visitor pour la sauvegarde
-    virtual void * accepte(const VisiteurSauvegarde * visiteur) const = 0;
+    virtual const void * accepte(const VisiteurSauvegarde * visiteur) const = 0;
 };
 
 inline ostream& operator << (ostream& os, const Formes* m)

@@ -7,6 +7,9 @@
 
 
 #include "VisiteurSauvegarde.h"
+#include <iostream>
+#include <string>
+#include <fstream>
 
 class VisiteurSauvegardeTxt : public VisiteurSauvegarde
 {
