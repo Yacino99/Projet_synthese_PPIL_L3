@@ -1,0 +1,4 @@
+triangle ( 30 , 200 , 90 , 200 , 45 , 50 ) green
+triangle ( 30 , 200 , 90 , 200 , 45 , 50 ) green
+triangle ( 30 , 200 , 90 , 200 , 45 , 50 ) green
+triangle ( 30 , 200 , 90 , 200 , 45 , 50 ) green
