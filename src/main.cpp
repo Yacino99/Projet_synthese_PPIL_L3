@@ -223,12 +223,25 @@ int main()
         p->addPoint(new Vecteur2D(175,135)).addPoint(new Vecteur2D(270,200))
         .addPoint(new Vecteur2D(200,220)).addPoint(new Vecteur2D(130,180));//.addPoint(&e);
         p->rotation(p->getCentreSymetrie(),M_PIl/2);
+        cout << "aire = " << p->calculerAire() << endl;
         p->dessiner(socket);
 
+        Vecteur2D aa(175,135);
+        Vecteur2D bb(270,200);
+        Vecteur2D cc(200,220);
+        Vecteur2D dd(130,180);
+
+        //--- test des distances du polygone
+        double ab = aa.distance(bb);
+        double bc = bb.distance(cc);
+        double cd = cc.distance(dd);
+        double ad = aa.distance(dd);
+
+        cout << "ab = " << ab << " bc = " << bc << " cd= " << cd << " ad= " << ad << endl;
 
 
         int nnn;
-        cout << "type any character -:-" ;
+        cout << "type any character --:--" ;
         // henry
         cin >>nnn;
 

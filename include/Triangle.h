@@ -19,10 +19,10 @@ class Triangle : public Formes {
 private:
     Vecteur2D a, b, c;
     Socket* s;
-    const double valAbs(double d) const {return d < 0 ? -d : d;}
+
 public:
 
-    Triangle(int a1, int a2 ,int b1,int b2 , int c1 , int c2 , double rayon, Socket* s, const string& color = " ") :
+    Triangle(int a1, int a2 ,int b1,int b2 , int c1 , int c2 ,  Socket* s = nullptr, const string& color = " ") :
             Formes(color), a(a1,a2), b(b1,b2), c(c1,c2), s(s) {
 
     }
