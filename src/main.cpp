@@ -20,6 +20,14 @@ using namespace std;
 #include "VisiteurSauvegarde.h"
 #include "VisiteurSauvegardeTxt.h"
 
+#include "Expert.h"
+#include "ExpertChargementCOR.h"
+#include "ExpertChargementCroixCOR.h"
+#include "ExpertChargementPolygoneCOR.h"
+#include "ExpertChargementRondCOR.h"
+#include "ExpertChargementTriangleCOR.h"
+#include "ChargeurListeFormes.h"
+
 
 #pragma comment(lib,"ws2_32.lib") // specifique  a visual studio et Clion
 
@@ -126,7 +134,7 @@ int main()
         cout << " on est la" << endl;
 
         Formes * f1 ,*f2 , *f3;
-        f1= new Rond (300, 300, 30.0, socket, "blue");
+        f1 = new Rond (300, 300, 30.0, socket, "blue");
         f2 = new Croix(30, 100, 100, 30, socket, "red");
 
         // test du rond
@@ -182,6 +190,24 @@ int main()
         f2->accepte(new VisiteurSauvegardeTxt);
         f3->accepte(new VisiteurSauvegardeTxt);
         // =================================================================================================================
+
+        // ================================== Test chargement des formes ==================================
+        cout << "================================================== TEST CHARGEMENT \"==================================================" << endl;
+        ifstream ifs("../sauvegardeTxt/sauvegardeForme.txt", std::ifstream::in);
+        cout << "Lecture des valeurs : " << endl;
+        vector<Formes *> listFormes = ChargeurListeFormes::charge(ifs, socket);
+
+        // Affichage du résultat
+        vector<Formes*>::iterator it = listFormes.begin();
+        cout << endl << "Resultat : " << endl;
+        while (it != listFormes.end())
+        {
+            cout << (*it) << endl;
+            it++;
+        }
+        cout << "================================================ FIN TEST CHARGEMENT \"================================================" << endl;
+        // =================================================================================================================
+
 
         Vecteur2D a(120, 40), b(140, 70), c(150, 80);
         Vecteur2D d(190, 60), e(60, 125), f(90, 125);
