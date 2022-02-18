@@ -1,0 +1,9 @@
+rond ( 448.5 , 468 , 39 ) blue
+croix ( 99 , 222 , 204 , 117 )red
+triangle ( 30 , 200 , 90 , 200 , 45 , 50 ) green
+rond ( 448.5 , 468 , 39 ) blue
+croix ( 99 , 222 , 204 , 117 )red
+triangle ( 30 , 200 , 90 , 200 , 45 , 50 ) green
+rond ( 448.5 , 468 , 39 ) blue
+croix ( 99 , 222 , 204 , 117 )red
+triangle ( 30 , 200 , 90 , 200 , 45 , 50 ) green
