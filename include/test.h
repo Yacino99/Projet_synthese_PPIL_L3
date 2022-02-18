@@ -12,6 +12,8 @@ public:
 
     void sayHi();
 
+    void testGetLine();
+
 };
 
 
