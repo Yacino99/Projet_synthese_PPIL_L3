@@ -48,12 +48,13 @@ Triangle::operator string() const
  */
 double Triangle::calculerAire() const {
 
-    double ab =valAbs(a.distance(b));
-    double ac =valAbs(a.distance(b));
-    double bc = valAbs(b.distance(c));
-    double d = (ab+ac+bc)/2;
+   // double ab =  u1.distance(u2) , ac = u1.distance(u3) , bc = u2.distance(u3);
+    // double aire = (ab + ac + bc)/2;
 
-    return sqrt(d*(d-ab)*(d-ab)*(d-bc));
+    double ab = a.distance(b) , ac = a.distance(c) , bc = b.distance(c);
+    double d = (ab+ac+bc)/2; // d est le demi perimetre
+
+    return sqrt(d*(d-ab)*(d-ac)*(d-bc));
 
     // probleme -> NAN
 }

@@ -48,9 +48,33 @@ void testMatrice(){
 
 }
 
+void testDistVect(){
+
+    cout << "--------test des distances ------------" << endl;
+
+    Vecteur2D u1(2,1), u2(7,2), v(5), w, v1(35,-63), u3(6,5), u4(3,-4);
+
+    cout << " u1 = " <<  u1 << " u2 = " << u2 << " dist(u1,u2) = " << u1.distance(u2) << endl;
+   // cout << " u1 = " <<  u1 << " u2 = " << u2 << " dist(u2,u1) = " << u2.distance(u1) << endl;
+    cout << " u1 = " <<  u1 << " u3 = " << u3 << " dist(u1,u3) = " << u1.distance(u3) << endl;
+    cout << " u2 = " <<  u2 << " u3 = " << u3 << " dist(u2,u3) = " << u2.distance(u3) << endl;
+    cout << "u1 = " << u1 << " dist(u1,u1) = " << u1.distance(u1) << endl;
+
+    double ab =  u1.distance(u2) , ac = u1.distance(u3) , bc = u2.distance(u3);
+    double demiPeri = (ab + ac + bc)/2 ;
+    double d = demiPeri;
+
+    double aires = sqrt(d*(d-ab)*(d-ac)*(d-bc));
+    cout << "demi perimetrre = " << demiPeri << endl;
+    cout << "aire = " << aires << endl;
+
+
+}
+
 int main()
 {
     //testMatrice();
+    testDistVect();
     test t;
     t.sayHi();
 
@@ -120,8 +144,10 @@ int main()
         // test Triangle
         f3 =  new Triangle(Vecteur2D(30,200), Vecteur2D(90,200), Vecteur2D(45,50), socket, "green");
         f3->dessiner(socket);
+        cout << "aire du triangle est = " << f3->calculerAire() << endl;
         f3->translation(u2*31);
         f3->dessiner(socket);
+        cout << "aire du triangle est = " << f3->calculerAire() << endl;
         f3->homothetie(Vecteur2D(0,0),2);
         f3->setColor("red");
       //  f3->rotation(Vecteur2D(0,0), M_PIl);
@@ -172,6 +198,9 @@ int main()
         .addPoint(new Vecteur2D(200,220)).addPoint(new Vecteur2D(130,180));//.addPoint(&e);
         p->rotation(p->getCentreSymetrie(),M_PIl/2);
         p->dessiner(socket);
+
+
+
         int nnn;
         cout << "type any character -:-" ;
         // henry
