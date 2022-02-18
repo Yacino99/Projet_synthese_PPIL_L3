@@ -39,7 +39,6 @@ public:
             if (forme != NULL)
             {
                 res.push_back(forme);
-                cout << "ligne ajoutee au vector" << endl;
             }
         }
 

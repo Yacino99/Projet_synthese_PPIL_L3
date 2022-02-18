@@ -22,7 +22,8 @@ void Triangle::translation(const Vecteur2D& u)
     c = c + u;
 }
 
-void Triangle::homothetie(const Vecteur2D &u, double k) {
+void Triangle::homothetie(const Vecteur2D &u, double k)
+{
     a =  (a - u)*k  + u;
     b =  (b - u)*k  + u;
     c =  (c - u)*k  + u;
@@ -46,17 +47,13 @@ Triangle::operator string() const
  * où d est le demi-périmètre du triangle ou la moitié de son périmètre.
  * perimetre = somme des 3 cotes du triangle
  */
-double Triangle::calculerAire() const {
-
-   // double ab =  u1.distance(u2) , ac = u1.distance(u3) , bc = u2.distance(u3);
-    // double aire = (ab + ac + bc)/2;
+double Triangle::calculerAire() const
+{
 
     double ab = a.distance(b) , ac = a.distance(c) , bc = b.distance(c);
     double d = (ab+ac+bc)/2; // d est le demi perimetre
 
     return sqrt(d*(d-ab)*(d-ac)*(d-bc));
-
-    // probleme -> NAN
 }
 
 void Triangle::rotation(const Vecteur2D &u, const double angle) {

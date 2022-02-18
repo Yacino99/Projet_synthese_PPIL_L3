@@ -17,15 +17,28 @@ public:
 
     Formes *resoudre1(const string &d, Socket *pSocket) const
     {
-        string cherche = "croix";
+        const string cherche = "croix";
         string::size_type pos = d.find(cherche);
         while (pos != string::npos)
         {
-            // Found!
-            cout << "found at : " << pos << endl;
-            pos = d.find(cherche, pos + 1);
+            // "croix" trouvé
+            vector<double> points;
 
-            return new Croix(30, 100, 100, 30, pSocket, "red");
+            // on extrait tout ce qui se trouve entre les parenthèses
+            unsigned firstParenthesis = d.find("(");
+            unsigned lastParenthesis = d.find(")");
+            string coordonnees = d.substr (firstParenthesis + 1, lastParenthesis - firstParenthesis - 1);
+            istringstream is(coordonnees );
+
+            // on enlève toutes les virgules et on stocke les nombres dans un vecteur
+            string t;
+            while ( getline( is, t, ',' ) ) points.push_back(stod(t));
+
+            // récupération de la couuleur
+            string couleur = d.substr(lastParenthesis + 1, d.size());
+
+            // création de la forme en des données du fichier de sauvegarde
+            return new Croix(points[0], points[1], points[2], points[3], pSocket, couleur);
         }
 
         return NULL;

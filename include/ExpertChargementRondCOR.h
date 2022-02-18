@@ -17,15 +17,28 @@ public:
 
     Formes *resoudre1(const string &d, Socket *pSocket) const
     {
-        string cherche = "rond";
+        const string cherche = "rond";
         string::size_type pos = d.find(cherche);
         while (pos != string::npos)
         {
-            // Found!
-            cout << "found at : " << pos << endl;
-            pos = d.find(cherche, pos + 1);
+            // "rond" trouvé
+            vector<double> points;
 
-            return new Rond (300, 300, 30.0, pSocket, "blue");
+            // on extrait tout ce qui se trouve entre les parenthèses
+            unsigned firstParenthesis = d.find("(");
+            unsigned lastParenthesis = d.find(")");
+            string coordonnees = d.substr (firstParenthesis + 1, lastParenthesis - firstParenthesis - 1);
+            istringstream is(coordonnees );
+
+            // on enlève toutes les virgules et on stocke les nombres dans un vecteur
+            string t;
+            while ( getline( is, t, ',' ) ) points.push_back(stod(t));
+
+            // récupération de la couuleur
+            string couleur = d.substr(lastParenthesis + 1, d.size());
+
+            // création de la forme en des données du fichier de sauvegarde
+            return new Rond (points[0], points[1], points[2], pSocket, couleur);
         }
 
         return NULL;

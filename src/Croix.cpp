@@ -30,7 +30,7 @@ Croix::operator string() const
     ostringstream os;
 
     os << "croix ( " << a.x << " , " <<
-       a.y << " , " << b.x << " , " << b.y << " )" << this->couleur;
+       a.y << " , " << b.x << " , " << b.y << " ) " << this->couleur;
 
 
     return os.str();

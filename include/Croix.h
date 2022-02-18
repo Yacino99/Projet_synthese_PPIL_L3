@@ -52,7 +52,6 @@ public:
     const void *accepte(const VisiteurSauvegarde * visiteur) const;
 };
 
-
 inline ostream& operator << (ostream& os, const Croix& m) {
     return os << (string)m;
 }

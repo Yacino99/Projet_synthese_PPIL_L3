@@ -28,7 +28,6 @@ using namespace std;
 #include "ExpertChargementTriangleCOR.h"
 #include "ChargeurListeFormes.h"
 
-
 #pragma comment(lib,"ws2_32.lib") // specifique  a visual studio et Clion
 
 # define M_PIl          3.141592653589793238462643383279502884L
@@ -186,27 +185,26 @@ int main()
 */
 
        // ================================== Sauvegarde des formes dans un fichier text  ==================================
-        f1->accepte(new VisiteurSauvegardeTxt);
+        /*f1->accepte(new VisiteurSauvegardeTxt);
         f2->accepte(new VisiteurSauvegardeTxt);
-        f3->accepte(new VisiteurSauvegardeTxt);
+        f3->accepte(new VisiteurSauvegardeTxt);*/
         // =================================================================================================================
 
-        // ================================== Test chargement des formes ==================================
+
+        // Test chargement de formes
+        /*
         cout << "================================================== TEST CHARGEMENT \"==================================================" << endl;
+
         ifstream ifs("../sauvegardeTxt/sauvegardeForme.txt", std::ifstream::in);
         cout << "Lecture des valeurs : " << endl;
         vector<Formes *> listFormes = ChargeurListeFormes::charge(ifs, socket);
 
-        // Affichage du résultat
         vector<Formes*>::iterator it = listFormes.begin();
-        cout << endl << "Resultat : " << endl;
-        while (it != listFormes.end())
-        {
-            cout << (*it) << endl;
-            it++;
-        }
+        for (std::size_t i = 0; i < listFormes.size(); i++)
+            listFormes[i]->dessiner(socket);
+
         cout << "================================================ FIN TEST CHARGEMENT \"================================================" << endl;
-        // =================================================================================================================
+         */
 
 
         Vecteur2D a(120, 40), b(140, 70), c(150, 80);
