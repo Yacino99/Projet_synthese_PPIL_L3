@@ -6,6 +6,7 @@
 #include "Vecteur2D.h"
 #include "Matrice22.h"
 #include "VisiteurSauvegarde.h"
+#include "Triangle.h"
 
 void Polygone::dessiner(Socket *ss) const
 {
@@ -18,7 +19,23 @@ void Polygone::dessiner(Socket *ss) const
 
 double Polygone::calculerAire() const
 {
-    return 0.0;
+    if (tab_vect.size() < 3)
+        return 0;
+
+    else
+    {
+        double aire = 0;
+        for (int i = 0; i < tab_vect.size()-2; ++i) {
+            Vecteur2D a = *tab_vect[0];
+            Vecteur2D b = *tab_vect[i+1];
+            Vecteur2D c = *tab_vect[i+2];
+            Triangle triangle(a,b,c,nullptr);
+            aire += triangle.calculerAire();
+        }
+        return aire;
+    }
+
+
 }
 
 
