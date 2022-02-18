@@ -26,7 +26,7 @@ public:
             cout << "found at : " << pos << endl;
             pos = d.find(cherche, pos + 1);
 
-            return new Triangle(30, 100, 100, 30, 50, 60, 30, pSocket, "red");
+            return new Triangle(50, 60, 100, 120, 30, 45, pSocket, "red");
         }
 
         return NULL;
