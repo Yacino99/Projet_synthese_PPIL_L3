@@ -14,10 +14,7 @@
 class VisiteurSauvegardeTxt : public VisiteurSauvegarde
 {
 public:
-    void *sauvegarde(const Triangle * triangle) const;
-    void *sauvegarde(const Rond * rond) const;
-    void *sauvegarde(const Croix * croix) const;
-    void *sauvegarde(const Polygone * polygone) const;
+    const void *sauvegarde(const Formes * forme) const;
 };
 
 #endif //PROJET_SYNTHESE_PPIL_L3_VISITEURSAUVEGARDETXT_H

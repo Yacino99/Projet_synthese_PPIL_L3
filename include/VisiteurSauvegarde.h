@@ -17,11 +17,7 @@ class VisiteurSauvegarde
 {
 
 public :
-    virtual void *sauvegarde(const Triangle * triangle) const = 0;
-    virtual void *sauvegarde(const Rond * rond) const = 0;
-    virtual void *sauvegarde(const Croix * croix) const = 0;
-    virtual void *sauvegarde(const Polygone * polygone) const = 0;
-
+    virtual const void *sauvegarde(const Formes * forme) const = 0;
 };
 
 #endif //PROJET_SYNTHESE_PPIL_L3_VISITEURSAUVEGARDE_H
