@@ -5,21 +5,6 @@ import java.util.HashMap;
 
 public class DrawPolygonHandler extends Handler{
 
-    HashMap<String, Color> map=new HashMap<String,Color>();
-
-    public DrawPolygonHandler() {
-        map.put("red",Color.red);
-        map.put("blue",Color.BLUE);
-        map.put("yellow",Color.yellow);
-        map.put("green",Color.green);
-        map.put("orange",Color.ORANGE);
-        map.put("magenta",Color.MAGENTA);
-        map.put("cyan",Color.CYAN);
-        map.put("pink",Color.PINK);
-        map.put("gray",Color.GRAY);
-        map.put("",Color.black);
-    }
-
 
     @Override
     public boolean handle(String message, CadreDessin cadreDessin) throws InterruptedException {

@@ -16,7 +16,7 @@ using namespace std;
 #include "Triangle.h"
 #include "Polygone.h"
 #include "test.h"
-
+#include "GroupeFormes.h"
 #include "VisiteurSauvegarde.h"
 #include "VisiteurSauvegardeTxt.h"
 
@@ -211,7 +211,7 @@ int main()
         Vecteur2D d(190, 60), e(60, 125), f(90, 125);
 
         /*
-         * 32 polygon2.addPoint( 165, 135 );
+          polygon2.addPoint( 165, 135 );
          polygon2.addPoint( 175, 150 );
          polygon2.addPoint( 270, 200 );
          polygon2.addPoint( 200, 220 );
@@ -237,9 +237,16 @@ int main()
 
         cout << "ab = " << ab << " bc = " << bc << " cd= " << cd << " ad= " << ad << endl;
 
+        //-------test du groupe formes---------------------------
+        GroupeFormes groupe("red");
+        groupe.addForme(f1).addForme(f2).addForme(f3);
+
+        groupe.dessinerFormes(socket);
+        groupe.appliquerHomothetie(Vecteur2D(0,0),false);
+        groupe.dessinerFormes(socket);
 
         int nnn;
-        cout << "type any character --:--" ;
+        cout << "type any character -:" ;
         // henry
         cin >>nnn;
 
