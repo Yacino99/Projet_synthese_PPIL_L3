@@ -245,6 +245,11 @@ int main()
         groupe.appliquerHomothetie(Vecteur2D(0,0),false);
         groupe.dessinerFormes(socket);
 
+        // verifier que la couleur de la forme inseré est un clone de l'original donc l'original n'est pas modifié
+        f1->dessiner(socket);
+
+        cout << groupe << endl;
+
         int nnn;
         cout << "type any character -:" ;
         // henry

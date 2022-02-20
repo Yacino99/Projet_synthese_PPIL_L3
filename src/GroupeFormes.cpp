@@ -8,6 +8,21 @@
 
 using namespace std;
 
+
+GroupeFormes::GroupeFormes(const vector<Formes *> shapes, const string &couleur) : couleur(couleur),
+                                                                                   formes(shapes) {
+    for (int i = 0; i < formes.size(); ++i) {
+        formes[i]->setColor(couleur);
+    }
+}
+
+
+GroupeFormes::~GroupeFormes() {
+    for (int i = 0; i < formes.size(); ++i) {
+        delete formes[i];
+    }
+}
+
 Formes *GroupeFormes::getForme(int i) const {
 
     if (i < 0 || i >= formes.size())
@@ -41,7 +56,9 @@ GroupeFormes::operator string() const {
 }
 
 GroupeFormes &GroupeFormes::addForme(const Formes *f) {
-    formes.push_back(f->clone());
+    Formes * newF = f->clone();
+    newF->setColor(couleur);
+    formes.push_back(newF);
     return (*this);
 }
 
@@ -90,7 +107,9 @@ void GroupeFormes::dessinerFormes(Socket *s) const {
     }
 }
 
-ostream &operator<<(ostream &os, const Formes &g) {
+ostream &operator<<(ostream &os, const GroupeFormes &g) {
     os << (string)(g);
     return os;
 }
+
+

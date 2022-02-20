@@ -19,9 +19,8 @@ private:
 
 public:
     explicit GroupeFormes(const string& couleur = " ") : couleur(couleur){}
-    explicit GroupeFormes(const vector<Formes*> shapes, const string& couleur = " ") : couleur(couleur),
-                                                                                            formes(shapes){}
-    virtual ~GroupeFormes(){}
+    GroupeFormes(const vector<Formes*> shapes, const string& couleur = " ") ;
+    virtual ~GroupeFormes();
     // setters & getters
 
     Formes * getForme(int i) const;
@@ -41,7 +40,7 @@ public:
     const double sommeAires() const;
     void dessinerFormes(Socket *s) const;
 
-     friend ostream& operator << (ostream& os, const Formes& g);
+     friend ostream& operator << (ostream& os,const GroupeFormes &g);
 
 };
 
