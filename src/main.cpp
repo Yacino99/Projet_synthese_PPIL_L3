@@ -250,8 +250,11 @@ int main()
 
         cout << groupe << endl;
 
+        Rond * rond = new Rond(1000,200,50,socket,"yellow");
+        rond->dessiner(socket);
+
         int nnn;
-        cout << "type any character -:" ;
+        cout << "type any character -:-" ;
         // henry
         cin >>nnn;
 

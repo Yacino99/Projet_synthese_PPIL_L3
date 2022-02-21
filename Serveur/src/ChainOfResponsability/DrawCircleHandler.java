@@ -27,6 +27,14 @@ public class DrawCircleHandler extends Handler{
             int y = (int)Ycentre;
             int r = (int)rayon;
 
+            //--code qui gere l'adaptation de la taille de la fenetre
+
+            /*if(x + rayon > cadreDessin.getWidth())
+                cadreDessin.setLargeur(x+r);
+            if(y + rayon > cadreDessin.getHeight())
+                cadreDessin.setLongueur(y+r);*/
+
+
 
             if(map.containsKey(couleur))
                 cadreDessin.graphics.setColor(map.get(couleur));

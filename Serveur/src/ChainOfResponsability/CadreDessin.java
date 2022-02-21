@@ -1,6 +1,9 @@
 package ChainOfResponsability;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * destin� � recevoir des dessins r�alis�s en Active-Rendering
@@ -13,6 +16,7 @@ import java.awt.*;
 public class CadreDessin extends Frame
 {
     public Graphics graphics;      // pour dessiner sur this
+    private int bordGauche, bordSuperieur;
 
     /**
      * @param titre : titre de la fen�tre
@@ -27,18 +31,17 @@ public class CadreDessin extends Frame
     public CadreDessin(String titre, int ox, int oy, int largeur, int hauteur) throws InterruptedException
     {
         super(titre);
-// ------------------ param�trage de la position et des dimensions de la fen�tre --------------------------
-
+// ------------------ parametrage de la position et des dimensions de la fenetre --------------------------
         Toolkit tk = Toolkit.getDefaultToolkit();
-
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         int le, he; // largeur �cran, hauteur �cran
 
-        Dimension dim = tk.getScreenSize(); // dimensions de l'�cran
+        Dimension dim = tk.getScreenSize(); // dimensions de l'ecran
 
         le = (int) dim.getWidth();
         he = (int) dim.getHeight();
 
-        int bordGauche, bordSuperieur, l, h ;
+        int  l, h ;
 
         bordGauche = Math.max(0, ox);
         bordSuperieur = Math.max(0, oy);
@@ -47,6 +50,7 @@ public class CadreDessin extends Frame
         this.setBounds(bordGauche, bordSuperieur, l, h);
 
 //this.setBounds(ox, oy, largeur, hauteur);
+
 
         this.setVisible(true);
 
@@ -58,6 +62,27 @@ public class CadreDessin extends Frame
         this.createBufferStrategy(nombreBuffers);
         Thread.sleep(50);   // il faut attendre un minimum de 50 ms pour que le buffer soit op�rationnel
         this.graphics = this.getBufferStrategy().getDrawGraphics();
+
+        addWindowListener (new WindowAdapter() {
+            public void windowClosing (WindowEvent e) {
+                dispose();
+            }
+        });
+
+        
+
+    }
+
+    //----adapter la largeur
+    public void setLargeur(int largeur){
+        //this.setSize(largeur,this.getHeight());
+        this.setBounds(bordGauche, bordSuperieur, largeur, this.getHeight());
+    }
+
+    //----adapter la longueur
+   public  void setLongueur(int longeur){
+       // this.setSize(this.getWidth(),longeur);
+       this.setBounds(bordGauche, bordSuperieur, this.getWidth(), longeur);
     }
 
 }
