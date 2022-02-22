@@ -29,10 +29,10 @@ public class DrawCircleHandler extends Handler{
 
             //--code qui gere l'adaptation de la taille de la fenetre
 
-            /*if(x + rayon > cadreDessin.getWidth())
+            if(x + rayon > cadreDessin.getWidth())
                 cadreDessin.setLargeur(x+r);
             if(y + rayon > cadreDessin.getHeight())
-                cadreDessin.setLongueur(y+r);*/
+                cadreDessin.setLongueur(y+r);
 
 
 
@@ -40,6 +40,7 @@ public class DrawCircleHandler extends Handler{
                 cadreDessin.graphics.setColor(map.get(couleur));
 
             cadreDessin.graphics.fillOval(x,y,r,r);
+            //cadreDessin.getBufferStrategy().show();
             System.out.println("i drawed a circle");
         }
 

@@ -46,6 +46,7 @@ public class Interlocuteur extends Thread{
                 h1.handle(requete,cadreDessin);
                 h2.handle(requete,cadreDessin);
                 h3.handle(requete,cadreDessin);
+                cadreDessin.getBufferStrategy().show();
             }
 
 

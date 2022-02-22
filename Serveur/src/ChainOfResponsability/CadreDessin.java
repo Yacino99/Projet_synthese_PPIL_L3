@@ -2,8 +2,7 @@ package ChainOfResponsability;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
 /**
  * destin� � recevoir des dessins r�alis�s en Active-Rendering
@@ -13,7 +12,7 @@ import java.awt.event.WindowEvent;
  * pourrait �tre am�lior�e par l'utilisation d'un Canvas : Panel sp�cialis� pour le dessin
  * pourrait �tre am�lior�e par l'utilisation de coordonn�es relatives plut�t que des coordonn�es en pixels
  * */
-public class CadreDessin extends Frame
+public class CadreDessin extends Frame implements ComponentListener
 {
     public Graphics graphics;      // pour dessiner sur this
     private int bordGauche, bordSuperieur;
@@ -58,9 +57,9 @@ public class CadreDessin extends Frame
 
         this.setIgnoreRepaint(true);
 
-        int nombreBuffers = 1;
+        int nombreBuffers = 2;
         this.createBufferStrategy(nombreBuffers);
-        Thread.sleep(50);   // il faut attendre un minimum de 50 ms pour que le buffer soit op�rationnel
+        Thread.sleep(100);   // il faut attendre un minimum de 50 ms pour que le buffer soit op�rationnel
         this.graphics = this.getBufferStrategy().getDrawGraphics();
 
         addWindowListener (new WindowAdapter() {
@@ -77,13 +76,36 @@ public class CadreDessin extends Frame
     public void setLargeur(int largeur){
         //this.setSize(largeur,this.getHeight());
         this.setBounds(bordGauche, bordSuperieur, largeur, this.getHeight());
+       // this.getBufferStrategy().show();
+
     }
 
     //----adapter la longueur
    public  void setLongueur(int longeur){
        // this.setSize(this.getWidth(),longeur);
        this.setBounds(bordGauche, bordSuperieur, this.getWidth(), longeur);
+        //this.getBufferStrategy().show();
+
     }
 
+    @Override
+    public void componentResized(ComponentEvent e) {
+        repaint();
+    }
+
+    @Override
+    public void componentMoved(ComponentEvent e) {
+
+    }
+
+    @Override
+    public void componentShown(ComponentEvent e) {
+
+    }
+
+    @Override
+    public void componentHidden(ComponentEvent e) {
+
+    }
 }
 
