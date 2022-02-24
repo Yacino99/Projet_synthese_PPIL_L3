@@ -31,7 +31,8 @@ public:
     virtual void homothetie(const Vecteur2D& u,double k) = 0;
     virtual void rotation(const Vecteur2D &u, const double angle ) = 0;
 
-
+    // pour faire le passage monde ecran
+    //virtual void bornes(double &xmin , double &ymin , double &xmax,double &ymax) = 0;
 
     virtual void dessiner(Socket *s) const = 0;
     virtual double calculerAire() const = 0;

@@ -69,13 +69,33 @@ void Triangle::rotation(const Vecteur2D &u, const double angle) {
     b =  M * (b - u) + u ;
     c =  M * (c - u) + u ;
 }
+/*
+void Triangle::rotation1(const Vecteur2D &u, const Matrice22 &M) {
 
+    double m11 = cos(angle);
+    double m12 = -sin(angle);
+    double m21 = -m12;
+    double m22 = m11;
+
+    Matrice22 M(m11,m12,m21,m22);
+
+    a =  M * (a - u) + u ;
+    b =  M * (b - u) + u ;
+    c =  M * (c - u) + u ;
+}
+*/
 Vecteur2D Triangle::getCentreSymetrie() const {
     double x = (a.x+b.x+c.x)/3;
     double y = (a.y+b.y+c.y)/3;
     return Vecteur2D(x,y);
 }
+/*
+Vecteur2D Triangle::getCentreSymetrie1() const {
 
+    Vecteur2D g = (a+b+c)*(1/3.0);
+    return g;
+}
+*/
 
 const void *Triangle::accepte(const VisiteurSauvegarde *visiteur) const {
     return visiteur->sauvegarde(this);

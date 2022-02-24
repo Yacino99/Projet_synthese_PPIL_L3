@@ -252,9 +252,21 @@ int main()
 
         Rond * rond = new Rond(1200,200,50,socket,"purple");
         rond->dessiner(socket);
+        Rond * rond2 = new Rond(900,200,50,socket,"blue");
+        rond2->dessiner(socket);
+        Triangle *tt = new Triangle(Vecteur2D(200,200),Vecteur2D(300,100),Vecteur2D(800,100),socket,"red");
+        tt->dessiner(socket);
+        Triangle *tt1 = new Triangle(Vecteur2D(-0.3,1.7),Vecteur2D(2.8,-2.5),Vecteur2D(4.3,5.2),socket,"purple");
+        Rond * rond3 = new Rond(5.8,-3.5,1.2,socket,"blue");
+        // p1 = (-0.3 , -2.5) <- absisse/ordonnee mini  p2 = (7,5.2) <- absisse/ordonnee maxi
+        GroupeFormes *g2 = new GroupeFormes("purple");
+        g2->addForme(tt1);
+        g2->addForme(rond3);
+
+       // g2->dessinerFormes(socket,600,300); // defini rect '    p1'=(0,300) , p2' = (600,0)
 
         int nnn;
-        cout << "type any character :" ;
+        cout << "type any character -:" ;
         // henry
         cin >>nnn;
 

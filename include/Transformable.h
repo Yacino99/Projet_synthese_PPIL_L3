@@ -8,6 +8,12 @@
 
 #include "Vecteur2D.h"
 
+// interface transformable
+
+/*
+ * translation homotetie et rotation , sont des cas particuliers d'une notion que je dois definir
+ * */
+
 class Transformable {
 public:
     virtual void translation(const Vecteur2D& u) = 0;

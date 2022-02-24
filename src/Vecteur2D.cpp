@@ -77,6 +77,8 @@ Vecteur2D& Vecteur2D::operator=(const Vecteur2D &u)  {
 
 const double Vecteur2D::distance(const Vecteur2D &b) const {
 
+    // TODO : ameliorer ceci et retirer le pow
+
     double opg = pow(b.x-x,2);
     double opd =  pow(b.y-y,2);
     return sqrt(opg + opd);
