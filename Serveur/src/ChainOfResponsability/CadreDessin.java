@@ -12,7 +12,7 @@ import java.awt.event.*;
  * pourrait �tre am�lior�e par l'utilisation d'un Canvas : Panel sp�cialis� pour le dessin
  * pourrait �tre am�lior�e par l'utilisation de coordonn�es relatives plut�t que des coordonn�es en pixels
  * */
-public class CadreDessin extends Frame implements ComponentListener
+public class CadreDessin extends Frame
 {
     public Graphics graphics;      // pour dessiner sur this
     private int bordGauche, bordSuperieur;
@@ -68,43 +68,44 @@ public class CadreDessin extends Frame implements ComponentListener
             }
         });
 
-        
+        addComponentListener(new ComponentAdapter(){
+            public void componentResized(ComponentEvent componentEvent) {
+                // do stuff
+                //System.out.println("x = " + this.getWidth() + ", y = " + this.getHeight());
+                System.out.println("redimentionnement");
+                //drawElements(taframe);
+            }
+        });
 
     }
 
+
+
     //----adapter la largeur
-    public void setLargeur(int largeur){
-        //this.setSize(largeur,this.getHeight());
-        this.setBounds(bordGauche, bordSuperieur, largeur, this.getHeight());
+    public void setLargeur(int largeur)  {
+        this.setSize(largeur,this.getHeight());
+
+        try {
+            Thread.sleep(150);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        //this.setBounds(bordGauche, bordSuperieur, largeur, this.getHeight());
        // this.getBufferStrategy().show();
 
     }
 
     //----adapter la longueur
    public  void setLongueur(int longeur){
-       // this.setSize(this.getWidth(),longeur);
-       this.setBounds(bordGauche, bordSuperieur, this.getWidth(), longeur);
+        this.setSize(this.getWidth(),longeur);
+       try {
+           Thread.sleep(150);
+       } catch (InterruptedException e) {
+           e.printStackTrace();
+       }
+       //this.setBounds(bordGauche, bordSuperieur, this.getWidth(), longeur);
         //this.getBufferStrategy().show();
-
-    }
-
-    @Override
-    public void componentResized(ComponentEvent e) {
-        repaint();
-    }
-
-    @Override
-    public void componentMoved(ComponentEvent e) {
-
-    }
-
-    @Override
-    public void componentShown(ComponentEvent e) {
-
-    }
-
-    @Override
-    public void componentHidden(ComponentEvent e) {
 
     }
 }
