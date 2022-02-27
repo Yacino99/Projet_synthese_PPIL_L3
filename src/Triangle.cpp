@@ -30,9 +30,6 @@ Triangle::operator string() const
 }
 
 
-
-//TODO : trouver la bonne formule pour calculer l'air d'un triangle
-
 /**
  * La formule de Héron stipule que l'aire A d'un triangle de côtés de longueurs
  * a , b et c est A = √ d ( d − a ) ( d − b ) ( d − c )
@@ -76,18 +73,13 @@ void Triangle::rotation1(const Vecteur2D &u, const Matrice22 &M) {
     c =  M * (c - u) + u ;
 }
 */
+
 Vecteur2D Triangle::getCentreSymetrie() const {
-    double x = (a.x+b.x+c.x)/3;
-    double y = (a.y+b.y+c.y)/3;
-    return Vecteur2D(x,y);
-}
-/*
-Vecteur2D Triangle::getCentreSymetrie1() const {
 
     Vecteur2D g = (a+b+c)*(1/3.0);
     return g;
 }
-*/
+
 
 const void *Triangle::sauvegarde(const VisiteurSauvegarde *visiteur) const {
     return visiteur->visite(this);
