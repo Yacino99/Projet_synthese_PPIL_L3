@@ -18,25 +18,22 @@ class Triangle : public Formes {
 
 private:
     Vecteur2D a, b, c;
-    Socket* s;
 
 public:
 
-    Triangle(int a1, int a2 ,int b1,int b2 , int c1 , int c2 ,  Socket* s = nullptr, const string& color = " ") :
-            Formes(color), a(a1,a2), b(b1,b2), c(c1,c2), s(s) {
+    Triangle(int a1, int a2 ,int b1,int b2 , int c1 , int c2 , const string& color = " ") :
+            Formes(color), a(a1,a2), b(b1,b2), c(c1,c2) {
 
     }
 
-    Triangle(Vecteur2D a, Vecteur2D b,Vecteur2D c, Socket* s, const string& color = " ") :
-            Formes(color), a(a), b(b) , c(c) , s(s) {
+    Triangle(Vecteur2D a, Vecteur2D b,Vecteur2D c, const string& color = " ") :
+            Formes(color), a(a), b(b) , c(c) {
 
     }
-
-    virtual void dessiner(Socket* ss)const;
 
     double calculerAire() const;
     Vecteur2D getCentreSymetrie() const;
-    virtual ~Triangle() { delete s; }
+    virtual ~Triangle() {}
 
     Triangle* clone() const { return new Triangle(*this); }
     void homothetie(const Vecteur2D& u,double k) ;
@@ -45,8 +42,9 @@ public:
     explicit operator string() const override;
     friend ostream& operator << (ostream& os, const Triangle& m);
 
-    // DP Visitor pour la sauvegarde
-    const void *accepte(const VisiteurSauvegarde * visiteur) const;
+    // DP Visitor
+    const void *sauvegarde(const VisiteurSauvegarde * visiteur) const;
+    const void *dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 };
 
 

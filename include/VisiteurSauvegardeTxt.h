@@ -14,7 +14,7 @@
 class VisiteurSauvegardeTxt : public VisiteurSauvegarde
 {
 public:
-    const void *sauvegarde(const Formes * forme) const;
+    const void *visite(const Formes * forme) const;
 };
 
 #endif //PROJET_SYNTHESE_PPIL_L3_VISITEURSAUVEGARDETXT_H

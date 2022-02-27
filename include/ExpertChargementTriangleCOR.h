@@ -14,9 +14,9 @@ using namespace std;
 class ExpertChargementTriangleCOR : public ExpertChargementCOR
 {
 public:
-    ExpertChargementTriangleCOR(ExpertChargementCOR *suivant, Socket *pSocket) : ExpertChargementCOR(suivant) {}
+    ExpertChargementTriangleCOR(ExpertChargementCOR *suivant) : ExpertChargementCOR(suivant) {}
 
-    Formes *resoudre1(const string &d, Socket *pSocket) const
+    Formes *resoudre1(const string &d) const
     {
         const string cherche = "triangle";
         string::size_type pos = d.find(cherche);
@@ -38,8 +38,8 @@ public:
             // récupération de la couuleur
             string couleur = d.substr(lastParenthesis + 1, d.size());
 
-            // création de la forme en des données du fichier de sauvegarde
-            return new Triangle(points[0], points[1], points[2], points[3], points[4], points[5], pSocket, couleur);
+            // création de la forme en des données du fichier de visite
+            return new Triangle(points[0], points[1], points[2], points[3], points[4], points[5], couleur);
         }
 
         return NULL;

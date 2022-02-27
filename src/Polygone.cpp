@@ -6,16 +6,8 @@
 #include "Vecteur2D.h"
 #include "Matrice22.h"
 #include "VisiteurSauvegarde.h"
+#include "VisiteurLibrairie.h"
 #include "Triangle.h"
-
-void Polygone::dessiner(Socket *ss) const
-{
-    ostringstream oss;
-    oss << (string)*this;
-    string requete = oss.str();
-    ss->sendMessage(requete.c_str());
-
-}
 
 double Polygone::calculerAire() const
 {
@@ -37,15 +29,6 @@ double Polygone::calculerAire() const
 
 
 }
-
-
-Polygone::~Polygone()
-{
-    for (int i = 0; i < tab_vect.size(); i++)
-        delete tab_vect[i];
-    delete s;
-}
-
 
 Polygone::operator string() const
 {
@@ -69,7 +52,7 @@ Polygone& Polygone::addPoint(const Vecteur2D* v){
 
 Polygone* Polygone::clone()const{
 
-    Polygone* p = new Polygone(this->s);
+    Polygone* p = new Polygone();
 
     for (int i = 0; i < tab_vect.size(); i++)
         p->tab_vect.push_back(tab_vect[i]);
@@ -120,8 +103,12 @@ Vecteur2D Polygone::getCentreSymetrie() const {
     return Vecteur2D(x/tab_vect.size(),y/tab_vect.size());
 }
 
-const void *Polygone::accepte(const VisiteurSauvegarde *visiteur) const {
-    return visiteur->sauvegarde(this);
+const void *Polygone::sauvegarde(const VisiteurSauvegarde *visiteur) const {
+    return visiteur->visite(this);
+}
+
+const void *Polygone::dessine(const VisiteurLibrairie *visiteur, Socket *s) const {
+    return visiteur->visite(this, s);
 }
 
 

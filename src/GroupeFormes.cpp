@@ -5,6 +5,7 @@
 #include "GroupeFormes.h"
 #include "Formes.h"
 #include "Erreur.h"
+#include "VisiteurLibrairieAwt.h"
 
 using namespace std;
 
@@ -103,7 +104,7 @@ const double GroupeFormes::sommeAires() const {
 
 void GroupeFormes::dessinerFormes(Socket *s) const {
     for (int i = 0; i < formes.size(); ++i) {
-        formes[i]->dessiner(s);
+        formes[i]->dessine(new VisiteurLibrairieAwt, s);
     }
 }
 

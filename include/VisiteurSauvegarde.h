@@ -8,16 +8,12 @@
 
 
 #include "Formes.h"
-#include "Triangle.h"
-#include "Rond.h"
-#include "Croix.h"
-#include "Polygone.h"
 
 class VisiteurSauvegarde
 {
 
 public :
-    virtual const void *sauvegarde(const Formes * forme) const = 0;
+    virtual const void *visite(const Formes * forme) const = 0;
 };
 
 #endif //PROJET_SYNTHESE_PPIL_L3_VISITEURSAUVEGARDE_H

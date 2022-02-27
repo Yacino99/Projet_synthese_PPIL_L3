@@ -14,9 +14,9 @@ using namespace std;
 class ExpertChargementPolygoneCOR : public ExpertChargementCOR
 {
 public:
-    ExpertChargementPolygoneCOR(ExpertChargementCOR *suivant, Socket *pSocket) : ExpertChargementCOR(suivant) {}
+    ExpertChargementPolygoneCOR(ExpertChargementCOR *suivant) : ExpertChargementCOR(suivant) {}
 
-    Formes *resoudre1(const string &d, Socket *pSocket) const
+    Formes *resoudre1(const string &d) const
     {
         const string cherche = "polygone";
         string::size_type pos = d.find(cherche);
@@ -44,8 +44,8 @@ public:
             // récupération de la couuleur
             string couleur = d.substr(lastParenthesis + 1, d.size());
 
-            // création de la forme en des données du fichier de sauvegarde
-            return new Polygone(vecteurs, pSocket, couleur);
+            // création de la forme en des données du fichier de visite
+            return new Polygone(vecteurs, couleur);
         }
 
         return NULL;

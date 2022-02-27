@@ -5,15 +5,7 @@
 #include "Triangle.h"
 #include "Matrice22.h"
 #include "VisiteurSauvegarde.h"
-
-void Triangle::dessiner(Socket *ss) const
-{
-    ostringstream oss;
-    oss << (string)*this;
-    string requete = oss.str();
-    ss->sendMessage(requete.c_str());
-
-}
+#include "VisiteurLibrairie.h"
 
 void Triangle::translation(const Vecteur2D& u)
 {
@@ -97,7 +89,10 @@ Vecteur2D Triangle::getCentreSymetrie1() const {
 }
 */
 
-const void *Triangle::accepte(const VisiteurSauvegarde *visiteur) const {
-    return visiteur->sauvegarde(this);
+const void *Triangle::sauvegarde(const VisiteurSauvegarde *visiteur) const {
+    return visiteur->visite(this);
 }
 
+const void *Triangle::dessine(const VisiteurLibrairie *visiteur, Socket *s) const {
+    return visiteur->visite(this, s);
+}

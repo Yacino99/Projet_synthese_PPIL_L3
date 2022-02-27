@@ -4,16 +4,7 @@
 
 #include "Croix.h"
 #include "VisiteurSauvegarde.h"
-
-void Croix::dessiner(Socket *ss) const
-{
-
-    ostringstream oss;
-    oss << (string)*this;
-    string requete = oss.str();
-    ss->sendMessage(requete.c_str());
-
-}
+#include "VisiteurLibrairie.h"
 
 double Croix::calculerAire() const {
     return 0;
@@ -54,8 +45,12 @@ void Croix::rotation(const Vecteur2D &u, const double angle) {
     a =  M * (a - u) + u ;
 }
 
-const void *Croix::accepte(const VisiteurSauvegarde *visiteur) const {
-    return visiteur->sauvegarde(this);
+const void *Croix::sauvegarde(const VisiteurSauvegarde *visiteur) const {
+    return visiteur->visite(this);
+}
+
+const void *Croix::dessine(const VisiteurLibrairie *visiteur, Socket *s) const {
+    return visiteur->visite(this, s);
 }
 
 

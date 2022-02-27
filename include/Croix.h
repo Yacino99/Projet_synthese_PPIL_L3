@@ -21,25 +21,21 @@ class Croix : public Formes{
 
 private :
 
-
     Vecteur2D a, b;
-    Socket* s;
+
 public:
 
-    Croix(double g, double h, double d, double b,  Socket* s, const string& couleur = " ") :
-            Formes(couleur) , s(s) , a(g,h),b(d,b){
+    Croix(double g, double h, double d, double b, const string& couleur = " ") :
+            Formes(couleur) , a(g,h),b(d,b){
     }
     Croix(Vecteur2D a, Vecteur2D b,  Socket* s, const string& couleur = " ") :
-            Formes(couleur) , s(s) , a(a),b(b){
+            Formes(couleur), a(a),b(b){
     }
-
-    // dans le projet on met un parametre pour dessiner
-    virtual void dessiner(Socket *ss)const;
 
     double calculerAire() const;
     Vecteur2D getCentreSymetrie() const;
     Croix* clone() const { return new Croix(*this); }
-    virtual ~Croix() { delete s; }
+    virtual ~Croix() {}
     friend ostream& operator << (ostream& os, const Croix& m);
     operator string() const;
 
@@ -48,8 +44,9 @@ public:
     void homothetie(const Vecteur2D& u,double k) ;
     void rotation(const Vecteur2D &u, const double angle );
 
-    // DP Visitor pour la sauvegarde
-    const void *accepte(const VisiteurSauvegarde * visiteur) const;
+    // DP Visitor
+    const void *sauvegarde(const VisiteurSauvegarde * visiteur) const;
+    const void *dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 };
 
 inline ostream& operator << (ostream& os, const Croix& m) {

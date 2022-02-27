@@ -21,24 +21,21 @@ private :
 	double rayon;
 	const double PI = 3.141592653589793;
 	Vecteur2D v;
-	Socket* s;
+
 public:
 
-	Rond(int x, int y, double rayon, Socket* s,const string& color = " ") :
-		Formes(color), rayon(rayon),s(s) ,v(x,y) {
+	Rond(int x, int y, double rayon, const string& color = " ") :
+		Formes(color), rayon(rayon),v(x,y) {
 
 	}
 
-    Rond(Vecteur2D v, double rayon, Socket* s,const string& color = " ") :
-            Formes(color), rayon(rayon),s(s) ,v(v) {
+    Rond(Vecteur2D v, double rayon, const string& color = " ") :
+            Formes(color), rayon(rayon),v(v) {
     }
-
-	// dans le projet on met un parametre pour dessiner
-	virtual void dessiner(Socket *ss)const;
 
 	double calculerAire() const;
     Vecteur2D getCentreSymetrie() const;
-	virtual ~Rond() { delete s; }
+	virtual ~Rond() {}
 
 	Rond* clone() const{ return new Rond(*this); }
     void rotation(const Vecteur2D &u, const double angle );
@@ -49,8 +46,9 @@ public:
     operator string() const;
 	friend ostream& operator << (ostream& os, const Rond& m);
 
-    // DP Visitor pour la sauvegarde
-    const void *accepte(const VisiteurSauvegarde * visiteur) const;
+    // DP Visitor
+    const void *sauvegarde(const VisiteurSauvegarde * visiteur) const;
+    const void *dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 };
 
 
