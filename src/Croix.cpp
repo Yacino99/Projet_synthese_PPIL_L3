@@ -20,9 +20,13 @@ double Croix::calculerAire() const {
 }
 
 Vecteur2D Croix::getCentreSymetrie() const {
-    double x = (a.x+b.x)/2;
-    double y = (a.y+b.y)/2;
-    return Vecteur2D(x,y);
+    //double x = (a.x+b.x)/2;
+    //double y = (a.y+b.y)/2;
+
+    Vecteur2D g = (a+b)*(1/2.0);
+
+
+    return g;
 }
 
 Croix::operator string() const
