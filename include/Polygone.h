@@ -20,15 +20,12 @@ using namespace std;
 class Polygone : public Formes {
 
 private:
-    Socket* s;
     vector<Vecteur2D*> tab_vect;
 
 public:
 
-    Polygone(Socket* ss, const string& couleur=" ") :Formes(couleur) { s = ss; }
-    Polygone(vector<Vecteur2D*> vect,Socket* ss, const string& couleur=" "):Formes(couleur) { s = ss;tab_vect=vect; }
-
-    virtual void dessiner(Socket* ss)const;
+    Polygone(const string& couleur=" ") :Formes(couleur) {}
+    Polygone(vector<Vecteur2D*> vect, const string& couleur=" "):Formes(couleur) {tab_vect=vect; }
 
     Polygone* clone() const;
     void translation(const Vecteur2D& u);
@@ -37,13 +34,14 @@ public:
 
     Vecteur2D getCentreSymetrie() const;
     double calculerAire() const;
-    virtual ~Polygone();
+    virtual ~Polygone() {};
     operator string() const;
     Polygone& addPoint(const Vecteur2D* v);
     friend ostream& operator << (ostream& os, const Polygone& m);
 
-    // DP Visitor pour la sauvegarde
-    const void *accepte(const VisiteurSauvegarde * visiteur) const;
+    // DP Visitor
+    const void *sauvegarde(const VisiteurSauvegarde * visiteur) const;
+    const void *dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 };
 
 inline ostream& operator<<(ostream& os, const Polygone& m)

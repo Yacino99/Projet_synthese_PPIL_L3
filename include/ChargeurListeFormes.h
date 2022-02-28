@@ -22,20 +22,20 @@ using namespace std;
 class ChargeurListeFormes
 {
 public:
-    static vector<Formes*> charge(ifstream& ifs, Socket *socket)
+    static vector<Formes*> charge(ifstream& ifs)
     {
         vector<Formes*> res;
         ExpertChargementCOR* expert;
-        expert = new ExpertChargementCroixCOR(NULL, socket);
-        expert = new ExpertChargementPolygoneCOR(expert, socket);
-        expert = new ExpertChargementRondCOR(expert, socket);
-        expert = new ExpertChargementTriangleCOR(expert, socket);
+        expert = new ExpertChargementCroixCOR(NULL);
+        expert = new ExpertChargementPolygoneCOR(expert);
+        expert = new ExpertChargementRondCOR(expert);
+        expert = new ExpertChargementTriangleCOR(expert);
 
         string tmp;
         while (getline(ifs, tmp))
         {
             cout << "ligne lue : " << tmp << endl;
-            Formes* forme = expert->resoudre(tmp, socket);
+            Formes* forme = expert->resoudre(tmp);
             if (forme != NULL)
             {
                 res.push_back(forme);

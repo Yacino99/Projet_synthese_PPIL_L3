@@ -5,14 +5,7 @@
 #include "Rond.h"
 #include "Matrice22.h"
 #include "VisiteurSauvegarde.h"
-
-void Rond::dessiner(Socket *ss) const
-{
-    ostringstream oss;
-    oss << (string)*this;
-    string requete = oss.str();
-    ss->sendMessage(requete.c_str());
-}
+#include "VisiteurLibrairie.h"
 
 void Rond::translation(const Vecteur2D& u)
 {
@@ -52,7 +45,10 @@ Vecteur2D Rond::getCentreSymetrie() const {
     return v;
 }
 
-const void *Rond::accepte(const VisiteurSauvegarde *visiteur) const {
-    return visiteur->sauvegarde(this);
+const void *Rond::sauvegarde(const VisiteurSauvegarde *visiteur) const {
+    return visiteur->visite(this);
 }
 
+const void *Rond::dessine(const VisiteurLibrairie *visiteur, Socket *s) const {
+    return visiteur->visite(this, s);
+}

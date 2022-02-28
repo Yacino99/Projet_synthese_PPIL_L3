@@ -28,6 +28,9 @@ using namespace std;
 #include "ExpertChargementTriangleCOR.h"
 #include "ChargeurListeFormes.h"
 
+#include "VisiteurLibrairie.h"
+#include "VisiteurLibrairieAwt.h"
+
 #pragma comment(lib,"ws2_32.lib") // specifique  a visual studio et Clion
 
 # define M_PIl          3.141592653589793238462643383279502884L
@@ -127,85 +130,83 @@ int main()
     try{
         const char* addr = "127.0.0.1";
         InitReseaux* reseau = InitReseaux::getInitReseaux();
-        std::cout << "initialisation reseau reussi!\n";
-        Socket *socket = new Socket(addr, 9111);
+        Socket * s = new Socket(addr, 9111);
 
         cout << " on est la" << endl;
 
         Formes * f1 ,*f2 , *f3;
-        f1 = new Rond (300, 300, 30.0, socket, "blue");
-        f2 = new Croix(30, 100, 100, 30, socket, "red");
+        f1 = new Rond (300, 300, 30.0, "blue");
+        f2 = new Croix(30, 100, 100, 30, "red");
 
         // test du rond
-        f1->dessiner(socket);
+        f1->dessine(new VisiteurLibrairieAwt, s);
         f1->translation(u1*15);
-        f1->dessiner(socket);
+        f1->dessine(new VisiteurLibrairieAwt, s);
         f1->homothetie(Vecteur2D(0,0),1.3);
-        f1->dessiner(socket);
+        f1->dessine(new VisiteurLibrairieAwt, s);
         //test croix
-        f2->dessiner(socket);
+        f2->dessine(new VisiteurLibrairieAwt, s);
         f2->translation(u1*12);
-        f2->dessiner(socket);
+        f2->dessine(new VisiteurLibrairieAwt, s);
         f2->homothetie(Vecteur2D(0,0),1.5);
-        f2->dessiner(socket);
+        f2->dessine(new VisiteurLibrairieAwt, s);
         // test Triangle
-        f3 =  new Triangle(Vecteur2D(30,200), Vecteur2D(90,200), Vecteur2D(45,50), socket, "green");
-        f3->dessiner(socket);
+        f3 =  new Triangle(Vecteur2D(30,200), Vecteur2D(90,200), Vecteur2D(45,50), "green");
+        f3->dessine(new VisiteurLibrairieAwt, s);
         cout << "aire du triangle est = " << f3->calculerAire() << endl;
         f3->translation(u2*31);
-        f3->dessiner(socket);
+        f3->dessine(new VisiteurLibrairieAwt, s);
         cout << "aire du triangle est = " << f3->calculerAire() << endl;
         f3->homothetie(Vecteur2D(0,0),2);
         f3->setColor("red");
       //  f3->rotation(Vecteur2D(0,0), M_PIl);
-        f3->dessiner(socket);
+        f3->dessine(new VisiteurLibrairieAwt, s);
         cout << f3 << " Aire = " << f3->calculerAire() << endl;
 
-        Formes* gros = new Rond(Vecteur2D(400,400) ,100 , socket , "red");
-        gros->dessiner(socket);
+        Formes* gros = new Rond(Vecteur2D(400,400) ,100 , "red");
+        gros->dessine(new VisiteurLibrairieAwt, s);
         gros->rotation(Vecteur2D(400,400),M_PIl);
-        gros->dessiner(socket);
+        gros->dessine(new VisiteurLibrairieAwt, s);
 
         //Formes * f3;
-        f3 =  new Triangle(Vecteur2D(30,200), Vecteur2D(90,200), Vecteur2D(45,50), socket, "green");
+        f3 =  new Triangle(Vecteur2D(30,200), Vecteur2D(90,200), Vecteur2D(45,50), "green");
         Vecteur2D centreTri( (30+90+45)/3,(200+200+50)/3);
-        // f3->dessiner(socket);
+        // f3->dessine(new VisiteurLibrairieAwt, s);
         //f3->translation(u2*31);
-        //f3->dessiner(socket);
+        //f3->dessine(new VisiteurLibrairieAwt, s);
         //f3->homothetie(Vecteur2D(0,0),2);
         //f3->setColor("red");
         // f3->rotation(f3->getCentreSymetrie(), M_PIl/2);
-        //f3->dessiner(socket);
+        //f3->dessine(new VisiteurLibrairieAwt, s);
 
         //test croix rotation
-       /* Formes * f2 = new Croix(30, 100, 100, 30, socket, "red");
-        f2->dessiner(socket);
+       /* Formes * f2 = new Croix(30, 100, 100, 30, "red");
+        f2->dessine(new VisiteurLibrairieAwt, s);
         f2->rotation(f2->getCentreSymetrie(),M_PIl/6);
-        f2->dessiner(socket);
+        f2->dessine(new VisiteurLibrairieAwt, s);
 */
 
        // ================================== Sauvegarde des formes dans un fichier text  ==================================
-        /*f1->accepte(new VisiteurSauvegardeTxt);
-        f2->accepte(new VisiteurSauvegardeTxt);
-        f3->accepte(new VisiteurSauvegardeTxt);*/
+       /* f1->sauvegarde(new VisiteurSauvegardeTxt);
+        f2->sauvegarde(new VisiteurSauvegardeTxt);
+        f3->sauvegarde(new VisiteurSauvegardeTxt);*/
         // =================================================================================================================
 
 
         // Test chargement de formes
-        /*
+/*
         cout << "================================================== TEST CHARGEMENT \"==================================================" << endl;
 
         ifstream ifs("../sauvegardeTxt/sauvegardeForme.txt", std::ifstream::in);
         cout << "Lecture des valeurs : " << endl;
-        vector<Formes *> listFormes = ChargeurListeFormes::charge(ifs, socket);
+        vector<Formes *> listFormes = ChargeurListeFormes::charge(ifs);
 
         vector<Formes*>::iterator it = listFormes.begin();
         for (std::size_t i = 0; i < listFormes.size(); i++)
-            listFormes[i]->dessiner(socket);
+            listFormes[i]->dessine(new VisiteurLibrairieAwt, s);
 
         cout << "================================================ FIN TEST CHARGEMENT \"================================================" << endl;
-         */
-
+*/
 
         Vecteur2D a(120, 40), b(140, 70), c(150, 80);
         Vecteur2D d(190, 60), e(60, 125), f(90, 125);
@@ -217,12 +218,12 @@ int main()
          polygon2.addPoint( 200, 220 );
          polygon2.addPoint( 130, 180 ); */
 
-        Polygone * p = new Polygone(socket);
+        Polygone * p = new Polygone();
         p->addPoint(new Vecteur2D(175,135)).addPoint(new Vecteur2D(270,200))
         .addPoint(new Vecteur2D(200,220)).addPoint(new Vecteur2D(130,180));//.addPoint(&e);
         p->rotation(p->getCentreSymetrie(),M_PIl/2);
         cout << "aire = " << p->calculerAire() << endl;
-        p->dessiner(socket);
+        p->dessine(new VisiteurLibrairieAwt, s);
 
         Vecteur2D aa(175,135);
         Vecteur2D bb(270,200);
@@ -241,33 +242,32 @@ int main()
         GroupeFormes groupe("red");
         groupe.addForme(f1).addForme(f2).addForme(f3);
 
-        groupe.dessinerFormes(socket);
+        groupe.dessinerFormes(s);
         groupe.appliquerHomothetie(Vecteur2D(0,0),false);
-        groupe.dessinerFormes(socket);
+        groupe.dessinerFormes(s);
 
         // verifier que la couleur de la forme inseré est un clone de l'original donc l'original n'est pas modifié
-        f1->dessiner(socket);
+        f1->dessine(new VisiteurLibrairieAwt, s);
 
         cout << groupe << endl;
 
-        Rond * rond = new Rond(1200,200,50,socket,"purple");
-        rond->dessiner(socket);
-        Rond * rond2 = new Rond(900,200,50,socket,"blue");
-        rond2->dessiner(socket);
-        Triangle *tt = new Triangle(Vecteur2D(200,200),Vecteur2D(300,100),Vecteur2D(800,100),socket,"red");
-        tt->dessiner(socket);
-        Triangle *tt1 = new Triangle(Vecteur2D(-0.3,1.7),Vecteur2D(2.8,-2.5),Vecteur2D(4.3,5.2),socket,"purple");
-        Rond * rond3 = new Rond(5.8,-3.5,1.2,socket,"blue");
+        Rond * rond = new Rond(1200,200,50,"purple");
+        //rond->dessine(new VisiteurLibrairieAwt, s);
+        Rond * rond2 = new Rond(900,200,50,"blue");
+        //rond2->dessine(new VisiteurLibrairieAwt, s);
+        Triangle *tt = new Triangle(Vecteur2D(200,200),Vecteur2D(300,100),Vecteur2D(800,100),"red");
+        //tt->dessine(new VisiteurLibrairieAwt, s);
+        Triangle *tt1 = new Triangle(Vecteur2D(-0.3,1.7),Vecteur2D(2.8,-2.5),Vecteur2D(4.3,5.2),"purple");
+        Rond * rond3 = new Rond(5.8,-3.5,1.2,"blue");
         // p1 = (-0.3 , -2.5) <- absisse/ordonnee mini  p2 = (7,5.2) <- absisse/ordonnee maxi
         GroupeFormes *g2 = new GroupeFormes("purple");
         g2->addForme(tt1);
         g2->addForme(rond3);
 
-       // g2->dessinerFormes(socket,600,300); // defini rect '    p1'=(0,300) , p2' = (600,0)
+       // g2->dessinerFormes(s,600,300); // defini rect '    p1'=(0,300) , p2' = (600,0)
 
         int nnn;
         cout << "type any character -:" ;
-        // henry
         cin >>nnn;
 
     }catch(Erreur e)

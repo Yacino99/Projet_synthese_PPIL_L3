@@ -13,9 +13,9 @@ using namespace std;
 class ExpertChargementCroixCOR : public ExpertChargementCOR
 {
 public:
-    ExpertChargementCroixCOR(ExpertChargementCOR *suivant, Socket *pSocket) : ExpertChargementCOR(suivant) {}
+    ExpertChargementCroixCOR(ExpertChargementCOR *suivant) : ExpertChargementCOR(suivant) {}
 
-    Formes *resoudre1(const string &d, Socket *pSocket) const
+    Formes *resoudre1(const string &d) const
     {
         const string cherche = "croix";
         string::size_type pos = d.find(cherche);
@@ -37,8 +37,8 @@ public:
             // récupération de la couuleur
             string couleur = d.substr(lastParenthesis + 1, d.size());
 
-            // création de la forme en des données du fichier de sauvegarde
-            return new Croix(points[0], points[1], points[2], points[3], pSocket, couleur);
+            // création de la forme en des données du fichier de visite
+            return new Croix(points[0], points[1], points[2], points[3], couleur);
         }
 
         return NULL;

@@ -14,6 +14,7 @@
 using namespace std;
 
 class VisiteurSauvegarde;
+class VisiteurLibrairie;
 
 class Formes : public Transformable
 {
@@ -34,7 +35,6 @@ public:
     // pour faire le passage monde ecran
     //virtual void bornes(double &xmin , double &ymin , double &xmax,double &ymax) = 0;
 
-    virtual void dessiner(Socket *s) const = 0;
     virtual double calculerAire() const = 0;
     virtual Vecteur2D getCentreSymetrie() const = 0;
     virtual operator string() const  = 0;
@@ -43,8 +43,9 @@ public:
     inline friend ostream& operator << (ostream& os, const Formes* m);
     virtual ~Formes(){}
 
-    // DP Visitor pour la sauvegarde
-    virtual const void * accepte(const VisiteurSauvegarde * visiteur) const = 0;
+    // DP Visitor
+    virtual const void * sauvegarde(const VisiteurSauvegarde * visiteur) const = 0;
+    virtual const void * dessine(const VisiteurLibrairie * visiteur, Socket * s) const = 0;
 };
 
 inline ostream& operator << (ostream& os, const Formes* m)

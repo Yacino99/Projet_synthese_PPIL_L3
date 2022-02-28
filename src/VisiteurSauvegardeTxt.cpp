@@ -8,7 +8,7 @@ using namespace std;
 #include "VisiteurSauvegardeTxt.h"
 #include "Erreur.h"
 
-const void *VisiteurSauvegardeTxt::sauvegarde(const Formes *forme) const
+const void *VisiteurSauvegardeTxt::visite(const Formes *forme) const
 {
     ofstream file;
 

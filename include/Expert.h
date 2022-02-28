@@ -15,7 +15,7 @@ class Formes;
 class Expert
 {
 protected :
-    virtual Formes * resoudre(const string & d, Socket *socket) const = 0;
+    virtual Formes * resoudre(const string & d) const = 0;
 };
 
 
