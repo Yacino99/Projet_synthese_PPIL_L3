@@ -171,6 +171,7 @@ int main()
         //Formes * f3;
         f3 =  new Triangle(Vecteur2D(30,200), Vecteur2D(90,200), Vecteur2D(45,50), "green");
         Vecteur2D centreTri( (30+90+45)/3,(200+200+50)/3);
+
         // f3->dessine(new VisiteurLibrairieAwt, s);
         //f3->translation(u2*31);
         //f3->dessine(new VisiteurLibrairieAwt, s);
@@ -207,7 +208,6 @@ int main()
 
         cout << "================================================ FIN TEST CHARGEMENT \"================================================" << endl;
 */
-
         Vecteur2D a(120, 40), b(140, 70), c(150, 80);
         Vecteur2D d(190, 60), e(60, 125), f(90, 125);
 
@@ -217,13 +217,13 @@ int main()
          polygon2.addPoint( 270, 200 );
          polygon2.addPoint( 200, 220 );
          polygon2.addPoint( 130, 180 ); */
-
         Polygone * p = new Polygone();
         p->addPoint(new Vecteur2D(175,135)).addPoint(new Vecteur2D(270,200))
         .addPoint(new Vecteur2D(200,220)).addPoint(new Vecteur2D(130,180));//.addPoint(&e);
         p->rotation(p->getCentreSymetrie(),M_PIl/2);
         cout << "aire = " << p->calculerAire() << endl;
         p->dessine(new VisiteurLibrairieAwt, s);
+
 
         Vecteur2D aa(175,135);
         Vecteur2D bb(270,200);

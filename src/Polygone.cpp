@@ -11,9 +11,10 @@
 
 double Polygone::calculerAire() const
 {
-    if (tab_vect.size() < 3)
-        return 0;
 
+    if (tab_vect.size() < 3) {
+        return 0;
+    }
     else
     {
         double aire = 0;
@@ -21,9 +22,10 @@ double Polygone::calculerAire() const
             Vecteur2D a = *tab_vect[0];
             Vecteur2D b = *tab_vect[i+1];
             Vecteur2D c = *tab_vect[i+2];
-            Triangle triangle(a,b,c,nullptr);
+            Triangle triangle(a,b,c); // ligne qui crash
             aire += triangle.calculerAire();
         }
+
         return aire;
     }
 
