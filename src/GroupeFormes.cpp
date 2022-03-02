@@ -93,7 +93,7 @@ void GroupeFormes::appliquerRotation(const Vecteur2D &u, const double angle, boo
     }
 }
 
-const double GroupeFormes::sommeAires() const {
+double GroupeFormes::calculerAire() const {
 
     double somme = 0;
     for (int i = 0; i < formes.size(); ++i) {
@@ -113,4 +113,27 @@ ostream &operator<<(ostream &os, const GroupeFormes &g) {
     return os;
 }
 
+const void *GroupeFormes::sauvegarde(const VisiteurSauvegarde *visiteur) const {
+    return nullptr;
+}
 
+const void *GroupeFormes::dessine(const VisiteurLibrairie *visiteur, Socket *s) const {
+    return nullptr;
+}
+
+Vecteur2D GroupeFormes::getCentreSymetrie() const {
+    return Vecteur2D();
+}
+
+void GroupeFormes::translation(const Vecteur2D &u) {
+
+
+}
+
+void GroupeFormes::homothetie(const Vecteur2D &u, double k) {
+
+}
+
+void GroupeFormes::rotation(const Vecteur2D &u, const double angle) {
+
+}
