@@ -1,6 +1,7 @@
 package Serveur;
 
 import ChainOfResponsability.*;
+import Serveur.Convertisseur.Config;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -29,13 +30,13 @@ public class TestServeurFormes {
                 System.out.println("connexion reussi avec le client numero "+noClient);
                 
                 //on cree un cadre dessin pour chaque client
-                CadreDessin cadreDessin = new CadreDessin("cadre dessin",60,60,800,800);
+                CadreDessin cadreDessin = new CadreDessin("cadre dessin",60,60, Config.LARGEUR,Config.HAUTEUR);
                 cadreDessin.setResizable(false);
                 Interlocuteur interlocuteur = new Interlocuteur(socket, noClient,cadreDessin,h1 );
 
                 ++noClient;
                 interlocuteur.start();
-                //adsvasdvsdv
+
             }
         }catch (IOException | InterruptedException e){
             e.printStackTrace();

@@ -239,6 +239,9 @@ int main()
         cout << "ab = " << ab << " bc = " << bc << " cd= " << cd << " ad= " << ad << endl;
 
         //-------test du groupe formes---------------------------
+
+
+        /*
         GroupeFormes groupe("red");
         groupe.addForme(f1).addForme(f2).addForme(f3);
 
@@ -250,6 +253,7 @@ int main()
         f1->dessine(new VisiteurLibrairieAwt, s);
 
         cout << groupe << endl;
+        */
 
         Rond * rond = new Rond(1200,200,50,"purple");
         //rond->dessine(new VisiteurLibrairieAwt, s);
@@ -259,13 +263,12 @@ int main()
         //tt->dessine(new VisiteurLibrairieAwt, s);
         Triangle *tt1 = new Triangle(Vecteur2D(-0.3,1.7),Vecteur2D(2.8,-2.5),Vecteur2D(4.3,5.2),"purple");
         Rond * rond3 = new Rond(5.8,-3.5,1.2,"blue");
-        // p1 = (-0.3 , -2.5) <- absisse/ordonnee mini  p2 = (7,5.2) <- absisse/ordonnee maxi
+        // pBG = (-0.3 , -2.5) <- absisse/ordonnee mini  pHD = (7,5.2) <- absisse/ordonnee maxi
         GroupeFormes *g2 = new GroupeFormes("purple");
         g2->addForme(tt1);
         g2->addForme(rond3);
 
-       // g2->dessinerFormes(s,600,300); // defini rect '    p1'=(0,300) , p2' = (600,0)
-
+        //g2->dessinerFormes(s,600,300); // defini rect '    pBasGauche'=(0,300) , pHautDroit' = (600,0)
         int nnn;
         cout << "type any character -:" ;
         cin >>nnn;

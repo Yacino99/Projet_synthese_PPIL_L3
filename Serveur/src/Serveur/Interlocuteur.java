@@ -1,12 +1,15 @@
 package Serveur;
 
 import ChainOfResponsability.*;
+import Serveur.Convertisseur.Config;
+import Serveur.Convertisseur.Vecteur2D;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Interlocuteur extends Thread{
 
@@ -42,8 +45,6 @@ public class Interlocuteur extends Thread{
 
                 expert.handle(requete,cadreDessin);
 
-                //this.formes
-
                 cadreDessin.getBufferStrategy().show();
             }
 
@@ -57,4 +58,5 @@ public class Interlocuteur extends Thread{
             e1.printStackTrace();
         }
     }
+
 }
