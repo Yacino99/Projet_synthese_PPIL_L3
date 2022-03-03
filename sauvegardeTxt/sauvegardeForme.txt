@@ -2,4 +2,4 @@ rond ( 448.5 , 468 , 39 ) blue
 croix ( 99 , 222 , 204 , 117 ) red
 polygone ( 242.5 , 165 , 177.5 , 260 , 157.5 , 190 , 197.5 , 120 )
 triangle ( 30 , 200 , 90 , 200 , 45 , 50 ) green
-groupe : [ triangle ( -0.3 , 1.7 , 2.8 , -2.5 , 4.3 , 5.2 ) purple ; rond ( 5 , -3 , 1.2 ) purple ; ] purple
+groupe : [ rond ( 448.5 , 468 , 39 )  ; croix ( 99 , 222 , 204 , 117 )  ; triangle ( 30 , 200 , 90 , 200 , 45 , 50 )  ;  ]

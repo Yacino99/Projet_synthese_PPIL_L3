@@ -51,8 +51,6 @@ public:
     const void * sauvegarde(const VisiteurSauvegarde * visiteur) const;
     const void * dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 
-    void dessine(Socket *s) const;
-
     friend ostream& operator << (ostream& os,const GroupeFormes &g);
 };
 

@@ -15,7 +15,6 @@
 #include "ExpertChargementRondCOR.h"
 #include "ExpertChargementPolygoneCOR.h"
 #include "ExpertChargementTriangleCOR.h"
-#include "Croix.h"
 
 using namespace std;
 
@@ -31,7 +30,6 @@ public:
         while (pos != string::npos)
         {
             // "groupe" trouvé
-            //vector<double> points;
 
             // on extrait tout ce qui se trouve entre les crochets => liste des formes du groupe
             unsigned firstCrochet = d.find("[");
@@ -39,17 +37,18 @@ public:
             string coordonnees = d.substr (firstCrochet + 1, lastCrochet - firstCrochet - 1);
             istringstream is(coordonnees );
 
-            cout << "string lue : " << coordonnees << endl; //  triangle ( -0.3 , 1.7 , 2.8 , -2.5 , 4.3 , 5.2 ) purple, rond ( 5 , -3 , 1.2 ) purple,
+            // String lue entre les crochets
+            // cout << "string lue : " << coordonnees << endl; //  triangle ( -0.3 , 1.7 , 2.8 , -2.5 , 4.3 , 5.2 ) purple, rond ( 5 , -3 , 1.2 ) purple,
 
             string delimiter = ";";
             vector<string> words{};
             size_t pos = 0;
 
-            while ((pos = coordonnees.find(delimiter)) != string::npos) {
+            while ((pos = coordonnees.find(delimiter)) != string::npos)
+            {
                 words.push_back(coordonnees.substr(0, pos));
                 coordonnees.erase(0, pos + delimiter.length());
             }
-
 
             vector<Formes*> res;
             ExpertChargementCOR* expert;
@@ -59,32 +58,35 @@ public:
             expert = new ExpertChargementTriangleCOR(expert);
 
             // affichage des strings des formes du groupe de forme lue
-            for (const auto &str : words) {
-                cout << "string : " << str << endl;
+            for (const auto &str : words)
+            {
+                //cout << "string : " << str << endl;
                 Formes* forme = expert->resoudre(str);
+                // groupe de forme de groupe de forme ICI
                 if (forme != NULL)
                 {
                     res.push_back(forme);
                 }
             }
 
-            GroupeFormes *g2 = new GroupeFormes("purple");
+            GroupeFormes *g2 = new GroupeFormes();
 
-            // construction du groupe de forme
-            for (const auto &str : res) {
-                cout << "forme : " << str << endl;
+            // affichage des formes + construction du groupe de forme
+            for (const auto &str : res)
+            {
+                //cout << "forme : " << str << endl;
                 g2->addForme(str);
             }
+
+            // Récupération et attribution de la couleur
+            string couleur = d.substr(lastCrochet + 1, d.size());
+            g2->setCouleur(couleur);
+
+            // Affichage du groupe de forme créé
             cout << *g2 << endl;
-            // on enlève toutes les virgules et on stocke les nombres dans un vecteur
-            /*string t;
-            while ( getline( is, t, ',' ) ) points.push_back(stod(t));
 
-            // récupération de la couuleur
-            string couleur = d.substr(lastCrochet + 1, d.size());*/
-
-            // création de la forme en des données du fichier de visite - en attendant on retourne une croix au lieu de g2
-            return new Croix(400 ,500 , 600 ,200 , "red");
+            // Retour du groupe de Forme
+            return g2;
         }
 
         return NULL;

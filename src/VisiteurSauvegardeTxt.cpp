@@ -20,17 +20,3 @@ const void *VisiteurSauvegardeTxt::visite(const Formes *forme) const
 
     return 0;
 }
-
-/*const void *VisiteurSauvegardeTxt::visite(const GroupeFormes *groupeFormes) const
-{
-    ofstream file;
-
-    file.open("../sauvegardeTxt/sauvegardeForme.txt", fstream::app);
-
-    file << *groupeFormes << "\n";
-
-    file.close();
-
-    return 0;
-}*/
-

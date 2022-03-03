@@ -226,20 +226,19 @@ int main()
 
         //-------test du groupe formes---------------------------
 
-
-        /*
         GroupeFormes groupe("red");
         groupe.addForme(f1).addForme(f2).addForme(f3);
 
-        groupe.dessine(s);
-        groupe.appliquerHomothetie(Vecteur2D(0,0),false);
-        groupe.dessine(s);
+        //groupe.sauvegarde(new VisiteurSauvegardeTxt);
+        groupe.dessine(new VisiteurLibrairieAwt, s);
+        groupe.appliquerHomothetie(Vecteur2D(0,0), 0.5, false);
+        groupe.dessine(new VisiteurLibrairieAwt, s);
+
 
         // verifier que la couleur de la forme inseré est un clone de l'original donc l'original n'est pas modifié
         f1->dessine(new VisiteurLibrairieAwt, s);
 
         cout << groupe << endl;
-        */
 
        /* Rond * rond = new Rond(1200,200,50,"purple");
         //rond->dessine(new VisiteurLibrairieAwt, s);
@@ -254,33 +253,25 @@ int main()
         g2->addForme(tt1);
         g2->addForme(rond3);*/
 
-      /*  cout << "==================================================================" << endl;
-
-        //g2->dessine(s);
-        g2->sauvegarde(new VisiteurSauvegardeTxt);
-
-        cout << "==================================================================" << endl;
-        */
         // Test chargement de formes
-/*
-        cout << "================================================== TEST CHARGEMENT ==================================================" << endl;
+        /*cout << "================================================== TEST CHARGEMENT ==================================================" << endl;
 
         ifstream ifs("../sauvegardeTxt/sauvegardeForme.txt", std::ifstream::in);
         cout << "Lecture des valeurs : " << endl;
         vector<Formes *> listFormes = ChargeurListeFormes::charge(ifs);
 
+        // Envoie au serveur pour dessiner les formes chargés
        /* vector<Formes*>::iterator it = listFormes.begin();
         for (std::size_t i = 0; i < listFormes.size(); i++)
-            listFormes[i]->dessine(new VisiteurLibrairieAwt, s);*/
-
-     //   cout << "================================================ FIN TEST CHARGEMENT ================================================" << endl;
+            listFormes[i]->dessine(new VisiteurLibrairieAwt, s);
+*/
+       // cout << "================================================ FIN TEST CHARGEMENT ================================================" << endl;
 
 
         //g2->dessinerFormes(s,600,300); // defini rect '    pBasGauche'=(0,300) , pHautDroit' = (600,0)
 
-        Formes * grb = new GroupeFormes();
         // Formes * grb = new GroupeFormes();
-        // ici yacino
+
         int nnn;
         cout << "type any character -:" ;
         cin >>nnn;

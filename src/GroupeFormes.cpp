@@ -41,7 +41,8 @@ GroupeFormes::operator string() const {
 
     os << "groupe : [ ";
     for (int i = 0; i < formes.size(); ++i) {
-        os << formes[i] << endl;
+        os << formes[i] << " ; ";
+        // Ancienne version : endl à la place de " ; "
     }
     os << " ] " << this->couleur;
     return os.str();
@@ -94,13 +95,6 @@ const double GroupeFormes::sommeAires() const
         somme += formes[i]->calculerAire();
     }
     return somme;
-}
-
-void GroupeFormes::dessine(Socket *s) const
-{
-    for (int i = 0; i < formes.size(); ++i) {
-        formes[i]->dessine(new VisiteurLibrairieAwt, s);
-    }
 }
 
 void GroupeFormes::translation(const Vecteur2D &u) {
