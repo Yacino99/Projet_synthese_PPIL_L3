@@ -17,3 +17,4 @@ const void *VisiteurLibrairieAwt::visite(const Formes * forme, Socket * s) const
     return 0;
 }
 
+

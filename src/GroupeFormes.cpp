@@ -6,6 +6,7 @@
 #include "Formes.h"
 #include "Erreur.h"
 #include "VisiteurLibrairieAwt.h"
+#include "VisiteurSauvegarde.h"
 
 using namespace std;
 
@@ -49,7 +50,7 @@ GroupeFormes::operator string() const {
 
     os << "groupe : [ ";
     for (int i = 0; i < formes.size(); ++i) {
-        os << formes[i] << endl;
+        os << formes[i] << " ; ";
     }
     os << " ] " << this->couleur;
     return os.str();
@@ -102,7 +103,7 @@ double GroupeFormes::calculerAire() const {
     return somme;
 }
 
-void GroupeFormes::dessinerFormes(Socket *s) const {
+void GroupeFormes::dessine(Socket *s) const {
     for (int i = 0; i < formes.size(); ++i) {
         formes[i]->dessine(new VisiteurLibrairieAwt, s);
     }
@@ -114,12 +115,12 @@ ostream &operator<<(ostream &os, const GroupeFormes &g) {
 }
 
 const void *GroupeFormes::sauvegarde(const VisiteurSauvegarde *visiteur) const {
-    return nullptr;
+    return visiteur->visite(this);
 }
-
+/*
 const void *GroupeFormes::dessine(const VisiteurLibrairie *visiteur, Socket *s) const {
-    return nullptr;
-}
+    return visiteur->visite(this, s);
+}*/
 
 Vecteur2D GroupeFormes::getCentreSymetrie() const {
     return Vecteur2D();
@@ -137,3 +138,4 @@ void GroupeFormes::homothetie(const Vecteur2D &u, double k) {
 void GroupeFormes::rotation(const Vecteur2D &u, const double angle) {
 
 }
+

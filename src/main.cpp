@@ -193,21 +193,6 @@ int main()
         f3->sauvegarde(new VisiteurSauvegardeTxt);*/
         // =================================================================================================================
 
-
-        // Test chargement de formes
-/*
-        cout << "================================================== TEST CHARGEMENT \"==================================================" << endl;
-
-        ifstream ifs("../sauvegardeTxt/sauvegardeForme.txt", std::ifstream::in);
-        cout << "Lecture des valeurs : " << endl;
-        vector<Formes *> listFormes = ChargeurListeFormes::charge(ifs);
-
-        vector<Formes*>::iterator it = listFormes.begin();
-        for (std::size_t i = 0; i < listFormes.size(); i++)
-            listFormes[i]->dessine(new VisiteurLibrairieAwt, s);
-
-        cout << "================================================ FIN TEST CHARGEMENT \"================================================" << endl;
-*/
         Vecteur2D a(120, 40), b(140, 70), c(150, 80);
         Vecteur2D d(190, 60), e(60, 125), f(90, 125);
 
@@ -222,7 +207,7 @@ int main()
         .addPoint(new Vecteur2D(200,220)).addPoint(new Vecteur2D(130,180));//.addPoint(&e);
         p->rotation(p->getCentreSymetrie(),M_PIl/2);
         cout << "aire = " << p->calculerAire() << endl;
-        p->dessine(new VisiteurLibrairieAwt, s);
+        //p->dessine(new VisiteurLibrairieAwt, s);
 
 
         Vecteur2D aa(175,135);
@@ -267,6 +252,28 @@ int main()
         GroupeFormes *g2 = new GroupeFormes("purple");
         g2->addForme(tt1);
         g2->addForme(rond3);
+
+      /*  cout << "==================================================================" << endl;
+
+        //g2->dessine(s);
+        g2->sauvegarde(new VisiteurSauvegardeTxt);
+
+        cout << "==================================================================" << endl;
+        */
+        // Test chargement de formes
+
+        cout << "================================================== TEST CHARGEMENT ==================================================" << endl;
+
+        ifstream ifs("../sauvegardeTxt/sauvegardeForme.txt", std::ifstream::in);
+        cout << "Lecture des valeurs : " << endl;
+        vector<Formes *> listFormes = ChargeurListeFormes::charge(ifs);
+
+       /* vector<Formes*>::iterator it = listFormes.begin();
+        for (std::size_t i = 0; i < listFormes.size(); i++)
+            listFormes[i]->dessine(new VisiteurLibrairieAwt, s);*/
+
+        cout << "================================================ FIN TEST CHARGEMENT ================================================" << endl;
+
 
         //g2->dessinerFormes(s,600,300); // defini rect '    pBasGauche'=(0,300) , pHautDroit' = (600,0)
         int nnn;
