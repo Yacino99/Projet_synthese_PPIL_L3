@@ -5,7 +5,6 @@
 #ifndef PROJET_EXPERTCHARGEMENTGROUPECOR_H
 #define PROJET_EXPERTCHARGEMENTGROUPECOR_H
 
-
 #include "ExpertChargementCOR.h"
 #include "Formes.h"
 #include "GroupeFormes.h"
@@ -16,6 +15,7 @@
 #include "ExpertChargementRondCOR.h"
 #include "ExpertChargementPolygoneCOR.h"
 #include "ExpertChargementTriangleCOR.h"
+#include "Croix.h"
 
 using namespace std;
 

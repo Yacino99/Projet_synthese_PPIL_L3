@@ -21,7 +21,7 @@ const void *VisiteurSauvegardeTxt::visite(const Formes *forme) const
     return 0;
 }
 
-const void *VisiteurSauvegardeTxt::visite(const GroupeFormes *groupeFormes) const
+/*const void *VisiteurSauvegardeTxt::visite(const GroupeFormes *groupeFormes) const
 {
     ofstream file;
 
@@ -32,5 +32,5 @@ const void *VisiteurSauvegardeTxt::visite(const GroupeFormes *groupeFormes) cons
     file.close();
 
     return 0;
-}
+}*/
 

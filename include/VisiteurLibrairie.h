@@ -6,7 +6,6 @@
 #define PROJET_VISITEURLIBRAIRIE_H
 
 #include "Formes.h"
-#include "GroupeFormes.h"
 
 class VisiteurLibrairie
 {

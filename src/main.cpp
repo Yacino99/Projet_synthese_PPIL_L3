@@ -16,12 +16,12 @@ using namespace std;
 #include "Triangle.h"
 #include "Polygone.h"
 #include "test.h"
-#include "GroupeFormes.h"
 #include "VisiteurSauvegarde.h"
 #include "VisiteurSauvegardeTxt.h"
 
 #include "Expert.h"
 #include "ExpertChargementCOR.h"
+#include "ExpertChargementGroupeCOR.h"
 #include "ExpertChargementCroixCOR.h"
 #include "ExpertChargementPolygoneCOR.h"
 #include "ExpertChargementRondCOR.h"
@@ -30,6 +30,8 @@ using namespace std;
 
 #include "VisiteurLibrairie.h"
 #include "VisiteurLibrairieAwt.h"
+
+#include "GroupeFormes.h"
 
 #pragma comment(lib,"ws2_32.lib") // specifique  a visual studio et Clion
 
@@ -226,21 +228,21 @@ int main()
         //-------test du groupe formes---------------------------
 
 
-        /*
+
         GroupeFormes groupe("red");
         groupe.addForme(f1).addForme(f2).addForme(f3);
 
-        groupe.dessinerFormes(s);
-        groupe.appliquerHomothetie(Vecteur2D(0,0),false);
-        groupe.dessinerFormes(s);
+        groupe.dessine(s);
+        groupe.appliquerHomothetie(Vecteur2D(0,0), 0.5, false);
+        groupe.dessine(s);
 
         // verifier que la couleur de la forme inseré est un clone de l'original donc l'original n'est pas modifié
         f1->dessine(new VisiteurLibrairieAwt, s);
 
         cout << groupe << endl;
-        */
 
-        Rond * rond = new Rond(1200,200,50,"purple");
+
+       /* Rond * rond = new Rond(1200,200,50,"purple");
         //rond->dessine(new VisiteurLibrairieAwt, s);
         Rond * rond2 = new Rond(900,200,50,"blue");
         //rond2->dessine(new VisiteurLibrairieAwt, s);
@@ -251,7 +253,7 @@ int main()
         // pBG = (-0.3 , -2.5) <- absisse/ordonnee mini  pHD = (7,5.2) <- absisse/ordonnee maxi
         GroupeFormes *g2 = new GroupeFormes("purple");
         g2->addForme(tt1);
-        g2->addForme(rond3);
+        g2->addForme(rond3);*/
 
       /*  cout << "==================================================================" << endl;
 
@@ -261,7 +263,7 @@ int main()
         cout << "==================================================================" << endl;
         */
         // Test chargement de formes
-
+/*
         cout << "================================================== TEST CHARGEMENT ==================================================" << endl;
 
         ifstream ifs("../sauvegardeTxt/sauvegardeForme.txt", std::ifstream::in);
@@ -272,10 +274,12 @@ int main()
         for (std::size_t i = 0; i < listFormes.size(); i++)
             listFormes[i]->dessine(new VisiteurLibrairieAwt, s);*/
 
-        cout << "================================================ FIN TEST CHARGEMENT ================================================" << endl;
+     //   cout << "================================================ FIN TEST CHARGEMENT ================================================" << endl;
 
 
         //g2->dessinerFormes(s,600,300); // defini rect '    pBasGauche'=(0,300) , pHautDroit' = (600,0)
+
+       // Formes * grb = new GroupeFormes();
         int nnn;
         cout << "type any character -:" ;
         cin >>nnn;

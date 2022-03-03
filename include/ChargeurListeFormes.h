@@ -18,7 +18,6 @@ using namespace std;
 #include "ExpertChargementRondCOR.h"
 #include "ExpertChargementPolygoneCOR.h"
 #include "ExpertChargementTriangleCOR.h"
-#include "ExpertChargementGroupeCOR.h"
 
 class ChargeurListeFormes
 {
@@ -31,7 +30,6 @@ public:
         expert = new ExpertChargementPolygoneCOR(expert);
         expert = new ExpertChargementRondCOR(expert);
         expert = new ExpertChargementTriangleCOR(expert);
-        expert = new ExpertChargementGroupeCOR(expert);
 
         string tmp;
         while (getline(ifs, tmp))
