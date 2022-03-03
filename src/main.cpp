@@ -281,6 +281,7 @@ int main()
         //g2->dessinerFormes(s,600,300); // defini rect '    pBasGauche'=(0,300) , pHautDroit' = (600,0)
 
         // Formes * grb = new GroupeFormes();
+        // ici yacino
         int nnn;
         cout << "type any character -:" ;
         cin >>nnn;
