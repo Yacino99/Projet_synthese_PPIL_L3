@@ -67,7 +67,7 @@ void testDistVect(){
     Vecteur2D u1(2,1), u2(7,2), v(5), w, v1(35,-63), u3(6,5), u4(3,-4);
 
     cout << " u1 = " <<  u1 << " u2 = " << u2 << " dist(u1,u2) = " << u1.distance(u2) << endl;
-   // cout << " u1 = " <<  u1 << " u2 = " << u2 << " dist(u2,u1) = " << u2.distance(u1) << endl;
+    // cout << " u1 = " <<  u1 << " u2 = " << u2 << " dist(u2,u1) = " << u2.distance(u1) << endl;
     cout << " u1 = " <<  u1 << " u3 = " << u3 << " dist(u1,u3) = " << u1.distance(u3) << endl;
     cout << " u2 = " <<  u2 << " u3 = " << u3 << " dist(u2,u3) = " << u2.distance(u3) << endl;
     cout << "u1 = " << u1 << " dist(u1,u1) = " << u1.distance(u1) << endl;
@@ -161,7 +161,7 @@ int main()
         cout << "aire du triangle est = " << f3->calculerAire() << endl;
         f3->homothetie(Vecteur2D(0,0),2);
         f3->setColor("red");
-      //  f3->rotation(Vecteur2D(0,0), M_PIl);
+        //  f3->rotation(Vecteur2D(0,0), M_PIl);
         f3->dessine(new VisiteurLibrairieAwt, s);
         cout << f3 << " Aire = " << f3->calculerAire() << endl;
 
@@ -183,16 +183,16 @@ int main()
         //f3->dessine(new VisiteurLibrairieAwt, s);
 
         //test croix rotation
-       /* Formes * f2 = new Croix(30, 100, 100, 30, "red");
-        f2->dessine(new VisiteurLibrairieAwt, s);
-        f2->rotation(f2->getCentreSymetrie(),M_PIl/6);
-        f2->dessine(new VisiteurLibrairieAwt, s);
-*/
+        /* Formes * f2 = new Croix(30, 100, 100, 30, "red");
+         f2->dessine(new VisiteurLibrairieAwt, s);
+         f2->rotation(f2->getCentreSymetrie(),M_PIl/6);
+         f2->dessine(new VisiteurLibrairieAwt, s);
+ */
 
-       // ================================== Sauvegarde des formes dans un fichier text  ==================================
-       /* f1->sauvegarde(new VisiteurSauvegardeTxt);
-        f2->sauvegarde(new VisiteurSauvegardeTxt);
-        f3->sauvegarde(new VisiteurSauvegardeTxt);*/
+        // ================================== Sauvegarde des formes dans un fichier text  ==================================
+        /* f1->sauvegarde(new VisiteurSauvegardeTxt);
+         f2->sauvegarde(new VisiteurSauvegardeTxt);
+         f3->sauvegarde(new VisiteurSauvegardeTxt);*/
         // =================================================================================================================
 
         Vecteur2D a(120, 40), b(140, 70), c(150, 80);
@@ -206,7 +206,7 @@ int main()
          polygon2.addPoint( 130, 180 ); */
         Polygone * p = new Polygone();
         p->addPoint(new Vecteur2D(175,135)).addPoint(new Vecteur2D(270,200))
-        .addPoint(new Vecteur2D(200,220)).addPoint(new Vecteur2D(130,180));//.addPoint(&e);
+                .addPoint(new Vecteur2D(200,220)).addPoint(new Vecteur2D(130,180));//.addPoint(&e);
         p->rotation(p->getCentreSymetrie(),M_PIl/2);
         cout << "aire = " << p->calculerAire() << endl;
         //p->dessine(new VisiteurLibrairieAwt, s);
@@ -235,6 +235,7 @@ int main()
         groupe.dessine(s);
         groupe.appliquerHomothetie(Vecteur2D(0,0), 0.5, false);
         groupe.dessine(s);
+        groupe.dessine(new VisiteurLibrairieAwt, s);
 
         // verifier que la couleur de la forme inseré est un clone de l'original donc l'original n'est pas modifié
         f1->dessine(new VisiteurLibrairieAwt, s);
@@ -242,26 +243,26 @@ int main()
         cout << groupe << endl;
 
 
-       /* Rond * rond = new Rond(1200,200,50,"purple");
-        //rond->dessine(new VisiteurLibrairieAwt, s);
-        Rond * rond2 = new Rond(900,200,50,"blue");
-        //rond2->dessine(new VisiteurLibrairieAwt, s);
-        Triangle *tt = new Triangle(Vecteur2D(200,200),Vecteur2D(300,100),Vecteur2D(800,100),"red");
-        //tt->dessine(new VisiteurLibrairieAwt, s);
-        Triangle *tt1 = new Triangle(Vecteur2D(-0.3,1.7),Vecteur2D(2.8,-2.5),Vecteur2D(4.3,5.2),"purple");
-        Rond * rond3 = new Rond(5.8,-3.5,1.2,"blue");
-        // pBG = (-0.3 , -2.5) <- absisse/ordonnee mini  pHD = (7,5.2) <- absisse/ordonnee maxi
-        GroupeFormes *g2 = new GroupeFormes("purple");
-        g2->addForme(tt1);
-        g2->addForme(rond3);*/
+        /* Rond * rond = new Rond(1200,200,50,"purple");
+         //rond->dessine(new VisiteurLibrairieAwt, s);
+         Rond * rond2 = new Rond(900,200,50,"blue");
+         //rond2->dessine(new VisiteurLibrairieAwt, s);
+         Triangle *tt = new Triangle(Vecteur2D(200,200),Vecteur2D(300,100),Vecteur2D(800,100),"red");
+         //tt->dessine(new VisiteurLibrairieAwt, s);
+         Triangle *tt1 = new Triangle(Vecteur2D(-0.3,1.7),Vecteur2D(2.8,-2.5),Vecteur2D(4.3,5.2),"purple");
+         Rond * rond3 = new Rond(5.8,-3.5,1.2,"blue");
+         // pBG = (-0.3 , -2.5) <- absisse/ordonnee mini  pHD = (7,5.2) <- absisse/ordonnee maxi
+         GroupeFormes *g2 = new GroupeFormes("purple");
+         g2->addForme(tt1);
+         g2->addForme(rond3);*/
 
-      /*  cout << "==================================================================" << endl;
+        /*  cout << "==================================================================" << endl;
 
-        //g2->dessine(s);
-        g2->sauvegarde(new VisiteurSauvegardeTxt);
+          //g2->dessine(s);
+          g2->sauvegarde(new VisiteurSauvegardeTxt);
 
-        cout << "==================================================================" << endl;
-        */
+          cout << "==================================================================" << endl;
+          */
         // Test chargement de formes
 /*
         cout << "================================================== TEST CHARGEMENT ==================================================" << endl;
@@ -274,12 +275,12 @@ int main()
         for (std::size_t i = 0; i < listFormes.size(); i++)
             listFormes[i]->dessine(new VisiteurLibrairieAwt, s);*/
 
-     //   cout << "================================================ FIN TEST CHARGEMENT ================================================" << endl;
+        //   cout << "================================================ FIN TEST CHARGEMENT ================================================" << endl;
 
 
         //g2->dessinerFormes(s,600,300); // defini rect '    pBasGauche'=(0,300) , pHautDroit' = (600,0)
 
-       // Formes * grb = new GroupeFormes();
+        // Formes * grb = new GroupeFormes();
         int nnn;
         cout << "type any character -:" ;
         cin >>nnn;

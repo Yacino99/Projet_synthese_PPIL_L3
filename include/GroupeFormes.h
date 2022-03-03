@@ -61,5 +61,5 @@ inline ostream& operator << (ostream& os, const GroupeFormes& g)
     os << (string)(g);
     return os;
 }
-
+// z
 #endif //PROJET_GROUPEFORMES_H

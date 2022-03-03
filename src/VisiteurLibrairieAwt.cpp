@@ -13,7 +13,7 @@ const void *VisiteurLibrairieAwt::visite(const Formes * forme, Socket * s) const
     oss << (string)*forme;
     string requete = oss.str();
     s->sendMessage(requete.c_str());
-
+    cout << "dessin ! ";
     return 0;
 }
 

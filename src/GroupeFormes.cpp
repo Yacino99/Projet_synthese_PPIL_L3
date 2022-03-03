@@ -139,3 +139,4 @@ const void *GroupeFormes::dessine(const VisiteurLibrairie *visiteur, Socket *s) 
 {
     return visiteur->visite(this, s);
 }
+//z
