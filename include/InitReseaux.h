@@ -13,9 +13,8 @@
 
 // on se debrouille pour que cette classe soit instancié que une fois
 
-class InitReseaux {
-
-
+class InitReseaux
+{
 private:
     int r;
     WSADATA wsadata;
@@ -27,15 +26,12 @@ private:
 
     }
 
-
 public:
 
     virtual ~InitReseaux()
     {
         WSACleanup();
     }
-
-
 
     static InitReseaux* initiateur;
 
@@ -49,6 +45,5 @@ public:
         return initiateur;
     }
 };
-
 
 #endif //PROJETT_INITRESEAUX_H

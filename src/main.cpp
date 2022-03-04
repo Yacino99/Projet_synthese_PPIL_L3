@@ -15,7 +15,6 @@ using namespace std;
 #include "Croix.h"
 #include "Triangle.h"
 #include "Polygone.h"
-#include "test.h"
 #include "VisiteurSauvegarde.h"
 #include "VisiteurSauvegardeTxt.h"
 
@@ -37,7 +36,8 @@ using namespace std;
 # define M_PIl          3.141592653589793238462643383279502884L
 //-----------------------------------------debut test------------------------------------------------------
 
-void testMatrice(){
+void testMatrice()
+{
     Matrice22 m1(1,2,3,4);
     Vecteur2D v1(1,2);
     Vecteur2D v2(3,4);
@@ -52,15 +52,13 @@ void testMatrice(){
 
     Matrice22 M(m11,m12,m21,m22);
 
-
     cout << m1*v1 << endl;
     cout << "OK !!!!!!!!!!!!!!!!!!!!!! \n";
     cout << M << endl;
-
 }
 
-void testDistVect(){
-
+void testDistVect()
+{
     cout << "--------test des distances ------------" << endl;
 
     Vecteur2D u1(2,1), u2(7,2), v(5), w, v1(35,-63), u3(6,5), u4(3,-4);
@@ -78,16 +76,12 @@ void testDistVect(){
     double aires = sqrt(d*(d-ab)*(d-ac)*(d-bc));
     cout << "demi perimetrre = " << demiPeri << endl;
     cout << "aire = " << aires << endl;
-
-
 }
 
 int main()
 {
     //testMatrice();
     testDistVect();
-    test t;
-    t.sayHi();
 
     cout << "essai des vecteurs 2D \n";
 
@@ -120,15 +114,14 @@ int main()
     cout << "m1 * u4 = \n" << m1 * u4 << endl;
     cout << "m1 * 5 = \n" << m1 *5 << endl;
 
-
     m1 = m2;
     // test d'affectation matrice
     cout << "m1 = m2 -> "<< (m1==m2) << endl << m1 << endl << m2 << endl;
 
     cout << "m1 *m1-1 = " << m1*m1.inverse() << endl;
 
-
-    try{
+    try
+    {
         const char* addr = "127.0.0.1";
         InitReseaux* reseau = InitReseaux::getInitReseaux();
         Socket * s = new Socket(addr, 9111);
@@ -169,7 +162,6 @@ int main()
         gros->rotation(Vecteur2D(400,400),M_PIl);
         gros->dessine(new VisiteurLibrairieAwt, s);
 
-        //Formes * f3;
         f3 =  new Triangle(Vecteur2D(30,200), Vecteur2D(90,200), Vecteur2D(45,50), "green");
         Vecteur2D centreTri( (30+90+45)/3,(200+200+50)/3);
 
@@ -254,19 +246,21 @@ int main()
         g2->addForme(rond3);*/
 
         // Test chargement de formes
-        /*cout << "================================================== TEST CHARGEMENT ==================================================" << endl;
+      /*  cout << "================================================== TEST CHARGEMENT ==================================================" << endl;
 
+        groupe.sauvegarde(new VisiteurSauvegardeTxt);
         ifstream ifs("../sauvegardeTxt/sauvegardeForme.txt", std::ifstream::in);
         cout << "Lecture des valeurs : " << endl;
         vector<Formes *> listFormes = ChargeurListeFormes::charge(ifs);
 
         // Envoie au serveur pour dessiner les formes chargés
-       /* vector<Formes*>::iterator it = listFormes.begin();
+        vector<Formes*>::iterator it = listFormes.begin();
         for (std::size_t i = 0; i < listFormes.size(); i++)
+        {
             listFormes[i]->dessine(new VisiteurLibrairieAwt, s);
+        }
 */
-       // cout << "================================================ FIN TEST CHARGEMENT ================================================" << endl;
-
+      //  cout << "================================================ FIN TEST CHARGEMENT ================================================" << endl;
 
         //g2->dessinerFormes(s,600,300); // defini rect '    pBasGauche'=(0,300) , pHautDroit' = (600,0)
 
@@ -276,13 +270,13 @@ int main()
         cout << "type any character -:" ;
         cin >>nnn;
 
-    }catch(Erreur e)
+    }
+    catch(Erreur e)
     {
         cout << e.message;
     }
 
     cout << "Fin du programme :) !!!"<<endl;
-
 
     return 0;
 }

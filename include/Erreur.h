@@ -14,7 +14,6 @@ using namespace std;
 #include <string>
 #include <iostream>
 
-
 class Erreur {
 
 public:

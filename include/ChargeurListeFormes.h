@@ -23,6 +23,7 @@ using namespace std;
 class ChargeurListeFormes
 {
 public:
+
     static vector<Formes*> charge(ifstream& ifs)
     {
         vector<Formes*> res;
@@ -44,7 +45,6 @@ public:
                 res.push_back(forme);
             }
         }
-
         return res;
     };
 };

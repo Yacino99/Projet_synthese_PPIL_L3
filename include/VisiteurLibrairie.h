@@ -9,7 +9,6 @@
 
 class VisiteurLibrairie
 {
-
 public :
     virtual const void *visite(const Formes * forme, Socket * s) const = 0;
 };

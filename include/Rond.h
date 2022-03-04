@@ -5,7 +5,6 @@
 #ifndef PROJETT_ROND_H
 #define PROJETT_ROND_H
 
-
 #include "Formes.h"
 #include <string>
 #include "Socket.h"
@@ -24,17 +23,11 @@ private :
 
 public:
 
-	Rond(int x, int y, double rayon, const string& color = " ") :
-		Formes(color), rayon(rayon),v(x,y) {
-
-	}
-
-    Rond(Vecteur2D v, double rayon, const string& color = " ") :
-            Formes(color), rayon(rayon),v(v) {
-    }
+	Rond(int x, int y, double rayon, const string& color = " ") : Formes(color), rayon(rayon),v(x,y) {}
+    Rond(Vecteur2D v, double rayon, const string& color = " ") : Formes(color), rayon(rayon),v(v) {}
 
 	double calculerAire() const;
-    Vecteur2D getCentreSymetrie() const;
+    Vecteur2D getCentreSymetrie() const { return v; }
 	virtual ~Rond() {}
 
 	Rond* clone() const{ return new Rond(*this); }
@@ -52,7 +45,8 @@ public:
 };
 
 
-inline ostream& operator << (ostream& os, const Rond& m) {
+inline ostream& operator << (ostream& os, const Rond& m)
+{
 	return os << (string)m;
 }
 

@@ -17,15 +17,16 @@
 #include "Matrice22.h"
 using namespace std;
 
-class Polygone : public Formes {
+class Polygone : public Formes
+{
 
 private:
     vector<Vecteur2D*> tab_vect;
 
 public:
 
-    Polygone(const string& couleur=" ") :Formes(couleur) {}
-    Polygone(vector<Vecteur2D*> vect, const string& couleur=" "):Formes(couleur) {tab_vect=vect; }
+    Polygone(const string& couleur=" ") : Formes(couleur) {}
+    Polygone(vector<Vecteur2D*> vect, const string& couleur=" ") : Formes(couleur) { tab_vect=vect; }
 
     Polygone* clone() const;
     void translation(const Vecteur2D& u);
@@ -48,9 +49,5 @@ inline ostream& operator<<(ostream& os, const Polygone& m)
 {
     return os << (string)m;
 }
-
-
-
-
 
 #endif //PROJETT_POLYGONE_H

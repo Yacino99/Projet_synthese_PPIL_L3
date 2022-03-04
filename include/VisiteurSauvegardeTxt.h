@@ -5,7 +5,6 @@
 #ifndef PROJETT_VISITEURSAUVEGARDETXT_H
 #define PROJETT_VISITEURSAUVEGARDETXT_H
 
-
 #include "VisiteurSauvegarde.h"
 #include <iostream>
 #include <string>

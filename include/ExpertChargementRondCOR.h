@@ -40,7 +40,6 @@ public:
             // création de la forme en des données du fichier de visite
             return new Rond (points[0], points[1], points[2], couleur);
         }
-
         return NULL;
     };
 };

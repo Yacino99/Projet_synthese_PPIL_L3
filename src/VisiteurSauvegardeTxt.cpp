@@ -6,7 +6,6 @@
 using namespace std;
 
 #include "VisiteurSauvegardeTxt.h"
-#include "Erreur.h"
 
 const void *VisiteurSauvegardeTxt::visite(const Formes *forme) const
 {

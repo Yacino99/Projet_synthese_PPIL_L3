@@ -12,7 +12,8 @@ void Rond::translation(const Vecteur2D& u)
     v = v + u;
 }
 
-void Rond::homothetie(const Vecteur2D &u, double k) {
+void Rond::homothetie(const Vecteur2D &u, double k)
+{
     v = (v - u)*k  + u;
     rayon *= k;
 }
@@ -24,12 +25,13 @@ Rond::operator string() const
     return os.str();
 }
 
-double Rond::calculerAire() const {
+double Rond::calculerAire() const
+{
     return (rayon * rayon) * PI;
 }
 
-void Rond::rotation(const Vecteur2D &u, const double angle) {
-
+void Rond::rotation(const Vecteur2D &u, const double angle)
+{
     double m11 = cos(angle);
     double m12 = -sin(angle);
     double m21 = sin(angle);
@@ -38,17 +40,14 @@ void Rond::rotation(const Vecteur2D &u, const double angle) {
     Matrice22 M(m11,m12,m21,m22);
 
     v =  M * (v - u) + u ;
-
 }
 
-Vecteur2D Rond::getCentreSymetrie() const {
-    return v;
-}
-
-const void *Rond::sauvegarde(const VisiteurSauvegarde *visiteur) const {
+const void *Rond::sauvegarde(const VisiteurSauvegarde *visiteur) const
+{
     return visiteur->visite(this);
 }
 
-const void *Rond::dessine(const VisiteurLibrairie *visiteur, Socket *s) const {
+const void *Rond::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
+{
     return visiteur->visite(this, s);
 }

@@ -5,13 +5,10 @@
 #ifndef PROJETT_VISITEURSAUVEGARDE_H
 #define PROJETT_VISITEURSAUVEGARDE_H
 
-
-
 #include "Formes.h"
 
 class VisiteurSauvegarde
 {
-
 public :
     virtual const void *visite(const Formes * forme) const = 0;
 };

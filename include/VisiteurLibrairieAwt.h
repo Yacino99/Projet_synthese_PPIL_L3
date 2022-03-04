@@ -13,10 +13,8 @@
 
 class VisiteurLibrairieAwt : public VisiteurLibrairie
 {
-
 public:
     const void *visite(const Formes * forme, Socket * s) const;
 };
-
 
 #endif //PROJET_VISITEURLIBRAIRIEAWT_H

@@ -47,7 +47,6 @@ public:
             // création de la forme en des données du fichier de visite
             return new Polygone(vecteurs, couleur);
         }
-
         return NULL;
     };
 };

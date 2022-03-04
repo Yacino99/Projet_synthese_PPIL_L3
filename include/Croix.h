@@ -5,7 +5,6 @@
 #ifndef PROJETT_CROIX_H
 #define PROJETT_CROIX_H
 
-
 #include "Formes.h"
 #include <string>
 #include "Socket.h"
@@ -25,12 +24,8 @@ private :
 
 public:
 
-    Croix(double g, double h, double d, double b, const string& couleur = " ") :
-            Formes(couleur) , a(g,h),b(d,b){
-    }
-    Croix(Vecteur2D a, Vecteur2D b,  Socket* s, const string& couleur = " ") :
-            Formes(couleur), a(a),b(b){
-    }
+    Croix(double g, double h, double d, double b, const string& couleur = " ") : Formes(couleur) , a(g,h),b(d,b) {}
+    Croix(Vecteur2D a, Vecteur2D b,  Socket* s, const string& couleur = " ") : Formes(couleur), a(a),b(b) {}
 
     double calculerAire() const;
     Vecteur2D getCentreSymetrie() const;
@@ -49,17 +44,9 @@ public:
     const void *dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 };
 
-inline ostream& operator << (ostream& os, const Croix& m) {
+inline ostream& operator << (ostream& os, const Croix& m)
+{
     return os << (string)m;
 }
-
-
-
-
-
-
-
-
-
 
 #endif //PROJETT_CROIX_H

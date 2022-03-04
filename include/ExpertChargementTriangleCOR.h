@@ -41,7 +41,6 @@ public:
             // création de la forme en des données du fichier de visite
             return new Triangle(points[0], points[1], points[2], points[3], points[4], points[5], couleur);
         }
-
         return NULL;
     };
 };

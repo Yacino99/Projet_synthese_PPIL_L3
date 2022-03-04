@@ -24,9 +24,9 @@ protected:
 public:
 
     Formes();
-    Formes(const string& couleur) :couleur(couleur){}
+    Formes(const string& couleur) : couleur(couleur) {}
 
-    void setColor(const string& c){ couleur=c;}
+    void setColor(const string& c) { couleur=c;}
 
     virtual void translation(const Vecteur2D& u) = 0;
     virtual void homothetie(const Vecteur2D& u,double k) = 0;
@@ -41,7 +41,7 @@ public:
     virtual Formes* clone() const = 0;
 
     inline friend ostream& operator << (ostream& os, const Formes* m);
-    virtual ~Formes(){}
+    virtual ~Formes() {}
 
     // DP Visitor
     virtual const void * sauvegarde(const VisiteurSauvegarde * visiteur) const = 0;

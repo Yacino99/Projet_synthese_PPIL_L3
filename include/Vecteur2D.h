@@ -7,7 +7,6 @@
 #ifndef PROJETT_VECTEUR_H
 #define PROJETT_VECTEUR_H
 
-
 #include <string>
 #include <ostream>
 #include <sstream>
@@ -15,17 +14,16 @@
 using namespace std;
 
 template <class T>
+
 inline const T operator - (const T & u, const T & v)
 {
     return u + -v;
 }
 
-
 class Vecteur2D
 {
 public:
     double x,y;
-
 
     explicit Vecteur2D(const double & x = 0, const double & y = 0);
 

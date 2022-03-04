@@ -15,9 +15,8 @@
  * [ v.x  v.y ]
  */
 
-
-
-class Matrice22 {
+class Matrice22
+{
 
 public:
 

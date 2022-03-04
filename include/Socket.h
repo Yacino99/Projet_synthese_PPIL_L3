@@ -14,11 +14,10 @@
 #include <string.h>
 #include <sstream>
 
-
 #define monL 200
 
-
-class Socket{
+class Socket
+{
 
 private:
     SOCKET sock;
@@ -33,14 +32,11 @@ private:
     char message[monL - 1];
     int l;
 
-
 public:
 
 
-    Socket(const char *addresseServeurr , int port):familleAdresse(AF_INET) ,
-                                                    typeSocket(SOCK_STREAM),protocole(IPPROTO_TCP),portServer(port)
+    Socket(const char *addresseServeurr, int port) : familleAdresse(AF_INET), typeSocket(SOCK_STREAM),protocole(IPPROTO_TCP), portServer(port)
     {
-
         strcpy_s(this->adresseServeur, addresseServeurr);
 
         // chargement de la DLL reseau si c'est pas fait
@@ -56,21 +52,19 @@ public:
         }
         cout << "socket cree" << endl;
 
-
-
         sockaddr.sin_family = AF_INET;
         sockaddr.sin_addr.s_addr = inet_addr(adresseServeur);
         sockaddr.sin_port = htons(portServer);
 
         if (connect(sock, (SOCKADDR*)&sockaddr, sizeof(sockaddr)) == SOCKET_ERROR)
+        {
             throw Erreur("La connexion a echoué");
-
+        }
         cout << "La connexion a reussi" << endl;
     }
 
-
-    virtual ~Socket()	{
-
+    virtual ~Socket()
+    {
         /*
         int r = shutdown(sock, SD_BOTH);
 
@@ -80,12 +74,11 @@ public:
 
         WSACleanup();
         */
-
         this->shutItDown();
-
     }
 
-    void shutItDown() {
+    void shutItDown()
+    {
         int r = shutdown(sock, SD_BOTH);
 
         if (r == SOCKET_ERROR) throw Erreur("La coupure de connexion a echoue");
@@ -99,7 +92,6 @@ public:
     {
         strcpy_s(message, msg);
 
-
         strcat_s(message, "\r\n");
         l = strlen(message);
         cout << "ton message a ete : " << message << endl;
@@ -111,7 +103,6 @@ public:
 
     void recieveMessage(char reponse[monL])
     {
-
         int r = recv(sock, reponse, l, 0);
 
         if (r == SOCKET_ERROR)

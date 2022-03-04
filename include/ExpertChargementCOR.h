@@ -29,5 +29,4 @@ public :
     }
 };
 
-
 #endif //PROJET_EXPERTCHARGEMENTCOR_H

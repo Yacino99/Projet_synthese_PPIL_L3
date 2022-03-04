@@ -38,15 +38,14 @@ Triangle::operator string() const
  */
 double Triangle::calculerAire() const
 {
-
     double ab = a.distance(b) , ac = a.distance(c) , bc = b.distance(c);
     double d = (ab+ac+bc)/2; // d est le demi perimetre
 
     return sqrt(d*(d-ab)*(d-ac)*(d-bc));
 }
 
-void Triangle::rotation(const Vecteur2D &u, const double angle) {
-
+void Triangle::rotation(const Vecteur2D &u, const double angle)
+{
     double m11 = cos(angle);
     double m12 = -sin(angle);
     double m21 = sin(angle);
@@ -58,33 +57,20 @@ void Triangle::rotation(const Vecteur2D &u, const double angle) {
     b =  M * (b - u) + u ;
     c =  M * (c - u) + u ;
 }
-/*
-void Triangle::rotation1(const Vecteur2D &u, const Matrice22 &M) {
 
-    double m11 = cos(angle);
-    double m12 = -sin(angle);
-    double m21 = -m12;
-    double m22 = m11;
-
-    Matrice22 M(m11,m12,m21,m22);
-
-    a =  M * (a - u) + u ;
-    b =  M * (b - u) + u ;
-    c =  M * (c - u) + u ;
-}
-*/
-
-Vecteur2D Triangle::getCentreSymetrie() const {
-
+Vecteur2D Triangle::getCentreSymetrie() const
+{
     Vecteur2D g = (a+b+c)*(1/3.0);
     return g;
 }
 
 
-const void *Triangle::sauvegarde(const VisiteurSauvegarde *visiteur) const {
+const void *Triangle::sauvegarde(const VisiteurSauvegarde *visiteur) const
+{
     return visiteur->visite(this);
 }
 
-const void *Triangle::dessine(const VisiteurLibrairie *visiteur, Socket *s) const {
+const void *Triangle::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
+{
     return visiteur->visite(this, s);
 }

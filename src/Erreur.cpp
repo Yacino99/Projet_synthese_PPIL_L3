@@ -11,10 +11,9 @@
 #include <string.h>
 #include <iostream>
 #include <string>
-#include "Erreur.h" //aaaaazz
-//zazza
-using namespace std;
+#include "Erreur.h"
 
+using namespace std;
 
 Erreur::Erreur()
 {

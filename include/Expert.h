@@ -14,10 +14,10 @@ class Formes;
 
 class Expert
 {
+
 protected :
     virtual Formes * resoudre(const string & d) const = 0;
+
 };
-
-
 
 #endif //PROJET_EXPERT_H

@@ -10,27 +10,31 @@
 #include "Formes.h"
 #include "Socket.h"
 
-class GroupeFormes : public Formes {
+class GroupeFormes : public Formes
+{
 
 private:
     vector<Formes*> formes;
     string couleur;
 
 public:
-    explicit GroupeFormes(const string& couleur = " ") : Formes(couleur) {
+    explicit GroupeFormes(const string& couleur = " ") : Formes(couleur)
+    {
         this->couleur = couleur;
     }
+
     GroupeFormes(vector<Formes*> shapes, const string& couleur = " ") : Formes(couleur)
     {
         this->couleur = couleur;
         formes = shapes;
     }
+
     virtual ~GroupeFormes();
 
     //getters / setters
     Formes *getForme(int i) const;
     void setCouleur(const string &color);
-    const string getCouleur() const;
+    const string getCouleur() const { return couleur; }
 
     GroupeFormes &addForme(const Formes *f);
 
@@ -55,6 +59,7 @@ public:
     const void * dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 
     friend ostream& operator << (ostream& os,const GroupeFormes &g);
+
 };
 
 inline ostream& operator << (ostream& os, const GroupeFormes& g)
@@ -62,5 +67,5 @@ inline ostream& operator << (ostream& os, const GroupeFormes& g)
     os << (string)(g);
     return os;
 }
-// z
+
 #endif //PROJET_GROUPEFORMES_H

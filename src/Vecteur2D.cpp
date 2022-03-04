@@ -9,9 +9,7 @@
 #include <ostream>
 #include <sstream>
 
-
 #include "../include/Vecteur2D.h"
-
 
 const Vecteur2D operator *(const double & a, const Vecteur2D & u) { return u*a;}
 
@@ -39,7 +37,8 @@ const Vecteur2D Vecteur2D::operator - () const
     return Vecteur2D(-x,-y);
 }
 
-const bool Vecteur2D::operator==(const Vecteur2D &u) const {
+const bool Vecteur2D::operator==(const Vecteur2D &u) const
+{
     return ( x==u.x && y==u.y );
 }
 
@@ -61,13 +60,17 @@ const double Vecteur2D::determinant(const Vecteur2D &u) const
     return (x*u.y-y*u.x);
 }
 
-const double Vecteur2D::operator*(const Vecteur2D &u) const {
+const double Vecteur2D::operator*(const Vecteur2D &u) const
+{
     return (x*u.x + y*u.y);
 }
 
-Vecteur2D& Vecteur2D::operator=(const Vecteur2D &u)  {
+Vecteur2D& Vecteur2D::operator=(const Vecteur2D &u)
+{
     if (this== &u)
+    {
         return *this;
+    }
 
     x = u.x;
     y = u.y;
@@ -75,9 +78,8 @@ Vecteur2D& Vecteur2D::operator=(const Vecteur2D &u)  {
     return *this;
 }
 
-const double Vecteur2D::distance(const Vecteur2D &b) const {
-
-
+const double Vecteur2D::distance(const Vecteur2D &b) const
+{
     double opg = (b.x-x)*(b.x-x);
     double opd = (b.y-y)*(b.y-y);
     //double opg = pow(b.x-x,2);

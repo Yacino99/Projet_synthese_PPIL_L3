@@ -88,9 +88,8 @@ public:
             // Retour du groupe de Forme
             return g2;
         }
-
         return NULL;
     };
-};//z
+};
 
 #endif //PROJET_EXPERTCHARGEMENTGROUPECOR_H
