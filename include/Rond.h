@@ -1,6 +1,6 @@
-//
-// Created by Yacino99 on 07/02/2022.
-//
+/**  @file Rond.h
+ *   @brief This file is marvelous.
+ */
 
 #ifndef PROJETT_ROND_H
 #define PROJETT_ROND_H

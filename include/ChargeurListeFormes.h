@@ -1,6 +1,17 @@
-//
-// Created by Anwender on 18/02/2022.
-//
+/**  @file
+ *   @brief This file is marvelous.
+ */
+
+
+/**
+ * \file      ChargeurListeFormes.h
+ * \version   1.0
+ * \date      04 mars 2022
+ * \brief     Charge la liste des formes d'un fichier .txt
+ *
+ * \details    Cette classe charge le fichier "sauvegardeForme.txt" et analyse les formes de ce fichier
+ *                  grâce au Design Pattern Chain Of Responsability
+ */
 
 #ifndef PROJET_CHARGEURLISTEFORMES_H
 #define PROJET_CHARGEURLISTEFORMES_H
@@ -24,6 +35,12 @@ class ChargeurListeFormes
 {
 public:
 
+    /**
+     * \brief       Fonction qui charge et appelle le DP COR
+     * \details    Fonction qui charge et appelle le DP COR en appelant tous les Experts
+     * \param    ifs         le fichier texte récupéré
+     * \return    Un vecteur de Formes contenant toutes les formes du fichier .txt
+     */
     static vector<Formes*> charge(ifstream& ifs)
     {
         vector<Formes*> res;

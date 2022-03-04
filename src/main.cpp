@@ -78,6 +78,9 @@ void testDistVect()
     cout << "aire = " << aires << endl;
 }
 
+/**
+ *  \fn int main ()
+ */
 int main()
 {
     //testMatrice();

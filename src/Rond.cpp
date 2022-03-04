@@ -1,6 +1,6 @@
-//
-// Created by Anwender on 14/02/2022.
-//
+/**  @file Rond.cpp
+ *   @brief This file is marvelous.
+ */
 
 #include "Rond.h"
 #include "Matrice22.h"
