@@ -17,9 +17,12 @@ private:
     string couleur;
 
 public:
-    explicit GroupeFormes(const string& couleur = " ") : Formes(couleur) {}
+    explicit GroupeFormes(const string& couleur = " ") : Formes(couleur) {
+        this->couleur = couleur;
+    }
     GroupeFormes(vector<Formes*> shapes, const string& couleur = " ") : Formes(couleur)
     {
+        this->couleur = couleur;
         formes = shapes;
     }
     virtual ~GroupeFormes();

@@ -28,7 +28,7 @@ public class DrawGroupeHandler extends Handler{
                 Handler h4 = new DrawGroupeHandler();
                 h1.setNextChain(h2);
                 h2.setNextChain(h3);
-                //h3.setNextChain(h4);
+                h3.setNextChain(h4);
 
                 CadreDessin cadreDessin2 = new CadreDessin(cadreDessin.getTitle(),cadreDessin.bordGauche,
                         cadreDessin.bordSuperieur, cadreDessin.getWidth(),cadreDessin.getHeight());
