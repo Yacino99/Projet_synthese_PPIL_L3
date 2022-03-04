@@ -15,7 +15,7 @@ import java.awt.event.*;
 public class CadreDessin extends Frame
 {
     public Graphics graphics;      // pour dessiner sur this
-    private int bordGauche, bordSuperieur;
+    public final int bordGauche, bordSuperieur;
 
     /**
      * @param titre : titre de la fen�tre
@@ -78,6 +78,8 @@ public class CadreDessin extends Frame
         });
 
     }
+
+
 
 
 

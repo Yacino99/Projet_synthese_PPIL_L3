@@ -16,8 +16,10 @@ public class TestServeurFormes {
             Handler h1 = new DrawCircleHandler();
             Handler h2 = new DrawLineHandler();
             Handler h3 = new DrawPolygonHandler();
+            Handler h4 = new DrawGroupeHandler();
             h1.setNextChain(h2);
             h2.setNextChain(h3);
+            h3.setNextChain(h4);
 
             int portServeur=9111;
             ServerSocket serveur = new ServerSocket(portServeur);
@@ -33,7 +35,7 @@ public class TestServeurFormes {
                 CadreDessin cadreDessin = new CadreDessin("cadre dessin",60,60, Config.LARGEUR,Config.HAUTEUR);
                 cadreDessin.setResizable(false);
                 Interlocuteur interlocuteur = new Interlocuteur(socket, noClient,cadreDessin,h1 );
-
+                System.out.println("----------c bon-----------------");
                 ++noClient;
                 interlocuteur.start();
 
