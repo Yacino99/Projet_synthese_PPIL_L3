@@ -1,10 +1,10 @@
 /**
- * \file      Croix.cpp
+ * \file      Segment.cpp
  * \date      04 mars 2022
- * \brief     Implémentation de la classe Croix
+ * \brief     Implémentation de la classe Segment
  */
 
-#include "Croix.h"
+#include "Segment.h"
 #include "VisiteurSauvegarde.h"
 #include "VisiteurLibrairie.h"
 
@@ -12,17 +12,17 @@
  * \brief    Fonction qui retourne le centre de symétrie
  * \return    Un Vecteur2D
  */
-Vecteur2D Croix::getCentreSymetrie() const
+Vecteur2D Segment::getCentreSymetrie() const
 {
     Vecteur2D g = (a+b)*(1/2.0);
     return g;
 }
 
-Croix::operator string() const
+Segment::operator string() const
 {
     ostringstream os;
 
-    os << "croix ( " << a.x << " , " <<
+    os << "segment ( " << a.x << " , " <<
        a.y << " , " << b.x << " , " << b.y << " ) " << this->couleur;
 
     return os.str();
@@ -31,7 +31,7 @@ Croix::operator string() const
 /**
  * \brief    Opération de translation
  */
-void Croix::translation(const Vecteur2D &u)
+void Segment::translation(const Vecteur2D &u)
 {
     a = a + u;
     b = b + u;
@@ -40,7 +40,7 @@ void Croix::translation(const Vecteur2D &u)
 /**
  * \brief    Opération d'homothétie
  */
-void Croix::homothetie(const Vecteur2D &u, double k)
+void Segment::homothetie(const Vecteur2D &u, double k)
 {
     a =  (a - u)*k  + u;
     b =  (b - u)*k  + u;
@@ -49,7 +49,7 @@ void Croix::homothetie(const Vecteur2D &u, double k)
 /**
  * \brief    Opération de rotation
  */
-void Croix::rotation(const Vecteur2D &u, const double angle)
+void Segment::rotation(const Vecteur2D &u, const double angle)
 {
     Matrice22 M(Vecteur2D(cos(angle),-sin(angle)) , Vecteur2D(sin(angle), cos(angle)));
     b =  M * (b - u) + u ;
@@ -62,7 +62,7 @@ void Croix::rotation(const Vecteur2D &u, const double angle)
  *             l'opération de sauvegarde associée à celle-ci grâce au Design Pattern Visitor.
  * \param      *visiteur instance de VisiteurSauvegarde
  */
-const void *Croix::sauvegarde(const VisiteurSauvegarde *visiteur) const
+const void *Segment::sauvegarde(const VisiteurSauvegarde *visiteur) const
 {
     return visiteur->visite(this);
 }
@@ -74,7 +74,7 @@ const void *Croix::sauvegarde(const VisiteurSauvegarde *visiteur) const
  * \param      *visiteur instance de VisiteurLibrairie
  * \param      *s        socket permettant de dessiner en C++ avec un Client TCP/IP
  */
-const void *Croix::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
+const void *Segment::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
 {
     return visiteur->visite(this, s);
 }

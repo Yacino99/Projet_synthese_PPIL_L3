@@ -14,7 +14,7 @@ using namespace std;
 #include "Socket.h"
 #include "Formes.h"
 #include "Rond.h"
-#include "Croix.h"
+#include "Segment.h"
 #include "Triangle.h"
 #include "Polygone.h"
 #include "VisiteurSauvegarde.h"
@@ -22,7 +22,7 @@ using namespace std;
 
 #include "Expert.h"
 #include "ExpertChargementCOR.h"
-#include "ExpertChargementCroixCOR.h"
+#include "ExpertChargementSegmentCOR.h"
 #include "ExpertChargementPolygoneCOR.h"
 #include "ExpertChargementRondCOR.h"
 #include "ExpertChargementTriangleCOR.h"
@@ -135,7 +135,7 @@ int main()
 
         Formes * f1 ,*f2 , *f3;
         f1 = new Rond (300, 300, 30.0, "blue");
-        f2 = new Croix(30, 100, 100, 30, "red");
+        f2 = new Segment(30, 100, 100, 30, "red");
 
         // test du rond
         f1->dessine(new VisiteurLibrairieAwt, s);
@@ -179,7 +179,7 @@ int main()
         //f3->dessine(new VisiteurLibrairieAwt, s);
 
         //test croix rotation
-       /* Formes * f2 = new Croix(30, 100, 100, 30, "red");
+       /* Formes * f2 = new Segment(30, 100, 100, 30, "red");
         f2->dessine(new VisiteurLibrairieAwt, s);
         f2->rotation(f2->getCentreSymetrie(),M_PIl/6);
         f2->dessine(new VisiteurLibrairieAwt, s);

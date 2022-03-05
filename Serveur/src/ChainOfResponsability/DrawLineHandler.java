@@ -10,7 +10,7 @@ public class DrawLineHandler extends Handler {
     public boolean handle(String message , CadreDessin cadreDessin) throws InterruptedException {
 
 
-        if(message.toLowerCase().contains("croix"))
+        if(message.toLowerCase().contains("segment"))
         {
             int parOuvrante = message.indexOf("(");
 
@@ -18,7 +18,7 @@ public class DrawLineHandler extends Handler {
 
             type = type.toLowerCase().trim();
 
-            if(type.contains("croix") && !type.contains("group") )
+            if(type.contains("segment") && !type.contains("group") )
             {
 
                 int parFermante = message.indexOf(")");

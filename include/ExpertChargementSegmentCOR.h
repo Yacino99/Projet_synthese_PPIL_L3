@@ -1,22 +1,22 @@
 /**
- * \file      ExpertChargementCroixCOR.h
+ * \file      ExpertChargementSegmentCOR.h
  * \date      04 mars 2022
- * \brief     Classe ExpertChargementCroixCOR
+ * \brief     Classe ExpertChargementSegmentCOR
  * \details   Cette expert essaie de trouver une croix parmi les formes qui lui sont données
  */
 
-#ifndef PROJET_EXPERTCHARGEMENTCROIXCOR_H
-#define PROJET_EXPERTCHARGEMENTCROIXCOR_H
+#ifndef PROJET_EXPERTCHARGEMENTSEGMENTCOR_H
+#define PROJET_EXPERTCHARGEMENTSEGMENTCOR_H
 
 #include "ExpertChargementCOR.h"
 #include "Formes.h"
 
 using namespace std;
 
-class ExpertChargementCroixCOR : public ExpertChargementCOR
+class ExpertChargementSegmentCOR : public ExpertChargementCOR
 {
 public:
-    ExpertChargementCroixCOR(ExpertChargementCOR *suivant) : ExpertChargementCOR(suivant) {}
+    ExpertChargementSegmentCOR(ExpertChargementCOR *suivant) : ExpertChargementCOR(suivant) {}
 
     /**
      * \brief      Méthode du Design Pattern Chain of Responsibility
@@ -25,7 +25,7 @@ public:
      */
     Formes *resoudre1(const string &d) const
     {
-        const string cherche = "croix";
+        const string cherche = "segment";
         string::size_type pos = d.find(cherche);
         while (pos != string::npos)
         {
@@ -46,10 +46,10 @@ public:
             string couleur = d.substr(lastParenthesis + 1, d.size());
 
             // création de la forme en des données du fichier de visite
-            return new Croix(points[0], points[1], points[2], points[3], couleur);
+            return new Segment(points[0], points[1], points[2], points[3], couleur);
         }
         return NULL;
     };
 };
 
-#endif //PROJET_EXPERTCHARGEMENTCROIXCOR_H
+#endif //PROJET_EXPERTCHARGEMENTSEGMENTCOR_H

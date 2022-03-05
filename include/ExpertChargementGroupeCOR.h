@@ -14,7 +14,7 @@
 
 #include "Formes.h"
 #include "ExpertChargementCOR.h"
-#include "ExpertChargementCroixCOR.h"
+#include "ExpertChargementSegmentCOR.h"
 #include "ExpertChargementRondCOR.h"
 #include "ExpertChargementPolygoneCOR.h"
 #include "ExpertChargementTriangleCOR.h"
@@ -60,7 +60,7 @@ public:
 
             vector<Formes*> res;
             ExpertChargementCOR* expert;
-            expert = new ExpertChargementCroixCOR(NULL);
+            expert = new ExpertChargementSegmentCOR(NULL);
             expert = new ExpertChargementPolygoneCOR(expert);
             expert = new ExpertChargementRondCOR(expert);
             expert = new ExpertChargementTriangleCOR(expert);

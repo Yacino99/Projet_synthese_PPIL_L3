@@ -1,7 +1,7 @@
 /**
- * \file      Croix.h
+ * \file      Segment.h
  * \date      04 mars 2022
- * \brief     Classe Croix
+ * \brief     Classe Segment
  */
 
 #ifndef PROJETT_CROIX_H
@@ -18,23 +18,25 @@
 
 using namespace std;
 
-class Croix : public Formes
+class Segment : public Formes
 {
 private :
     Vecteur2D a, b;
 
 public:
-    Croix(double g, double h, double d, double b, const string& couleur = " ") : Formes(couleur) , a(g,h),b(d,b) {}
-    Croix(Vecteur2D a, Vecteur2D b,  Socket* s, const string& couleur = " ") : Formes(couleur), a(a),b(b) {}
+    /**  \brief  Constructeur  */
+    Segment(double g, double h, double d, double b, const string& couleur = " ") : Formes(couleur) , a(g, h), b(d, b) {}
+    /**  \brief  Constructeur  */
+    Segment(Vecteur2D a, Vecteur2D b, Socket* s, const string& couleur = " ") : Formes(couleur), a(a), b(b) {}
 
     double calculerAire() const { return 0; }
 
     Vecteur2D getCentreSymetrie() const;
 
 
-    Croix* clone() const { return new Croix(*this); }
-    virtual ~Croix() {}
-    friend ostream& operator << (ostream& os, const Croix& m);
+    Segment* clone() const { return new Segment(*this); }
+    virtual ~Segment() {}
+    friend ostream& operator << (ostream& os, const Segment& m);
     operator string() const;
 
     void translation(const Vecteur2D &u);
@@ -45,7 +47,7 @@ public:
     const void *dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 };
 
-inline ostream& operator << (ostream& os, const Croix& m)
+inline ostream& operator << (ostream& os, const Segment& m)
 {
     return os << (string)m;
 }
