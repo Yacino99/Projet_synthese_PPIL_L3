@@ -113,29 +113,14 @@ void GroupeFormes::appliquerRotation(const Vecteur2D &u, const double angle, boo
     }
 }
 
-/**
- * \brief      Méthode qui retourne la somme des aires
- * \details    Cette méthode retourne la somme des aires de toutes les formes du groupe
- * \return     Un double
- */
-const double GroupeFormes::sommeAires() const
-{
-    double somme = 0;
-    for (int i = 0; i < formes.size(); ++i)
-    {
-        somme += formes[i]->calculerAire();
-    }
-    return somme;
-}
-
 void GroupeFormes::translation(const Vecteur2D &u)
 {
-
+    appliquerTranslation(u, false);
 }
 
 void GroupeFormes::homothetie(const Vecteur2D &u, double k)
 {
-
+    appliquerHomothetie(u, k, false);
 }
 
 Vecteur2D GroupeFormes::getCentreSymetrie() const
@@ -143,6 +128,11 @@ Vecteur2D GroupeFormes::getCentreSymetrie() const
     return Vecteur2D();
 }
 
+/**
+ * \brief      Méthode qui retourne la somme des aires
+ * \details    Cette méthode retourne la somme des aires de toutes les formes du groupe
+ * \return     Un double
+ */
 double GroupeFormes::calculerAire() const
 {
     double somme = 0;
@@ -155,7 +145,7 @@ double GroupeFormes::calculerAire() const
 
 void GroupeFormes::rotation(const Vecteur2D &u, const double angle)
 {
-
+    appliquerRotation(u, angle, false);
 }
 
 /**

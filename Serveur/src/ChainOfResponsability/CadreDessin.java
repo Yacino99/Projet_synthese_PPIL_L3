@@ -5,12 +5,12 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * destin� � recevoir des dessins r�alis�s en Active-Rendering
+ * destine e recevoir des dessins realises en Active-Rendering
  *
- * paint() est d�sactiv�e
+ * paint() est desactivee
  *
- * pourrait �tre am�lior�e par l'utilisation d'un Canvas : Panel sp�cialis� pour le dessin
- * pourrait �tre am�lior�e par l'utilisation de coordonn�es relatives plut�t que des coordonn�es en pixels
+ * pourrait etre amelioree par l'utilisation d'un Canvas : Panel specialise pour le dessin
+ * pourrait etre amelioree par l'utilisation de coordonnees relatives plutet que des coordonnees en pixels
  * */
 public class CadreDessin extends Frame
 {
@@ -18,13 +18,13 @@ public class CadreDessin extends Frame
     public final int bordGauche, bordSuperieur;
 
     /**
-     * @param titre : titre de la fen�tre
-     * @param ox : abscisse souhait� pour le bord gauche de la fen�tre
-     * @param oy : ordonn�e souhait�e pour le bord sup�rieur de la fen�tre
-     * @param largeur : largeur souhait�e pour la fen�tre
-     * @param hauteur : hauteur souhait�e pour la fen�tre
+     * @param titre : titre de la fenetre
+     * @param ox : abscisse souhaite pour le bord gauche de la fenetre
+     * @param oy : ordonnee souhaitee pour le bord superieur de la fenetre
+     * @param largeur : largeur souhaitee pour la fenetre
+     * @param hauteur : hauteur souhaitee pour la fenetre
      *
-     * l'unit� pour ces 4 param�tres est le pixel
+     * l'unite pour ces 4 parametres est le pixel
      *
      * */
     public CadreDessin(String titre, int ox, int oy, int largeur, int hauteur) throws InterruptedException
@@ -33,7 +33,7 @@ public class CadreDessin extends Frame
 // ------------------ parametrage de la position et des dimensions de la fenetre --------------------------
         Toolkit tk = Toolkit.getDefaultToolkit();
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        int le, he; // largeur �cran, hauteur �cran
+        int le, he; // largeur ecran, hauteur ecran
 
         Dimension dim = tk.getScreenSize(); // dimensions de l'ecran
 
@@ -59,7 +59,7 @@ public class CadreDessin extends Frame
 
         int nombreBuffers = 2;
         this.createBufferStrategy(nombreBuffers);
-        Thread.sleep(100);   // il faut attendre un minimum de 50 ms pour que le buffer soit op�rationnel
+        Thread.sleep(100);   // il faut attendre un minimum de 50 ms pour que le buffer soit operationnel
         this.graphics = this.getBufferStrategy().getDrawGraphics();
 
         addWindowListener (new WindowAdapter() {

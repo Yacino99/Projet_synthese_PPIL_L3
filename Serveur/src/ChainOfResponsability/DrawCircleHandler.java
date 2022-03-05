@@ -1,3 +1,10 @@
+/**
+ * \file      ExpertChargementPolygoneCOR.h
+ * \date      04 mars 2022
+ * \brief     Classe ExpertChargementPolygoneCOR
+ * \details   Cette expert essaie de trouver un polygone parmi les formes qui lui sont données
+ */
+
 package ChainOfResponsability;
 
 import java.awt.*;
@@ -5,7 +12,13 @@ import java.util.HashMap;
 
 public class DrawCircleHandler extends Handler{
 
-
+    // FONCTION
+    /** \brief Cette fonciton fait ...
+     *  \details zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.
+     *  \param 1 description param1
+     *  \param 2 description param2
+     *  \returns Double
+     */
     @Override
     public boolean handle(String message, CadreDessin cadreDessin) throws InterruptedException {
 
