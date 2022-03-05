@@ -1,6 +1,8 @@
-//
-// Created by user on 14/02/2022.
-//
+/**
+ * \file      Matrice22.cpp
+ * \date      04 mars 2022
+ * \brief     Implémentation de la classe Matrice22
+ */
 
 #pragma once
 

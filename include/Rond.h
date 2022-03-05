@@ -1,5 +1,7 @@
-/**  @file Rond.h
- *   @brief This file is marvelous.
+/**
+ * \file      Rond.h
+ * \date      04 mars 2022
+ * \brief     Classe Rond
  */
 
 #ifndef PROJETT_ROND_H
@@ -23,7 +25,9 @@ private :
 
 public:
 
+    /**  \brief  Constructeur  */
 	Rond(int x, int y, double rayon, const string& color = " ") : Formes(color), rayon(rayon),v(x,y) {}
+    /**  \brief  Constructeur  */
     Rond(Vecteur2D v, double rayon, const string& color = " ") : Formes(color), rayon(rayon),v(v) {}
 
 	double calculerAire() const;
@@ -31,15 +35,16 @@ public:
 	virtual ~Rond() {}
 
 	Rond* clone() const{ return new Rond(*this); }
+    /**  \brief  Opération de rotation */
     void rotation(const Vecteur2D &u, const double angle );
-
+    /**  \brief  Opération de translation */
     void translation(const Vecteur2D& u);
+    /**  \brief  Opération d'homothétie */
     void homothetie(const Vecteur2D& u,double k) ;
 
     operator string() const;
 	friend ostream& operator << (ostream& os, const Rond& m);
 
-    // DP Visitor
     const void *sauvegarde(const VisiteurSauvegarde * visiteur) const;
     const void *dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 };

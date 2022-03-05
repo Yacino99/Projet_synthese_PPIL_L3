@@ -1,6 +1,8 @@
-//
-// Created by Yacino99 on 24/01/2022.
-//
+/**
+ * \file      main.cpp
+ * \date      04 mars 2022
+ * \brief     Main
+ */
 
 #include <iostream>
 

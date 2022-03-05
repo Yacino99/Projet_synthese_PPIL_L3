@@ -1,6 +1,8 @@
-//
-// Created by Anwender on 27/02/2022.
-//
+/**
+ * \file      VisiteurLibrairieAwt.cpp
+ * \date      04 mars 2022
+ * \brief     Implémentation de la classe VisiteurLibrairieAwt
+ */
 
 using namespace std;
 

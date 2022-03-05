@@ -1,6 +1,8 @@
-//
-// Created by user on 06/02/2022.
-//
+/**
+ * \file      Socket.h
+ * \date      04 mars 2022
+ * \brief     Classe Socket
+ */
 
 #ifndef PROJETT_SOCKET_H
 #define PROJETT_SOCKET_H
@@ -18,7 +20,6 @@
 
 class Socket
 {
-
 private:
     SOCKET sock;
     int familleAdresse;

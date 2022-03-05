@@ -1,6 +1,9 @@
-//
-// Created by Anwender on 03/03/2022.
-//
+/**
+ * \file      GroupeFormes.h
+ * \date      04 mars 2022
+ * \brief     Classe GroupeFormes
+ * \details   Un groupe de formes est représenté par un vecteur de formes
+ */
 
 #ifndef PROJET_GROUPEFORMES_H
 #define PROJET_GROUPEFORMES_H
@@ -18,11 +21,12 @@ private:
     string couleur;
 
 public:
+    /**  \brief  Constructeur  */
     explicit GroupeFormes(const string& couleur = " ") : Formes(couleur)
     {
         this->couleur = couleur;
     }
-
+    /**  \brief  Constructeur  */
     GroupeFormes(vector<Formes*> shapes, const string& couleur = " ") : Formes(couleur)
     {
         this->couleur = couleur;
@@ -31,20 +35,24 @@ public:
 
     virtual ~GroupeFormes();
 
-    //getters / setters
     Formes *getForme(int i) const;
     void setCouleur(const string &color);
     const string getCouleur() const { return couleur; }
 
     GroupeFormes &addForme(const Formes *f);
 
-    // trandformations
+    /**  \brief  Opération de translation */
     void translation(const Vecteur2D& u) ;
+    /**  \brief  Opération d'homothétie */
     void homothetie(const Vecteur2D& u,double k) ;
+    /**  \brief  Opération de rotation */
     void rotation(const Vecteur2D &u, const double angle ) ;
 
+    /**  \brief  Opération de translation */
     void appliquerTranslation(const Vecteur2D &u, bool centreSymetrie);
+    /**  \brief  Opération d'homothétie */
     void appliquerHomothetie(const Vecteur2D &u, const double k, bool centreSymetrie);
+    /**  \brief  Opération de rotation */
     void appliquerRotation(const Vecteur2D &u, const double angle, bool centreSymetrie) ;
 
     double calculerAire() const ;
@@ -54,7 +62,6 @@ public:
 
     const double sommeAires() const;
 
-    // DP Visitor
     const void * sauvegarde(const VisiteurSauvegarde * visiteur) const;
     const void * dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 

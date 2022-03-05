@@ -1,6 +1,8 @@
-//
-// Created by user on 11/02/2022.
-//
+/**
+ * \file      Polygone.h
+ * \date      04 mars 2022
+ * \brief     Classe Polygone
+ */
 
 #pragma once
 
@@ -19,18 +21,21 @@ using namespace std;
 
 class Polygone : public Formes
 {
-
 private:
     vector<Vecteur2D*> tab_vect;
 
 public:
-
+    /**  \brief  Constructeur  */
     Polygone(const string& couleur=" ") : Formes(couleur) {}
+    /**  \brief  Constructeur  */
     Polygone(vector<Vecteur2D*> vect, const string& couleur=" ") : Formes(couleur) { tab_vect=vect; }
 
     Polygone* clone() const;
+    /**  \brief  Opération de translation */
     void translation(const Vecteur2D& u);
+    /**  \brief  Opération d'homothétie */
     void homothetie(const Vecteur2D& u, double k);
+    /**  \brief  Opération de rotation */
     void rotation(const Vecteur2D &u, const double angle );
 
     Vecteur2D getCentreSymetrie() const;
@@ -40,7 +45,6 @@ public:
     Polygone& addPoint(const Vecteur2D* v);
     friend ostream& operator << (ostream& os, const Polygone& m);
 
-    // DP Visitor
     const void *sauvegarde(const VisiteurSauvegarde * visiteur) const;
     const void *dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 };

@@ -1,15 +1,12 @@
-//
-// Created by user on 06/02/2022.
-//
+/**
+ * \file      Erreur.h
+ * \date      04 mars 2022
+ * \brief     Classe Erreur
+ */
 
 #ifndef PROJETT_ERREUR_H
 #define PROJETT_ERREUR_H
 
-/*
-#ifdef _MSC_VER
-#define _CRT_SECURE_NO_WARNINGS
-#endif
-*/
 using namespace std;
 #include <string>
 #include <iostream>
@@ -27,7 +24,6 @@ public:
 
     friend ostream& operator << (ostream& os, const Erreur& erreur);
 };
-
 
 inline ostream& operator << (ostream& os, const Erreur& erreur)
 {

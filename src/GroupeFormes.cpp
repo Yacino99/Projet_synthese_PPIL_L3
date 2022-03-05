@@ -1,6 +1,8 @@
-//
-// Created by Anwender on 03/03/2022.
-//
+/**
+ * \file      GroupeFormes.cpp
+ * \date      04 mars 2022
+ * \brief     Implémentation de la classe GroupeFormes
+ */
 
 #include "GroupeFormes.h"
 #include "Formes.h"
@@ -52,6 +54,12 @@ GroupeFormes::operator string() const
     return os.str();
 }
 
+/**
+ * \brief      Méthode qui ajoute une forme au groupe actuel
+ * \details    Cette méthode ajoute une nouvelle forme au groupe de forme actuel.
+ * \param      *f la forme à ajouté
+ * \return     Un GroupeFormes
+ */
 GroupeFormes &GroupeFormes::addForme(const Formes *f)
 {
     Formes * newF = f->clone();
@@ -105,6 +113,11 @@ void GroupeFormes::appliquerRotation(const Vecteur2D &u, const double angle, boo
     }
 }
 
+/**
+ * \brief      Méthode qui retourne la somme des aires
+ * \details    Cette méthode retourne la somme des aires de toutes les formes du groupe
+ * \return     Un double
+ */
 const double GroupeFormes::sommeAires() const
 {
     double somme = 0;
@@ -145,11 +158,24 @@ void GroupeFormes::rotation(const Vecteur2D &u, const double angle)
 
 }
 
+/**
+ * \brief      Méthode du Design Pattern Visitor
+ * \details    Cette méthode sauvegarde() permet de visiter cette forme et d'appliquer
+ *             l'opération de sauvegarde associée à celle-ci grâce au Design Pattern Visitor.
+ * \param      *visiteur instance de VisiteurSauvegarde
+ */
 const void *GroupeFormes::sauvegarde(const VisiteurSauvegarde *visiteur) const
 {
     return visiteur->visite(this);
 }
 
+/**
+ * \brief      Méthode du Design Pattern Visitor
+ * \details    Cette méthode dessine() permet de visiter cette forme et d'appliquer
+ *             l'opération de dessin associée à celle-ci grâce au Design Pattern Visitor.
+ * \param      *visiteur instance de VisiteurLibrairie
+ * \param      *s        socket permettant de dessiner en C++ avec un Client TCP/IP
+ */
 const void *GroupeFormes::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
 {
     return visiteur->visite(this, s);

@@ -1,6 +1,9 @@
-//
-// Created by user on 06/02/2022.
-//
+/**
+ * \file      InitReseaux.h
+ * \date      04 mars 2022
+ * \brief     Classe InitReseaux
+ * \details   Classe singleton qui s'execute une seule fois pour initialiser TCP/IP
+ */
 
 #ifndef PROJETT_INITRESEAUX_H
 #define PROJETT_INITRESEAUX_H
@@ -10,8 +13,6 @@
 
 #include <WinSock2.h>
 #include "Erreur.h"
-
-// on se debrouille pour que cette classe soit instancié que une fois
 
 class InitReseaux
 {

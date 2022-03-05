@@ -1,5 +1,7 @@
-/**  @file Rond.cpp
- *   @brief This file is marvelous.
+/**
+ * \file      Rond.cpp
+ * \date      04 mars 2022
+ * \brief     Implémentation de la classe Rond
  */
 
 #include "Rond.h"
@@ -25,6 +27,10 @@ Rond::operator string() const
     return os.str();
 }
 
+/**
+ * \brief      Méthode qui retourne l'aire du rond
+ * \return     Un double
+ */
 double Rond::calculerAire() const
 {
     return (rayon * rayon) * PI;
@@ -42,11 +48,24 @@ void Rond::rotation(const Vecteur2D &u, const double angle)
     v =  M * (v - u) + u ;
 }
 
+/**
+ * \brief      Méthode du Design Pattern Visitor
+ * \details    Cette méthode sauvegarde() permet de visiter cette forme et d'appliquer
+ *             l'opération de sauvegarde associée à celle-ci grâce au Design Pattern Visitor.
+ * \param      *visiteur instance de VisiteurSauvegarde
+ */
 const void *Rond::sauvegarde(const VisiteurSauvegarde *visiteur) const
 {
     return visiteur->visite(this);
 }
 
+/**
+ * \brief      Méthode du Design Pattern Visitor
+ * \details    Cette méthode dessine() permet de visiter cette forme et d'appliquer
+ *             l'opération de dessin associée à celle-ci grâce au Design Pattern Visitor.
+ * \param      *visiteur instance de VisiteurLibrairie
+ * \param      *s        socket permettant de dessiner en C++ avec un Client TCP/IP
+ */
 const void *Rond::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
 {
     return visiteur->visite(this, s);

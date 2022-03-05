@@ -1,12 +1,9 @@
-//
-// Created by user on 06/02/2022.
-//
+/**
+ * \file      Erreur.cpp
+ * \date      04 mars 2022
+ * \brief     Implémentation de la classe Erreur
+ */
 
-/*
-#ifdef _MSC_VER
-#define _CRT_SECURE_NO_WARNINGS
-#endif
-*/
 #include <stdio.h>
 #include <string.h>
 #include <iostream>

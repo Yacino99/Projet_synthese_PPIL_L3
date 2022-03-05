@@ -1,6 +1,9 @@
-//
-// Created by Anwender on 12/02/2022.
-//
+/**
+ * \file      VisiteurSauvegardeTxt.cpp
+ * \date      04 mars 2022
+ * \brief     Implémentation de la classe VisiteurSauvegardeTxt
+ */
+
 #include <iostream>
 
 using namespace std;

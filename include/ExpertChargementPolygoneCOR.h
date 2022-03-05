@@ -1,6 +1,10 @@
-//
-// Created by Anwender on 18/02/2022.
-//
+/**
+ * \file      ExpertChargementPolygoneCOR.h
+ * \date      04 mars 2022
+ * \brief     Classe ExpertChargementPolygoneCOR
+ * \details   Cette expert essaie de trouver un polygone parmi les formes qui lui sont données
+ */
+
 
 #ifndef PROJET_EXPERTCHARGEMENTPOLYGONECOR_H
 #define PROJET_EXPERTCHARGEMENTPOLYGONECOR_H
@@ -16,6 +20,11 @@ class ExpertChargementPolygoneCOR : public ExpertChargementCOR
 public:
     ExpertChargementPolygoneCOR(ExpertChargementCOR *suivant) : ExpertChargementCOR(suivant) {}
 
+    /**
+     * \brief      Méthode du Design Pattern Chain of Responsibility
+     * \details    Cette méthode resoudre1() va essayer de résoudre le problème. S'il le résoud, il retourne la forme trouvé sinon il retourne NULL et l'expert suivant est appelé.
+     * \param      *d le problème à résoudre, ici une ligne lue depuis le fichier de sauvegarde réprésentant une forme
+     */
     Formes *resoudre1(const string &d) const
     {
         const string cherche = "polygone";

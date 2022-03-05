@@ -1,6 +1,8 @@
-//
-// Created by Anwender on 14/02/2022.
-//
+/**
+ * \file      Triangle.cpp
+ * \date      04 mars 2022
+ * \brief     Implémentation de la classe Triangle
+ */
 
 #include "Triangle.h"
 #include "Matrice22.h"
@@ -29,13 +31,14 @@ Triangle::operator string() const
     return os.str();
 }
 
-
 /**
- * La formule de Héron stipule que l'aire A d'un triangle de côtés de longueurs
- * a , b et c est A = √ d ( d − a ) ( d − b ) ( d − c )
- * où d est le demi-périmètre du triangle ou la moitié de son périmètre.
- * perimetre = somme des 3 cotes du triangle
- */
+* \brief      Méthode qui retourne l'aire du triangle
+* \details    La formule de Héron stipule que l'aire A d'un triangle de côtés de longueurs
+*             a , b et c est A = √ d ( d − a ) ( d − b ) ( d − c )
+*             où d est le demi-périmètre du triangle ou la moitié de son périmètre. \n
+*             Perimètre = somme des 3 cotes du triangle.
+* \return     Un double
+*/
 double Triangle::calculerAire() const
 {
     double ab = a.distance(b) , ac = a.distance(c) , bc = b.distance(c);
@@ -64,12 +67,24 @@ Vecteur2D Triangle::getCentreSymetrie() const
     return g;
 }
 
-
+/**
+ * \brief      Méthode du Design Pattern Visitor
+ * \details    Cette méthode sauvegarde() permet de visiter cette forme et d'appliquer
+ *             l'opération de sauvegarde associée à celle-ci grâce au Design Pattern Visitor.
+ * \param      *visiteur instance de VisiteurSauvegarde
+ */
 const void *Triangle::sauvegarde(const VisiteurSauvegarde *visiteur) const
 {
     return visiteur->visite(this);
 }
 
+/**
+ * \brief      Méthode du Design Pattern Visitor
+ * \details    Cette méthode dessine() permet de visiter cette forme et d'appliquer
+ *             l'opération de dessin associée à celle-ci grâce au Design Pattern Visitor.
+ * \param      *visiteur instance de VisiteurLibrairie
+ * \param      *s        socket permettant de dessiner en C++ avec un Client TCP/IP
+ */
 const void *Triangle::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
 {
     return visiteur->visite(this, s);

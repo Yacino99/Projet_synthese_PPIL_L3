@@ -1,6 +1,8 @@
-//
-// Created by user on 11/02/2022.
-//
+/**
+ * \file      Polygone.cpp
+ * \date      04 mars 2022
+ * \brief     Implémentation de la classe Polygone
+ */
 
 #include "Polygone.h"
 #include "Vecteur2D.h"
@@ -9,6 +11,11 @@
 #include "VisiteurLibrairie.h"
 #include "Triangle.h"
 
+/**
+ * \brief      Méthode qui retourne l'aire du polygone
+ * \details    Cette méthode retourne la somme des aires de toutes les formes du groupe
+ * \return     Un double
+ */
 double Polygone::calculerAire() const
 {
     if (tab_vect.size() < 3)
@@ -44,6 +51,10 @@ Polygone::operator string() const
     return os.str();
 }
 
+/**
+ * \brief      Méthode qui ajoute un point au polygone
+ * \return     Un Polygone
+ */
 Polygone& Polygone::addPoint(const Vecteur2D* v)
 {
     tab_vect.push_back(v->clone());
@@ -106,11 +117,24 @@ Vecteur2D Polygone::getCentreSymetrie() const
     return Vecteur2D(x/tab_vect.size(),y/tab_vect.size());
 }
 
+/**
+ * \brief      Méthode du Design Pattern Visitor
+ * \details    Cette méthode sauvegarde() permet de visiter cette forme et d'appliquer
+ *             l'opération de sauvegarde associée à celle-ci grâce au Design Pattern Visitor.
+ * \param      *visiteur instance de VisiteurSauvegarde
+ */
 const void *Polygone::sauvegarde(const VisiteurSauvegarde *visiteur) const
 {
     return visiteur->visite(this);
 }
 
+/**
+ * \brief      Méthode du Design Pattern Visitor
+ * \details    Cette méthode dessine() permet de visiter cette forme et d'appliquer
+ *             l'opération de dessin associée à celle-ci grâce au Design Pattern Visitor.
+ * \param      *visiteur instance de VisiteurLibrairie
+ * \param      *s        socket permettant de dessiner en C++ avec un Client TCP/IP
+ */
 const void *Polygone::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
 {
     return visiteur->visite(this, s);

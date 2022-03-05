@@ -1,6 +1,8 @@
-//
-// Created by user on 06/02/2022.
-//
+/**
+ * \file      InitReseaux.cpp
+ * \date      04 mars 2022
+ * \brief     Implémentation de la classe InitReseaux
+ */
 
 #pragma once
 

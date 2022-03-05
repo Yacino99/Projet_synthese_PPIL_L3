@@ -1,6 +1,8 @@
-//
-// Created by Yacino99 on 24/01/2022.
-//
+/**
+ * \file      Matrice22.h
+ * \date      04 mars 2022
+ * \brief     Classe Matrice22
+ */
 
 #ifndef PROJETT_MATRICE22_H
 #define PROJETT_MATRICE22_H
