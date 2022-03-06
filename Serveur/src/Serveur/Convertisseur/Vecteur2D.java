@@ -1,14 +1,17 @@
+/**
+ * \file      Vecteur2D.java
+ * \date      06 mars 2022
+ * \brief     Classe Vecteur2D
+ */
+
 package Serveur.Convertisseur;
 
 import java.util.ArrayList;
 
-/**
- * Classe Vecteur2D
- */
 public class Vecteur2D {
     double x,y;
     /**
-     * Constructeur
+     * \brief Constructeur
      * @param x
      * @param y
      */
@@ -17,7 +20,7 @@ public class Vecteur2D {
         this.y = y;
     }
     /**
-     * Constructeur par recopie
+     * \brief Constructeur par recopie
      * @param v
      */
     public Vecteur2D(Vecteur2D v) {
@@ -26,7 +29,7 @@ public class Vecteur2D {
     }
 
     /**
-     * Constructeur
+     * \brief Constructeur
      * @param vect : une chaine de caractere cense etre sous la forme de (double , double ) ou double est un nombre
      */
     public Vecteur2D(String vect) {
@@ -66,7 +69,7 @@ public class Vecteur2D {
         this.y = y;
     }
     /**
-     * additionne deux vecteurs ensemble
+     * \brief additionne deux vecteurs ensemble
      * @param v
      * @return Vecteur2D
      */
@@ -74,7 +77,7 @@ public class Vecteur2D {
         return new Vecteur2D(v.getX() + x,v.getY() + y);
     }
     /**
-     * soustrait deux vecteurs ensemble
+     * \brief soustrait deux vecteurs ensemble
      * @param v
      * @return Vecteur2D
      */
@@ -82,7 +85,7 @@ public class Vecteur2D {
         return new Vecteur2D(x -v.getX(),y - v.getY());
     }
     /**
-     * soustrait double au Vecteur2D
+     * \brief soustrait double au Vecteur2D
      * @param n
      * @return Vecteur2D
      */
@@ -90,7 +93,7 @@ public class Vecteur2D {
         return new Vecteur2D(x - n,y - n);
     }
     /**
-     * multiplie un double au Vecteur2D
+     * \brief multiplie un double au Vecteur2D
      * @param f
      * @return Vecteur2D
      */
@@ -99,7 +102,7 @@ public class Vecteur2D {
     }
 
     /**
-     * retourne un Vecteur2D contenant les valeur absolue de x y et z du Vecteur2D
+     * \brief retourne un Vecteur2D contenant les valeur absolue de x y et z du Vecteur2D
      * @return Vecteur2D
      */
     public Vecteur2D valeurAbs() {
@@ -110,11 +113,10 @@ public class Vecteur2D {
 
 
     /**
-     * retourne la distance entre deux points ou vecteurs dans un plan
+     * \brief retourne la distance entre deux points ou vecteurs dans un plan
      * @param b : vecteur b pour faire la distance
      * @return un double qui est la distance entre deux vecteurs dans un plan
      */
-
     public double distance( Vecteur2D b) {
 
         double opg = (b.x-x)*(b.x-x);

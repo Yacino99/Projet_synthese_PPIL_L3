@@ -1,8 +1,12 @@
+/**
+ * \file      TransfoMondeEcran.java
+ * \date      06 mars 2022
+ * \brief     Classe TransfoMondeEcran
+ * \details   classe qui s'occupe des calculs de transformations monde vers ecran et ecran vers monde
+ */
+
 package Serveur.Convertisseur;
 
-/**
- * \brief : classe qui s'occupe des calculs de transformations monde vers ecran et ecran vers monde
- */
 
 public class TransfoMondeEcran {
 

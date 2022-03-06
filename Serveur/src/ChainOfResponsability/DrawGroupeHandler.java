@@ -1,3 +1,9 @@
+/**
+ * \file      DrawGroupeHandler.java
+ * \date      06 mars 2022
+ * \brief     Classe DrawGroupeHandler
+ */
+
 package ChainOfResponsability;
 
 import Serveur.Convertisseur.Vecteur2D;
@@ -6,15 +12,14 @@ public class DrawGroupeHandler extends Handler{
 
 
     /** \brief :parseur et dessinateur d'un groupe
-     * \details : appelles les autres chaines de responsabilite pour parser les formes
-     *  \message : message a parser.
-     *  \cadreDessin : la fenetre dont on veut dessiner dessus
-     *  \Isgroupe : permet de savoir si on dessine dans la meme fenetre ou sur une autre
-     *  \Vmin : connaitre le point bas Gauche de l'ecran pour un groupe
-     *  \Vmax : connaitre le point haut droit de l'ecran pour un groupe
+     *  \details : appelles les autres chaines de responsabilite pour parser les formes
+     *  \param message : message a parser.
+     *  \param cadreDessin : la fenetre dont on veut dessiner dessus
+     *  \param Isgroupe : permet de savoir si on dessine dans la meme fenetre ou sur une autre
+     *  \param Vmin : connaitre le point bas Gauche de l'ecran pour un groupe
+     *  \param Vmax : connaitre le point haut droit de l'ecran pour un groupe
      *  \returns booleen qui permet de dire si il ya un prochain expert ou pas
      */
-
     @Override
     public boolean handle(String message , CadreDessin cadreDessin,boolean Isgroupe,
                           Vecteur2D Vmin,Vecteur2D Vmax) throws InterruptedException {

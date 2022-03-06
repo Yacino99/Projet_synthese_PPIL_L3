@@ -40,7 +40,13 @@ public:
     /**  \brief  Opération de translation */
     void translation(const Vecteur2D& u);
 
+    /** \brief Avoir le point X minimal et point Y minimal  du plan selon la figure
+     * @return un vecteur2D qui contient le le point min x et le point min Y
+     */
     Vecteur2D getMinXMinY() const ;
+    /** \brief  Avoir le point X maximal et point Y maximal  du plan selon la figure
+ * @return un vecteur2D qui contient le le point max x et le point max Y
+ */
     Vecteur2D getMaxXMaxY() const ;
 
 

@@ -1,8 +1,12 @@
+/**
+ * \file      Config.java
+ * \date      06 mars 2022
+ * \brief     Classe Config
+ * \details configuration de la fenetre
+ */
+
 package Serveur.Convertisseur;
 
-/**
- * @brief configuration de la fenetre
- */
 public class Config {
 
     public final static int LARGEUR = 600;

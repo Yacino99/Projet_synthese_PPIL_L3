@@ -1,3 +1,12 @@
+/**
+ * \file      Handler.java
+ * \date      06 mars 2022
+ * \brief     Classe Handler
+ * \details   destine a gerer la chaine de responsaibilite ceci est l'expert pere abstrait
+ *              chaque classe qui derive de celle ci est centre etre un expert qui sait dessiner un forme specifique
+ *              contient une hashmap dans le contructeur qui permer d'associer la couleur en String a une classe COLOR
+ */
+
 package ChainOfResponsability;
 
 import Serveur.Convertisseur.Vecteur2D;
@@ -7,13 +16,6 @@ import java.io.BufferedReader;
 import java.io.PrintStream;
 import java.util.HashMap;
 
-
-/**
- * destine a gerer la chaine de responsaibilite ceci est l'expert pere abstrait
- * chaque classe qui derive de celle ci est centre etre un expert qui sait dessiner un forme specifique
- *
- * contient une hashmap dans le contructeur qui permer d'associer la couleur en String a une classe COLOR
- * */
 
 public abstract class  Handler {
     private Handler next;
@@ -25,9 +27,8 @@ public abstract class  Handler {
     protected HashMap<String,Color> map=new HashMap<String,Color>();
 
 /**
- * Constructeur contient l'initialisation de la hashmap et les ajout des couleurs
- * **/
-
+ *  \brief Constructeur contient l'initialisation de la hashmap et les ajout des couleurs
+ **/
     protected Handler(){
         map.put("red",Color.red);
         map.put("blue",Color.BLUE);

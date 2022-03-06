@@ -1,3 +1,10 @@
+/**
+ * \file      TestServeurFormes.java
+ * \date      06 mars 2022
+ * \brief     Classe TestServeurFormes
+ * \details   classe main qui appelles la classe interlocteur et la chaine de responsabilite
+ */
+
 package Serveur;
 
 import ChainOfResponsability.*;
@@ -6,9 +13,6 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
- * @brief : classe main qui appelles la classe interlocteur et la chaine de responsabilite
- */
 public class TestServeurFormes {
 
     public static void main(String[] args) {

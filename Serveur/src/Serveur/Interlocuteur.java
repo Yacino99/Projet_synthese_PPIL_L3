@@ -1,3 +1,9 @@
+/**
+ * \file      Interlocuteur.java
+ * \date      06 mars 2022
+ * \brief     Classe Interlocuteur
+ */
+
 package Serveur;
 
 import ChainOfResponsability.*;
@@ -31,7 +37,6 @@ public class Interlocuteur extends Thread{
      * @param expert : l'expert sur lequelle il s'occupe de dessiner les requetes
      * @throws IOException : Erreur de thread et de connexion
      */
-
     public Interlocuteur(Socket socket , int noClient, Handler expert) throws IOException {
         this.numClient=noClient;
         this.fluxEntrant = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -42,7 +47,6 @@ public class Interlocuteur extends Thread{
     /**
      * \brief activer le thread de la classe pour interagir avec le client
      */
-
     @Override
     public void run() {
         try {

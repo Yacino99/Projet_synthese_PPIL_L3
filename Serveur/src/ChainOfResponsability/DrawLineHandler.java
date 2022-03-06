@@ -1,3 +1,9 @@
+/**
+ * \file      DrawLineHandler.java
+ * \date      06 mars 2022
+ * \brief     Classe DrawLineHandler
+ */
+
 package ChainOfResponsability;
 
 import Serveur.Convertisseur.Config;
@@ -12,11 +18,11 @@ public class DrawLineHandler extends Handler {
 
 
     /** \brief parseur et dessinateur d'un seguement
-     *  \message : message a parser.
-     *  \cadreDessin : la fenetre dont on veut dessiner dessus
-     *  \Isgroupe : permet de savoir si on dessine dans la meme fenetre ou sur une autre
-     *  \Vmin : connaitre le point bas Gauche de l'ecran pour un groupe
-     *  \Vmax : connaitre le point haut droit de l'ecran pour un groupe
+     *  \param message : message a parser.
+     *  \param cadreDessin : la fenetre dont on veut dessiner dessus
+     *  \param Isgroupe : permet de savoir si on dessine dans la meme fenetre ou sur une autre
+     *  \param Vmin : connaitre le point bas Gauche de l'ecran pour un groupe
+     *  \param Vmax : connaitre le point haut droit de l'ecran pour un groupe
      *  \returns booleen qui permet de dire si il ya un prochain expert ou pas
      */
     @Override

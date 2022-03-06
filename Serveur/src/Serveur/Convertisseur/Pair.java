@@ -1,10 +1,12 @@
-package Serveur.Convertisseur;
-
-
 /**
- * \brief classe  generique Pair qui permet de contenir une paire d'objet de meme type , utile pour stocker les couples de vecteur
- * @param <T> objet quelconque et  generique de la classe
+ * \file      Pair.java
+ * \date      06 mars 2022
+ * \brief     Classe Pair
+ * \details   classe  generique Pair qui permet de contenir une paire d'objet de meme type , utile pour stocker les couples de vecteur
+ * \param <T> objet quelconque et  generique de la classe
  */
+
+package Serveur.Convertisseur;
 
 public class Pair<T> {
 

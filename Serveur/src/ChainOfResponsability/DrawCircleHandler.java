@@ -1,8 +1,7 @@
 /**
- * \file      ExpertChargementPolygoneCOR.h
- * \date      04 mars 2022
- * \brief     Classe ExpertChargementPolygoneCOR
- * \details   Cette expert essaie de trouver un polygone parmi les formes qui lui sont données
+ * \file      DrawCircleHandler.java
+ * \date      06 mars 2022
+ * \brief     Classe DrawCircleHandler
  */
 
 package ChainOfResponsability;
@@ -19,11 +18,11 @@ public class DrawCircleHandler extends Handler{
 
 
     /** \brief parseur et dessinateur d'un cercle
-     *  \message : message a parser.
-     *  \cadreDessin : la fenetre dont on veut dessiner dessus
-     *  \Isgroupe : permet de savoir si on dessine dans la meme fenetre ou sur une autre
-     *  \Vmin : connaitre le point bas Gauche de l'ecran pour un groupe
-     *  \Vmax : connaitre le point haut droit de l'ecran pour un groupe
+     *  \param message : message a parser.
+     *  \param cadreDessin : la fenetre dont on veut dessiner dessus
+     *  \param Isgroupe : permet de savoir si on dessine dans la meme fenetre ou sur une autre
+     *  \param Vmin : connaitre le point bas Gauche de l'ecran pour un groupe
+     *  \param Vmax : connaitre le point haut droit de l'ecran pour un groupe
      *  \returns booleen qui permet de dire si il ya un prochain expert ou pas
      */
     @Override
