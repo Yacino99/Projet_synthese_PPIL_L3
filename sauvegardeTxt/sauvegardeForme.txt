@@ -1,4 +1,4 @@
 rond ( 448.5 , 468 , 39 ) blue
 triangle ( 30 , 200 , 90 , 200 , 45 , 50 ) green
 triangle ( 90 , 290 , 150 , 290 , 105 , 140 ) blue
-groupe : [ rond ( 300 , 300 , 30 ) magenta ; segment ( 30 , 100 , 100 , 30 ) magenta ; polygone ( 175 , 135 , 270 , 200 , 200 , 220 , 130 , 180 ) magenta ; triangle ( 30 , 200 , 90 , 200 , 45 , 50 ) magenta ;  ] magenta I ( 30, 30) I ( 330, 330)
+groupe : [ rond ( 300 , 300 , 30 ) magenta ; segment ( 30 , 100 , 100 , 30 ) magenta ;

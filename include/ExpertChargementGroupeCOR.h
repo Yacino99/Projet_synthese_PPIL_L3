@@ -89,7 +89,7 @@ public:
             // Récupération et attribution de la couleur
             unsigned delimiteur = d.find("I");
             string couleur = d.substr(lastCrochet + 1, delimiteur);
-            cout << "========================================================" << couleur << endl;
+            //cout << "========================================================" << couleur << endl;
             g2->setCouleur(couleur);
 
             // Affichage du groupe de forme créé
