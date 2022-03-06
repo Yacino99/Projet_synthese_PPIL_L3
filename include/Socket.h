@@ -95,7 +95,7 @@ public:
 
         strcat_s(message, "\r\n");
         l = strlen(message);
-        cout << "ton message a ete : " << message << endl;
+        //cout << "ton message a ete : " << message << endl;
 
         int r = send(sock, message, l, 0);
         if (r == SOCKET_ERROR)

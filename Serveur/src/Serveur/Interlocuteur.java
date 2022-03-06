@@ -2,6 +2,9 @@
  * \file      Interlocuteur.java
  * \date      06 mars 2022
  * \brief     Classe Interlocuteur
+ * \details   classe interlocuteur qui permet de gerer le serveur java
+ *            elle recoit les requetes des client et appelle la chaine de responsabilite
+ *            afin de dessiner des formes
  */
 
 package Serveur;
@@ -17,11 +20,6 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
-/**
- * \brief : classe interlocuteur qui permet de gerer le serveur java
- * elle recoit les requetes des client et appelle la chaine de responsabilite
- * afin de dessiner des formes
- */
 public class Interlocuteur extends Thread{
 
     private int numClient;

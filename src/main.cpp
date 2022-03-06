@@ -76,15 +76,14 @@ int main()
         //groupeForm->dessine(new VisiteurLibrairieAwt, socket);
 
         // ======================= TRANSFORMATIONS GEOMETRIQUE =======================
-        cout << triangle << endl;
+        cout << "Triangle avant translation : " << triangle << endl;
         triangle->translation(u1*30);
-        cout << triangle << endl;
+        cout << "Triangle apres translation : " << triangle << endl;
 
         // ======================= SAUVEGARDE ET CHARGEMENT D'UNE FORME =======================
-        triangle->sauvegarde(new VisiteurSauvegardeTxt);
-        groupeForm->sauvegarde(new VisiteurSauvegardeTxt);
+        //triangle->sauvegarde(new VisiteurSauvegardeTxt);
+       //groupeForm->sauvegarde(new VisiteurSauvegardeTxt);
         ifstream ifs("../sauvegardeTxt/sauvegardeForme.txt", std::ifstream::in);
-        cout << "Lecture des valeurs : " << endl;
         vector<Formes *> listFormes = ChargeurListeFormes::charge(ifs);
 
         // ======================= ENVOIE AU SERVEUR DES FORMES CHARGEES POUR DESSIN =======================
