@@ -72,8 +72,6 @@ public:
     operator string() const  ;
     virtual GroupeFormes* clone() const {return new GroupeFormes(*this);}
 
-    const double sommeAires() const;
-
     const void * sauvegarde(const VisiteurSauvegarde * visiteur) const;
     const void * dessine(const VisiteurLibrairie * visiteur, Socket * s) const;
 
