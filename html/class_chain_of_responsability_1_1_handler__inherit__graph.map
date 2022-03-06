@@ -1,0 +1,7 @@
+<map id="ChainOfResponsability.Handler" name="ChainOfResponsability.Handler">
+<area shape="rect" id="node1" title=" " alt="" coords="5,111,207,138"/>
+<area shape="rect" id="node2" href="$class_chain_of_responsability_1_1_draw_circle_handler.html" title=" " alt="" coords="255,5,441,47"/>
+<area shape="rect" id="node3" href="$class_chain_of_responsability_1_1_draw_groupe_handler.html" title=" " alt="" coords="255,71,441,112"/>
+<area shape="rect" id="node4" href="$class_chain_of_responsability_1_1_draw_line_handler.html" title=" " alt="" coords="255,136,441,177"/>
+<area shape="rect" id="node5" href="$class_chain_of_responsability_1_1_draw_polygon_handler.html" title=" " alt="" coords="255,201,441,243"/>
+</map>

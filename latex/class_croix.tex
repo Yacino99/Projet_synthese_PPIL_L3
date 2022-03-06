@@ -1,0 +1,180 @@
+\hypertarget{class_croix}{}\doxysection{Croix Class Reference}
+\label{class_croix}\index{Croix@{Croix}}
+Inheritance diagram for Croix\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_croix}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_croix_aedb5e587768066ec19dbc736c5c661b6}\label{class_croix_aedb5e587768066ec19dbc736c5c661b6}} 
+{\bfseries Croix} (double g, double h, double d, double b, const string \&couleur=\char`\"{} \char`\"{})
+\item 
+\mbox{\Hypertarget{class_croix_a95ae250f01b57dd2ea4e7acfc84b1820}\label{class_croix_a95ae250f01b57dd2ea4e7acfc84b1820}} 
+{\bfseries Croix} (\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} a, \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} b, \mbox{\hyperlink{class_socket}{Socket}} $\ast$s, const string \&couleur=\char`\"{} \char`\"{})
+\item 
+double \mbox{\hyperlink{class_croix_ae7169f1dd01c37ef6e707216454b8a6a}{calculer\+Aire}} () const
+\item 
+\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \mbox{\hyperlink{class_croix_a58f138972d49673971ad092d36d4b7fe}{get\+Centre\+Symetrie}} () const
+\begin{DoxyCompactList}\small\item\em Fonction qui retourne le centre de symétrie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_croix}{Croix}} $\ast$ \mbox{\hyperlink{class_croix_a2d4afa98028ad6eeac8688e558574910}{clone}} () const
+\item 
+\mbox{\hyperlink{class_croix_aeaac61bc0b884d0cf9a90a0e0141c69b}{operator string}} () const
+\item 
+void \mbox{\hyperlink{class_croix_a37e586bc803c88c4992d336d8ff16e62}{translation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u)
+\begin{DoxyCompactList}\small\item\em Opération de translation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_croix_a9c19f4945e2b449cb4ddbb56ce9cb307}{homothetie}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, double k)
+\begin{DoxyCompactList}\small\item\em Opération d\textquotesingle{}homothétie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_croix_ab05bac433153869692718db850a8bfab}{rotation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, const double angle)
+\begin{DoxyCompactList}\small\item\em Opération de rotation. \end{DoxyCompactList}\item 
+const void $\ast$ \mbox{\hyperlink{class_croix_aab65be0299a3f81f3dcd8fe9f45ff9d6}{sauvegarde}} (const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$visiteur) const
+\begin{DoxyCompactList}\small\item\em Méthode du Design Pattern Visitor. \end{DoxyCompactList}\item 
+const void $\ast$ \mbox{\hyperlink{class_croix_a023cd7abd7c076476f1fb03f01350a1b}{dessine}} (const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$visiteur, \mbox{\hyperlink{class_socket}{Socket}} $\ast$s) const
+\begin{DoxyCompactList}\small\item\em Méthode du Design Pattern Visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_croix_afcb284fe6aaea32958dda59c24ff474c}\label{class_croix_afcb284fe6aaea32958dda59c24ff474c}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&os, const \mbox{\hyperlink{class_croix}{Croix}} \&m)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_croix_ae7169f1dd01c37ef6e707216454b8a6a}\label{class_croix_ae7169f1dd01c37ef6e707216454b8a6a}} 
+\index{Croix@{Croix}!calculerAire@{calculerAire}}
+\index{calculerAire@{calculerAire}!Croix@{Croix}}
+\doxysubsubsection{\texorpdfstring{calculerAire()}{calculerAire()}}
+{\footnotesize\ttfamily double Croix\+::calculer\+Aire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_croix_a2d4afa98028ad6eeac8688e558574910}\label{class_croix_a2d4afa98028ad6eeac8688e558574910}} 
+\index{Croix@{Croix}!clone@{clone}}
+\index{clone@{clone}!Croix@{Croix}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_croix}{Croix}} $\ast$ Croix\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_croix_a023cd7abd7c076476f1fb03f01350a1b}\label{class_croix_a023cd7abd7c076476f1fb03f01350a1b}} 
+\index{Croix@{Croix}!dessine@{dessine}}
+\index{dessine@{dessine}!Croix@{Croix}}
+\doxysubsubsection{\texorpdfstring{dessine()}{dessine()}}
+{\footnotesize\ttfamily const void $\ast$ Croix\+::dessine (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$}]{visiteur,  }\item[{\mbox{\hyperlink{class_socket}{Socket}} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode du Design Pattern Visitor. 
+
+Cette méthode \mbox{\hyperlink{class_croix_a023cd7abd7c076476f1fb03f01350a1b}{dessine()}} permet de visiter cette forme et d\textquotesingle{}appliquer l\textquotesingle{}opération de dessin associée à celle-\/ci grâce au Design Pattern Visitor. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$visiteur} & instance de \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} \\
+\hline
+{\em $\ast$s} & socket permettant de dessiner en C++ avec un Client TCP/\+IP \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_formes_a53ea87cfeffb370da0bd2ae88a42ff5a}{Formes}}.
+
+\mbox{\Hypertarget{class_croix_a58f138972d49673971ad092d36d4b7fe}\label{class_croix_a58f138972d49673971ad092d36d4b7fe}} 
+\index{Croix@{Croix}!getCentreSymetrie@{getCentreSymetrie}}
+\index{getCentreSymetrie@{getCentreSymetrie}!Croix@{Croix}}
+\doxysubsubsection{\texorpdfstring{getCentreSymetrie()}{getCentreSymetrie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} Croix\+::get\+Centre\+Symetrie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Fonction qui retourne le centre de symétrie. 
+
+\begin{DoxyReturn}{Returns}
+Un \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_croix_a9c19f4945e2b449cb4ddbb56ce9cb307}\label{class_croix_a9c19f4945e2b449cb4ddbb56ce9cb307}} 
+\index{Croix@{Croix}!homothetie@{homothetie}}
+\index{homothetie@{homothetie}!Croix@{Croix}}
+\doxysubsubsection{\texorpdfstring{homothetie()}{homothetie()}}
+{\footnotesize\ttfamily void Croix\+::homothetie (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération d\textquotesingle{}homothétie. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_a3c768569c25cae25d237582dc2f443e4}{Formes}}.
+
+\mbox{\Hypertarget{class_croix_aeaac61bc0b884d0cf9a90a0e0141c69b}\label{class_croix_aeaac61bc0b884d0cf9a90a0e0141c69b}} 
+\index{Croix@{Croix}!operator string@{operator string}}
+\index{operator string@{operator string}!Croix@{Croix}}
+\doxysubsubsection{\texorpdfstring{operator string()}{operator string()}}
+{\footnotesize\ttfamily Croix\+::operator string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_croix_ab05bac433153869692718db850a8bfab}\label{class_croix_ab05bac433153869692718db850a8bfab}} 
+\index{Croix@{Croix}!rotation@{rotation}}
+\index{rotation@{rotation}!Croix@{Croix}}
+\doxysubsubsection{\texorpdfstring{rotation()}{rotation()}}
+{\footnotesize\ttfamily void Croix\+::rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{const double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération de rotation. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_ae3959ecc4aecaa88086a15d4be006647}{Formes}}.
+
+\mbox{\Hypertarget{class_croix_aab65be0299a3f81f3dcd8fe9f45ff9d6}\label{class_croix_aab65be0299a3f81f3dcd8fe9f45ff9d6}} 
+\index{Croix@{Croix}!sauvegarde@{sauvegarde}}
+\index{sauvegarde@{sauvegarde}!Croix@{Croix}}
+\doxysubsubsection{\texorpdfstring{sauvegarde()}{sauvegarde()}}
+{\footnotesize\ttfamily const void $\ast$ Croix\+::sauvegarde (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$}]{visiteur }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode du Design Pattern Visitor. 
+
+Cette méthode \mbox{\hyperlink{class_croix_aab65be0299a3f81f3dcd8fe9f45ff9d6}{sauvegarde()}} permet de visiter cette forme et d\textquotesingle{}appliquer l\textquotesingle{}opération de sauvegarde associée à celle-\/ci grâce au Design Pattern Visitor. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$visiteur} & instance de \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_formes_a80a34354727d0a57aec870afe74d7297}{Formes}}.
+
+\mbox{\Hypertarget{class_croix_a37e586bc803c88c4992d336d8ff16e62}\label{class_croix_a37e586bc803c88c4992d336d8ff16e62}} 
+\index{Croix@{Croix}!translation@{translation}}
+\index{translation@{translation}!Croix@{Croix}}
+\doxysubsubsection{\texorpdfstring{translation()}{translation()}}
+{\footnotesize\ttfamily void Croix\+::translation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération de translation. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_afb2f76884ca35ca70f843af59d8cbe2a}{Formes}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_croix_8h}{Croix.\+h}}\item 
+src/\mbox{\hyperlink{_croix_8cpp}{Croix.\+cpp}}\end{DoxyCompactItemize}

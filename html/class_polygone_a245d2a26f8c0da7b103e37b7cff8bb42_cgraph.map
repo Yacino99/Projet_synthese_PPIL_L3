@@ -1,0 +1,4 @@
+<map id="Polygone::calculerAire" name="Polygone::calculerAire">
+<area shape="rect" id="node1" title="Méthode qui retourne l&#39;aire du polygone." alt="" coords="5,5,157,32"/>
+<area shape="rect" id="node2" href="$class_triangle.html#a129c42d1f01fb66f514e9657c6dcb4e9" title="Méthode qui retourne l&#39;aire du triangle." alt="" coords="205,5,348,32"/>
+</map>

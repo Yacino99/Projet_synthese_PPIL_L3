@@ -1,0 +1,183 @@
+\hypertarget{class_triangle}{}\doxysection{Triangle Class Reference}
+\label{class_triangle}\index{Triangle@{Triangle}}
+Inheritance diagram for Triangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_triangle}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_triangle_a01beded10818ee2c37beca6119efb022}\label{class_triangle_a01beded10818ee2c37beca6119efb022}} 
+{\bfseries Triangle} (int a1, int a2, int b1, int b2, int c1, int c2, const string \&color=\char`\"{} \char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructeur ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_triangle_a48e847475f1ea640c419d431a30d9ff0}\label{class_triangle_a48e847475f1ea640c419d431a30d9ff0}} 
+{\bfseries Triangle} (\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} a, \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} b, \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} c, const string \&color=\char`\"{} \char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructeur ~\newline
+ \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_triangle_a129c42d1f01fb66f514e9657c6dcb4e9}{calculer\+Aire}} () const
+\begin{DoxyCompactList}\small\item\em Méthode qui retourne l\textquotesingle{}aire du triangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \mbox{\hyperlink{class_triangle_a471c5fe6fb1777f831a7c52ac5065676}{get\+Centre\+Symetrie}} () const
+\item 
+\mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ \mbox{\hyperlink{class_triangle_a1fd6b44e0d9172725102fbafc05ddf29}{clone}} () const
+\item 
+void \mbox{\hyperlink{class_triangle_af8a84983a02a8f68e2ca6df4402eea8d}{homothetie}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, double k)
+\begin{DoxyCompactList}\small\item\em Opération d\textquotesingle{}homothétie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_triangle_adeb2366249edf23cf87c33475a8d7825}{rotation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, const double angle)
+\begin{DoxyCompactList}\small\item\em Opération de rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_triangle_a7d14e9ca958fa9989334477de0a8cbe6}{translation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u)
+\begin{DoxyCompactList}\small\item\em Opération de translation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_triangle_a2af23ae4b7c7eaf6856157718281f2fd}{operator string}} () const override
+\item 
+const void $\ast$ \mbox{\hyperlink{class_triangle_a7e34180b12ce2eb4e5a8f54ca037ef0e}{sauvegarde}} (const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$visiteur) const
+\begin{DoxyCompactList}\small\item\em Méthode du Design Pattern Visitor. \end{DoxyCompactList}\item 
+const void $\ast$ \mbox{\hyperlink{class_triangle_a4c2aa57b2d72801309a5720cc0f02c3a}{dessine}} (const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$visiteur, \mbox{\hyperlink{class_socket}{Socket}} $\ast$s) const
+\begin{DoxyCompactList}\small\item\em Méthode du Design Pattern Visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_triangle_a872e171d159b72d863b3bfcbdf793afb}\label{class_triangle_a872e171d159b72d863b3bfcbdf793afb}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&os, const \mbox{\hyperlink{class_triangle}{Triangle}} \&m)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_triangle_a129c42d1f01fb66f514e9657c6dcb4e9}\label{class_triangle_a129c42d1f01fb66f514e9657c6dcb4e9}} 
+\index{Triangle@{Triangle}!calculerAire@{calculerAire}}
+\index{calculerAire@{calculerAire}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{calculerAire()}{calculerAire()}}
+{\footnotesize\ttfamily double Triangle\+::calculer\+Aire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode qui retourne l\textquotesingle{}aire du triangle. 
+
+La formule de Héron stipule que l\textquotesingle{}aire A d\textquotesingle{}un triangle de côtés de longueurs a , b et c est A = √ d ( d − a ) ( d − b ) ( d − c ) où d est le demi-\/périmètre du triangle ou la moitié de son périmètre. ~\newline
+ Perimètre = somme des 3 cotes du triangle. \begin{DoxyReturn}{Returns}
+Un double 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_triangle_a1fd6b44e0d9172725102fbafc05ddf29}\label{class_triangle_a1fd6b44e0d9172725102fbafc05ddf29}} 
+\index{Triangle@{Triangle}!clone@{clone}}
+\index{clone@{clone}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_triangle}{Triangle}} $\ast$ Triangle\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_triangle_a4c2aa57b2d72801309a5720cc0f02c3a}\label{class_triangle_a4c2aa57b2d72801309a5720cc0f02c3a}} 
+\index{Triangle@{Triangle}!dessine@{dessine}}
+\index{dessine@{dessine}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{dessine()}{dessine()}}
+{\footnotesize\ttfamily const void $\ast$ Triangle\+::dessine (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$}]{visiteur,  }\item[{\mbox{\hyperlink{class_socket}{Socket}} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode du Design Pattern Visitor. 
+
+Cette méthode \mbox{\hyperlink{class_triangle_a4c2aa57b2d72801309a5720cc0f02c3a}{dessine()}} permet de visiter cette forme et d\textquotesingle{}appliquer l\textquotesingle{}opération de dessin associée à celle-\/ci grâce au Design Pattern Visitor. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$visiteur} & instance de \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} \\
+\hline
+{\em $\ast$s} & socket permettant de dessiner en C++ avec un Client TCP/\+IP \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_formes_a53ea87cfeffb370da0bd2ae88a42ff5a}{Formes}}.
+
+\mbox{\Hypertarget{class_triangle_a471c5fe6fb1777f831a7c52ac5065676}\label{class_triangle_a471c5fe6fb1777f831a7c52ac5065676}} 
+\index{Triangle@{Triangle}!getCentreSymetrie@{getCentreSymetrie}}
+\index{getCentreSymetrie@{getCentreSymetrie}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{getCentreSymetrie()}{getCentreSymetrie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} Triangle\+::get\+Centre\+Symetrie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_triangle_af8a84983a02a8f68e2ca6df4402eea8d}\label{class_triangle_af8a84983a02a8f68e2ca6df4402eea8d}} 
+\index{Triangle@{Triangle}!homothetie@{homothetie}}
+\index{homothetie@{homothetie}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{homothetie()}{homothetie()}}
+{\footnotesize\ttfamily void Triangle\+::homothetie (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération d\textquotesingle{}homothétie. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_a3c768569c25cae25d237582dc2f443e4}{Formes}}.
+
+\mbox{\Hypertarget{class_triangle_a2af23ae4b7c7eaf6856157718281f2fd}\label{class_triangle_a2af23ae4b7c7eaf6856157718281f2fd}} 
+\index{Triangle@{Triangle}!operator string@{operator string}}
+\index{operator string@{operator string}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{operator string()}{operator string()}}
+{\footnotesize\ttfamily Triangle\+::operator string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_triangle_adeb2366249edf23cf87c33475a8d7825}\label{class_triangle_adeb2366249edf23cf87c33475a8d7825}} 
+\index{Triangle@{Triangle}!rotation@{rotation}}
+\index{rotation@{rotation}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{rotation()}{rotation()}}
+{\footnotesize\ttfamily void Triangle\+::rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{const double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération de rotation. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_ae3959ecc4aecaa88086a15d4be006647}{Formes}}.
+
+\mbox{\Hypertarget{class_triangle_a7e34180b12ce2eb4e5a8f54ca037ef0e}\label{class_triangle_a7e34180b12ce2eb4e5a8f54ca037ef0e}} 
+\index{Triangle@{Triangle}!sauvegarde@{sauvegarde}}
+\index{sauvegarde@{sauvegarde}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{sauvegarde()}{sauvegarde()}}
+{\footnotesize\ttfamily const void $\ast$ Triangle\+::sauvegarde (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$}]{visiteur }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode du Design Pattern Visitor. 
+
+Cette méthode \mbox{\hyperlink{class_triangle_a7e34180b12ce2eb4e5a8f54ca037ef0e}{sauvegarde()}} permet de visiter cette forme et d\textquotesingle{}appliquer l\textquotesingle{}opération de sauvegarde associée à celle-\/ci grâce au Design Pattern Visitor. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$visiteur} & instance de \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_formes_a80a34354727d0a57aec870afe74d7297}{Formes}}.
+
+\mbox{\Hypertarget{class_triangle_a7d14e9ca958fa9989334477de0a8cbe6}\label{class_triangle_a7d14e9ca958fa9989334477de0a8cbe6}} 
+\index{Triangle@{Triangle}!translation@{translation}}
+\index{translation@{translation}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{translation()}{translation()}}
+{\footnotesize\ttfamily void Triangle\+::translation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération de translation. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_afb2f76884ca35ca70f843af59d8cbe2a}{Formes}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_triangle_8h}{Triangle.\+h}}\item 
+src/\mbox{\hyperlink{_triangle_8cpp}{Triangle.\+cpp}}\end{DoxyCompactItemize}

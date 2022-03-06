@@ -1,0 +1,51 @@
+\hypertarget{_vecteur2_d_8h_source}{}\doxysection{Vecteur2\+D.\+h}
+\label{_vecteur2_d_8h_source}\index{include/Vecteur2D.h@{include/Vecteur2D.h}}
+\mbox{\hyperlink{_vecteur2_d_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef PROJETT\_VECTEUR\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define PROJETT\_VECTEUR\_H}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <ostream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{inline} \textcolor{keyword}{const} T operator -\/ (\textcolor{keyword}{const} T \& u, \textcolor{keyword}{const} T \& v)}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     \textcolor{keywordflow}{return} u + -\/v;}
+\DoxyCodeLine{23 \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \textcolor{keywordtype}{double} x,y;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& x = 0, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& y = 0);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{36     \mbox{\hyperlink{class_vecteur2_d_ad42dc9516e287260c4c315830ff057de}{Vecteur2D}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * s);}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}* clone()\textcolor{keyword}{const }\{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}(*\textcolor{keyword}{this}); \}}
+\DoxyCodeLine{38     \textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} operator + (\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \& u) \textcolor{keyword}{const};}
+\DoxyCodeLine{39     \textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \mbox{\hyperlink{class_vecteur2_d_afb6780dc96e5dd1a23f741946c1497b6}{operator -\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \& u) \textcolor{keyword}{const};}
+\DoxyCodeLine{40     \textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} operator * (\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& a) \textcolor{keyword}{const};}
+\DoxyCodeLine{41     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} operator == (\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \& u) \textcolor{keyword}{const};}
+\DoxyCodeLine{42     \textcolor{keyword}{const} \textcolor{keywordtype}{double} operator * (\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \& u) \textcolor{keyword}{const};}
+\DoxyCodeLine{43     \textcolor{keyword}{const} \textcolor{keywordtype}{double} determinant(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u) \textcolor{keyword}{const};}
+\DoxyCodeLine{44     \textcolor{keyword}{const} \textcolor{keywordtype}{double} distance(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& b) \textcolor{keyword}{const};}
+\DoxyCodeLine{45     \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u) ;}
+\DoxyCodeLine{49     \textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \mbox{\hyperlink{class_vecteur2_d_afb6780dc96e5dd1a23f741946c1497b6}{operator -\/ }}() \textcolor{keyword}{const};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keyword}{friend} ostream \& operator << (ostream \& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \& u);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keyword}{operator} string() \textcolor{keyword}{const};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \}; \textcolor{comment}{// classe Vecteur2D}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJETT\_VECTEUR\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,162 @@
+\hypertarget{class_formes}{}\doxysection{Formes Class Reference}
+\label{class_formes}\index{Formes@{Formes}}
+Inheritance diagram for Formes\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_formes}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_formes_ab27ff5b1c9543f73d8a51ac1df026ae3}\label{class_formes_ab27ff5b1c9543f73d8a51ac1df026ae3}} 
+{\bfseries Formes} ()
+\begin{DoxyCompactList}\small\item\em Constructeur vide. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_formes_aabca7b208e06405dce2c0e68bf619bfa}\label{class_formes_aabca7b208e06405dce2c0e68bf619bfa}} 
+{\bfseries Formes} (const string \&couleur)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_formes_afb2f76884ca35ca70f843af59d8cbe2a}{translation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u)=0
+\begin{DoxyCompactList}\small\item\em Opération de translation. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_formes_a3c768569c25cae25d237582dc2f443e4}{homothetie}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, double k)=0
+\begin{DoxyCompactList}\small\item\em Opération d\textquotesingle{}homothétie. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_formes_ae3959ecc4aecaa88086a15d4be006647}{rotation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, const double angle)=0
+\begin{DoxyCompactList}\small\item\em Opération de rotation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_formes_ab6682958a5472ec42eb57af60d1a9ef7}\label{class_formes_ab6682958a5472ec42eb57af60d1a9ef7}} 
+void {\bfseries set\+Color} (const string \&c)
+\item 
+virtual double \mbox{\hyperlink{class_formes_ac9c1415936302d0e7fd665b45d9a0020}{calculer\+Aire}} () const =0
+\item 
+virtual \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \mbox{\hyperlink{class_formes_a76438a77cb1001f37feccddc639b8bcf}{get\+Centre\+Symetrie}} () const =0
+\item 
+\mbox{\Hypertarget{class_formes_aad4ac2c14cc1561285a26ca396ae5b58}\label{class_formes_aad4ac2c14cc1561285a26ca396ae5b58}} 
+virtual {\bfseries operator string} () const =0
+\item 
+\mbox{\Hypertarget{class_formes_a4446e6754a043be8a50bb1d9ab1fd3a3}\label{class_formes_a4446e6754a043be8a50bb1d9ab1fd3a3}} 
+virtual \mbox{\hyperlink{class_formes}{Formes}} $\ast$ {\bfseries clone} () const =0
+\item 
+virtual const void $\ast$ \mbox{\hyperlink{class_formes_a80a34354727d0a57aec870afe74d7297}{sauvegarde}} (const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$visiteur) const =0
+\begin{DoxyCompactList}\small\item\em Méthode de sauvegarde du Design Pattern Visitor. \end{DoxyCompactList}\item 
+virtual const void $\ast$ \mbox{\hyperlink{class_formes_a53ea87cfeffb370da0bd2ae88a42ff5a}{dessine}} (const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$visiteur, \mbox{\hyperlink{class_socket}{Socket}} $\ast$s) const =0
+\begin{DoxyCompactList}\small\item\em Méthode de dessin du Design Pattern Visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_formes_a64e03a04427bfc27c585658a81872807}\label{class_formes_a64e03a04427bfc27c585658a81872807}} 
+string {\bfseries couleur}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_formes_ae4fee84a7c3730695b74feea2e52a2c1}\label{class_formes_ae4fee84a7c3730695b74feea2e52a2c1}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&os, const \mbox{\hyperlink{class_formes}{Formes}} $\ast$m)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_formes_ac9c1415936302d0e7fd665b45d9a0020}\label{class_formes_ac9c1415936302d0e7fd665b45d9a0020}} 
+\index{Formes@{Formes}!calculerAire@{calculerAire}}
+\index{calculerAire@{calculerAire}!Formes@{Formes}}
+\doxysubsubsection{\texorpdfstring{calculerAire()}{calculerAire()}}
+{\footnotesize\ttfamily virtual double Formes\+::calculer\+Aire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_groupe_formes_aae6258d214c576a8d0ce8a46cf4a0448}{Groupe\+Formes}}, \mbox{\hyperlink{class_polygone_a245d2a26f8c0da7b103e37b7cff8bb42}{Polygone}}, \mbox{\hyperlink{class_rond_a7b9105f7c1db6114efa56dc838d4f03d}{Rond}}, and \mbox{\hyperlink{class_triangle_a129c42d1f01fb66f514e9657c6dcb4e9}{Triangle}}.
+
+\mbox{\Hypertarget{class_formes_a53ea87cfeffb370da0bd2ae88a42ff5a}\label{class_formes_a53ea87cfeffb370da0bd2ae88a42ff5a}} 
+\index{Formes@{Formes}!dessine@{dessine}}
+\index{dessine@{dessine}!Formes@{Formes}}
+\doxysubsubsection{\texorpdfstring{dessine()}{dessine()}}
+{\footnotesize\ttfamily virtual const void $\ast$ Formes\+::dessine (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$}]{visiteur,  }\item[{\mbox{\hyperlink{class_socket}{Socket}} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Méthode de dessin du Design Pattern Visitor. 
+
+
+
+Implemented in \mbox{\hyperlink{class_croix_a023cd7abd7c076476f1fb03f01350a1b}{Croix}}, \mbox{\hyperlink{class_groupe_formes_af7e367a5365fc4371327fd26540775b2}{Groupe\+Formes}}, \mbox{\hyperlink{class_polygone_a2c322fcec9afaa5d0c4f7d0049126891}{Polygone}}, \mbox{\hyperlink{class_rond_a6af0dd4a7bf0d68a9db88f2289b34d88}{Rond}}, and \mbox{\hyperlink{class_triangle_a4c2aa57b2d72801309a5720cc0f02c3a}{Triangle}}.
+
+\mbox{\Hypertarget{class_formes_a76438a77cb1001f37feccddc639b8bcf}\label{class_formes_a76438a77cb1001f37feccddc639b8bcf}} 
+\index{Formes@{Formes}!getCentreSymetrie@{getCentreSymetrie}}
+\index{getCentreSymetrie@{getCentreSymetrie}!Formes@{Formes}}
+\doxysubsubsection{\texorpdfstring{getCentreSymetrie()}{getCentreSymetrie()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} Formes\+::get\+Centre\+Symetrie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_croix_a58f138972d49673971ad092d36d4b7fe}{Croix}}.
+
+\mbox{\Hypertarget{class_formes_a3c768569c25cae25d237582dc2f443e4}\label{class_formes_a3c768569c25cae25d237582dc2f443e4}} 
+\index{Formes@{Formes}!homothetie@{homothetie}}
+\index{homothetie@{homothetie}!Formes@{Formes}}
+\doxysubsubsection{\texorpdfstring{homothetie()}{homothetie()}}
+{\footnotesize\ttfamily virtual void Formes\+::homothetie (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Opération d\textquotesingle{}homothétie. 
+
+
+
+Implements \mbox{\hyperlink{class_transformable_a52756f249248dc1c3d87470c6590799d}{Transformable}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_croix_a9c19f4945e2b449cb4ddbb56ce9cb307}{Croix}}, \mbox{\hyperlink{class_groupe_formes_a53322e2988daf8d44965323f2a3ccf40}{Groupe\+Formes}}, \mbox{\hyperlink{class_polygone_a613eff173cbe3347c56e901f894b072a}{Polygone}}, \mbox{\hyperlink{class_rond_acdd9e5be3181b7cc90cb78e2346b4f21}{Rond}}, and \mbox{\hyperlink{class_triangle_af8a84983a02a8f68e2ca6df4402eea8d}{Triangle}}.
+
+\mbox{\Hypertarget{class_formes_ae3959ecc4aecaa88086a15d4be006647}\label{class_formes_ae3959ecc4aecaa88086a15d4be006647}} 
+\index{Formes@{Formes}!rotation@{rotation}}
+\index{rotation@{rotation}!Formes@{Formes}}
+\doxysubsubsection{\texorpdfstring{rotation()}{rotation()}}
+{\footnotesize\ttfamily virtual void Formes\+::rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{const double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Opération de rotation. 
+
+
+
+Implements \mbox{\hyperlink{class_transformable_a8cf7dbeeae92d9145308b54cd439fb67}{Transformable}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_croix_ab05bac433153869692718db850a8bfab}{Croix}}, \mbox{\hyperlink{class_groupe_formes_a576e1be31eadd8851f44a7aec989017f}{Groupe\+Formes}}, \mbox{\hyperlink{class_polygone_a1be7d2261b9fc701b5b69b84aa7ed55b}{Polygone}}, \mbox{\hyperlink{class_rond_a1ab5879b2c4286bf69096851fd66d3b4}{Rond}}, and \mbox{\hyperlink{class_triangle_adeb2366249edf23cf87c33475a8d7825}{Triangle}}.
+
+\mbox{\Hypertarget{class_formes_a80a34354727d0a57aec870afe74d7297}\label{class_formes_a80a34354727d0a57aec870afe74d7297}} 
+\index{Formes@{Formes}!sauvegarde@{sauvegarde}}
+\index{sauvegarde@{sauvegarde}!Formes@{Formes}}
+\doxysubsubsection{\texorpdfstring{sauvegarde()}{sauvegarde()}}
+{\footnotesize\ttfamily virtual const void $\ast$ Formes\+::sauvegarde (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$}]{visiteur }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Méthode de sauvegarde du Design Pattern Visitor. 
+
+
+
+Implemented in \mbox{\hyperlink{class_croix_aab65be0299a3f81f3dcd8fe9f45ff9d6}{Croix}}, \mbox{\hyperlink{class_groupe_formes_a31c34c05e05c2e73ff72e8462f91f75c}{Groupe\+Formes}}, \mbox{\hyperlink{class_polygone_aace29c017484cca5df08d79259cad385}{Polygone}}, \mbox{\hyperlink{class_rond_abc9e35b419b26dae24518c040e260a5d}{Rond}}, and \mbox{\hyperlink{class_triangle_a7e34180b12ce2eb4e5a8f54ca037ef0e}{Triangle}}.
+
+\mbox{\Hypertarget{class_formes_afb2f76884ca35ca70f843af59d8cbe2a}\label{class_formes_afb2f76884ca35ca70f843af59d8cbe2a}} 
+\index{Formes@{Formes}!translation@{translation}}
+\index{translation@{translation}!Formes@{Formes}}
+\doxysubsubsection{\texorpdfstring{translation()}{translation()}}
+{\footnotesize\ttfamily virtual void Formes\+::translation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Opération de translation. 
+
+
+
+Implements \mbox{\hyperlink{class_transformable_a2f1f1f2adff6c278e7843cb51e2c402b}{Transformable}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_croix_a37e586bc803c88c4992d336d8ff16e62}{Croix}}, \mbox{\hyperlink{class_groupe_formes_a109d9a14481c5740bae972b1c0ba8042}{Groupe\+Formes}}, \mbox{\hyperlink{class_polygone_a132257d97dd7a32ee27d0ed10dfc26a1}{Polygone}}, \mbox{\hyperlink{class_rond_a788fe30088e379767941c52abe163691}{Rond}}, and \mbox{\hyperlink{class_triangle_a7d14e9ca958fa9989334477de0a8cbe6}{Triangle}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_formes_8h}{Formes.\+h}}\end{DoxyCompactItemize}

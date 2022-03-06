@@ -1,0 +1,58 @@
+\hypertarget{_formes_8h_source}{}\doxysection{Formes.\+h}
+\label{_formes_8h_source}\index{include/Formes.h@{include/Formes.h}}
+\mbox{\hyperlink{_formes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef PROJETT\_FORMES\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define PROJETT\_FORMES\_H}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_socket_8h}{Socket.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vecteur2_d_8h}{Vecteur2D.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_transformable_8h}{Transformable.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_visiteur_sauvegarde}{VisiteurSauvegarde}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_visiteur_librairie}{VisiteurLibrairie}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_formes}{Formes}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_transformable}{Transformable}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{23     \textcolor{keywordtype}{string} couleur;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28     \mbox{\hyperlink{class_formes_ab27ff5b1c9543f73d8a51ac1df026ae3}{Formes}}();}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_formes_aabca7b208e06405dce2c0e68bf619bfa}{Formes}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& couleur) : couleur(couleur) \{\}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_formes_afb2f76884ca35ca70f843af59d8cbe2a}{translation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u) = 0;}
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_formes_a3c768569c25cae25d237582dc2f443e4}{homothetie}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u,\textcolor{keywordtype}{double} k) = 0;}
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_formes_ae3959ecc4aecaa88086a15d4be006647}{rotation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, \textcolor{keyword}{const} \textcolor{keywordtype}{double} angle ) = 0;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{comment}{// pour faire le passage monde ecran}}
+\DoxyCodeLine{41     \textcolor{comment}{//virtual void bornes(double \&xmin , double \&ymin , double \&xmax,double \&ymax) = 0;}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} setColor(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& c) \{ couleur=c;\}}
+\DoxyCodeLine{44     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} calculerAire() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} getCentreSymetrie() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \textcolor{keyword}{operator} string() \textcolor{keyword}{const}  = 0;}
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_formes}{Formes}}* clone() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{keyword}{inline} \textcolor{keyword}{friend} ostream\& operator << (ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_formes}{Formes}}* m);}
+\DoxyCodeLine{50     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_formes}{\string~Formes}}() \{\}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \mbox{\hyperlink{class_formes_a80a34354727d0a57aec870afe74d7297}{sauvegarde}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_visiteur_sauvegarde}{VisiteurSauvegarde}} * visiteur) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{55     \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \mbox{\hyperlink{class_formes_a53ea87cfeffb370da0bd2ae88a42ff5a}{dessine}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_visiteur_librairie}{VisiteurLibrairie}} * visiteur, Socket * s) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{inline} ostream\& operator << (ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_formes}{Formes}}* m)}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60     os << (string)(*m);}
+\DoxyCodeLine{61     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{62 \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJETT\_FORMES\_H}}
+
+\end{DoxyCode}

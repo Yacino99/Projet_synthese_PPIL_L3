@@ -1,0 +1,55 @@
+\hypertarget{_chargeur_liste_formes_8h_source}{}\doxysection{Chargeur\+Liste\+Formes.\+h}
+\label{_chargeur_liste_formes_8h_source}\index{include/ChargeurListeFormes.h@{include/ChargeurListeFormes.h}}
+\mbox{\hyperlink{_chargeur_liste_formes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef PROJET\_CHARGEURLISTEFORMES\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define PROJET\_CHARGEURLISTEFORMES\_H}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_formes_8h}{Formes.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_c_o_r_8h}{ExpertChargementCOR.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_croix_c_o_r_8h}{ExpertChargementCroixCOR.h}}"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_rond_c_o_r_8h}{ExpertChargementRondCOR.h}}"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_polygone_c_o_r_8h}{ExpertChargementPolygoneCOR.h}}"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_triangle_c_o_r_8h}{ExpertChargementTriangleCOR.h}}"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_groupe_c_o_r_8h}{ExpertChargementGroupeCOR.h}}"{}}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{class_chargeur_liste_formes}{ChargeurListeFormes}}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{36     \textcolor{keyword}{static} vector<Formes*> \mbox{\hyperlink{class_chargeur_liste_formes_aabda318e21e97850350a23a303b44aa7}{charge}}(ifstream\& ifs)}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         vector<Formes*> res;}
+\DoxyCodeLine{39         \mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}}* expert;}
+\DoxyCodeLine{40         expert = \textcolor{keyword}{new} \mbox{\hyperlink{class_expert_chargement_croix_c_o_r}{ExpertChargementCroixCOR}}(NULL);}
+\DoxyCodeLine{41         expert = \textcolor{keyword}{new} \mbox{\hyperlink{class_expert_chargement_polygone_c_o_r}{ExpertChargementPolygoneCOR}}(expert);}
+\DoxyCodeLine{42         expert = \textcolor{keyword}{new} \mbox{\hyperlink{class_expert_chargement_rond_c_o_r}{ExpertChargementRondCOR}}(expert);}
+\DoxyCodeLine{43         expert = \textcolor{keyword}{new} \mbox{\hyperlink{class_expert_chargement_triangle_c_o_r}{ExpertChargementTriangleCOR}}(expert);}
+\DoxyCodeLine{44         expert = \textcolor{keyword}{new} \mbox{\hyperlink{class_expert_chargement_groupe_c_o_r}{ExpertChargementGroupeCOR}}(expert);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{keywordtype}{string} tmp;}
+\DoxyCodeLine{47         \textcolor{keywordflow}{while} (getline(ifs, tmp))}
+\DoxyCodeLine{48         \{}
+\DoxyCodeLine{49             cout << \textcolor{stringliteral}{"{}ligne lue : "{}} << tmp << endl;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51             \mbox{\hyperlink{class_formes}{Formes}}* forme = expert-\/>\mbox{\hyperlink{class_expert_chargement_c_o_r_aa6a0dd2d63fb1dea983a38c5fa3e8753}{resoudre}}(tmp);}
+\DoxyCodeLine{52             \textcolor{keywordflow}{if} (forme != NULL)}
+\DoxyCodeLine{53             \{}
+\DoxyCodeLine{54                 res.push\_back(forme);}
+\DoxyCodeLine{55             \}}
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{58     \};}
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJET\_CHARGEURLISTEFORMES\_H}}
+
+\end{DoxyCode}

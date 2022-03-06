@@ -1,0 +1,57 @@
+\hypertarget{_rond_8h_source}{}\doxysection{Rond.\+h}
+\label{_rond_8h_source}\index{include/Rond.h@{include/Rond.h}}
+\mbox{\hyperlink{_rond_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef PROJETT\_ROND\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define PROJETT\_ROND\_H}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_formes_8h}{Formes.h}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_socket_8h}{Socket.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vecteur2_d_8h}{Vecteur2D.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_rond}{Rond}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_formes}{Formes}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 private :}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{double} rayon;}
+\DoxyCodeLine{23     \textcolor{keyword}{const} \textcolor{keywordtype}{double} PI = 3.141592653589793;}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} v;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{29     \mbox{\hyperlink{class_rond_a616077a13d36f00a8132a2e7d80f8668}{Rond}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{double} rayon, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& color = \textcolor{stringliteral}{"{} "{}}) : \mbox{\hyperlink{class_formes}{Formes}}(color), rayon(rayon),v(x,y) \{\}}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_rond_ab94257c836c251b1201c0072a6cb6f19}{Rond}}(\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} v, \textcolor{keywordtype}{double} rayon, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& color = \textcolor{stringliteral}{"{} "{}}) : \mbox{\hyperlink{class_formes}{Formes}}(color), rayon(rayon),v(v) \{\}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_rond_a7b9105f7c1db6114efa56dc838d4f03d}{calculerAire}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{34     \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} getCentreSymetrie()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} v; \}}
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_rond}{\string~Rond}}() \{\}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \mbox{\hyperlink{class_rond}{Rond}}* clone()\textcolor{keyword}{ const}\{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_rond_a616077a13d36f00a8132a2e7d80f8668}{Rond}}(*\textcolor{keyword}{this}); \}}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rond_a1ab5879b2c4286bf69096851fd66d3b4}{rotation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, \textcolor{keyword}{const} \textcolor{keywordtype}{double} angle );}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rond_a788fe30088e379767941c52abe163691}{translation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u);}
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_rond_acdd9e5be3181b7cc90cb78e2346b4f21}{homothetie}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u,\textcolor{keywordtype}{double} k) ;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keyword}{operator} string() \textcolor{keyword}{const};}
+\DoxyCodeLine{46     \textcolor{keyword}{friend} ostream\& operator << (ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_rond}{Rond}}\& m);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{class_rond_abc9e35b419b26dae24518c040e260a5d}{sauvegarde}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_visiteur_sauvegarde}{VisiteurSauvegarde}} * visiteur) \textcolor{keyword}{const};}
+\DoxyCodeLine{49     \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{class_rond_a6af0dd4a7bf0d68a9db88f2289b34d88}{dessine}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_visiteur_librairie}{VisiteurLibrairie}} * visiteur, Socket * s) \textcolor{keyword}{const};}
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{inline} ostream\& operator << (ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_rond}{Rond}}\& m)}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     \textcolor{keywordflow}{return} os << (string)m;}
+\DoxyCodeLine{56 \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJETT\_ROND\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,11 @@
+<map id="include/VisiteurSauvegarde.h" name="include/VisiteurSauvegarde.h">
+<area shape="rect" id="node1" title="Classe VisiteurSauvegarde." alt="" coords="419,5,609,32"/>
+<area shape="rect" id="node2" href="$_visiteur_sauvegarde_txt_8h.html" title="Classe VisiteurSauvegardeTxt." alt="" coords="61,80,239,121"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="Main." alt="" coords="228,169,325,196"/>
+<area shape="rect" id="node5" href="$_croix_8cpp.html" title="Implémentation de la classe Croix." alt="" coords="314,87,413,114"/>
+<area shape="rect" id="node6" href="$_groupe_formes_8cpp.html" title="Implémentation de la classe GroupeFormes." alt="" coords="437,87,591,114"/>
+<area shape="rect" id="node7" href="$_polygone_8cpp.html" title="Implémentation de la classe Polygone." alt="" coords="615,87,738,114"/>
+<area shape="rect" id="node8" href="$_rond_8cpp.html" title="Implémentation de la classe Rond." alt="" coords="762,87,861,114"/>
+<area shape="rect" id="node9" href="$_triangle_8cpp.html" title="Implémentation de la classe Triangle." alt="" coords="885,87,999,114"/>
+<area shape="rect" id="node3" href="$_visiteur_sauvegarde_txt_8cpp.html" title="Implémentation de la classe VisiteurSauvegardeTxt." alt="" coords="5,169,204,196"/>
+</map>

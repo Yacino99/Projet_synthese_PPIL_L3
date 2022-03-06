@@ -1,0 +1,98 @@
+\hypertarget{_expert_chargement_groupe_c_o_r_8h_source}{}\doxysection{Expert\+Chargement\+Groupe\+COR.\+h}
+\label{_expert_chargement_groupe_c_o_r_8h_source}\index{include/ExpertChargementGroupeCOR.h@{include/ExpertChargementGroupeCOR.h}}
+\mbox{\hyperlink{_expert_chargement_groupe_c_o_r_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef PROJET\_EXPERTCHARGEMENTGROUPECOR\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define PROJET\_EXPERTCHARGEMENTGROUPECOR\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_c_o_r_8h}{ExpertChargementCOR.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_formes_8h}{Formes.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_groupe_formes_8h}{GroupeFormes.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_formes_8h}{Formes.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_c_o_r_8h}{ExpertChargementCOR.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_croix_c_o_r_8h}{ExpertChargementCroixCOR.h}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_rond_c_o_r_8h}{ExpertChargementRondCOR.h}}"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_polygone_c_o_r_8h}{ExpertChargementPolygoneCOR.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_triangle_c_o_r_8h}{ExpertChargementTriangleCOR.h}}"{}}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_expert_chargement_groupe_c_o_r}{ExpertChargementGroupeCOR}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_expert_chargement_groupe_c_o_r}{ExpertChargementGroupeCOR}}(\mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}} *suivant) : \mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}}(suivant) \{\}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{34     \mbox{\hyperlink{class_formes}{Formes}} *\mbox{\hyperlink{class_expert_chargement_groupe_c_o_r_ada0f84fcff06d1a40a645a37487c7e91}{resoudre1}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&d)\textcolor{keyword}{ const}}
+\DoxyCodeLine{35 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{36         \textcolor{keyword}{const} \textcolor{keywordtype}{string} cherche = \textcolor{stringliteral}{"{}groupe"{}};}
+\DoxyCodeLine{37         string::size\_type pos = d.find(cherche);}
+\DoxyCodeLine{38         \textcolor{keywordflow}{while} (pos != string::npos)}
+\DoxyCodeLine{39         \{}
+\DoxyCodeLine{40             \textcolor{comment}{// "{}groupe"{} trouvé}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42             \textcolor{comment}{// on extrait tout ce qui se trouve entre les crochets => liste des formes du groupe}}
+\DoxyCodeLine{43             \textcolor{keywordtype}{unsigned} firstCrochet = d.find(\textcolor{stringliteral}{"{}["{}});}
+\DoxyCodeLine{44             \textcolor{keywordtype}{unsigned} lastCrochet = d.find(\textcolor{stringliteral}{"{}]"{}});}
+\DoxyCodeLine{45             \textcolor{keywordtype}{string} coordonnees = d.substr (firstCrochet + 1, lastCrochet -\/ firstCrochet -\/ 1);}
+\DoxyCodeLine{46             istringstream is(coordonnees );}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48             \textcolor{comment}{// String lue entre les crochets}}
+\DoxyCodeLine{49             \textcolor{comment}{// cout << "{}string lue : "{} << coordonnees << endl; //  triangle ( -\/0.3 , 1.7 , 2.8 , -\/2.5 , 4.3 , 5.2 ) purple, rond ( 5 , -\/3 , 1.2 ) purple,}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51             \textcolor{keywordtype}{string} delimiter = \textcolor{stringliteral}{"{};"{}};}
+\DoxyCodeLine{52             vector<string> words\{\};}
+\DoxyCodeLine{53             \textcolor{keywordtype}{size\_t} pos = 0;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55             \textcolor{keywordflow}{while} ((pos = coordonnees.find(delimiter)) != string::npos)}
+\DoxyCodeLine{56             \{}
+\DoxyCodeLine{57                 words.push\_back(coordonnees.substr(0, pos));}
+\DoxyCodeLine{58                 coordonnees.erase(0, pos + delimiter.length());}
+\DoxyCodeLine{59             \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61             vector<Formes*> res;}
+\DoxyCodeLine{62             \mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}}* expert;}
+\DoxyCodeLine{63             expert = \textcolor{keyword}{new} \mbox{\hyperlink{class_expert_chargement_croix_c_o_r}{ExpertChargementCroixCOR}}(NULL);}
+\DoxyCodeLine{64             expert = \textcolor{keyword}{new} \mbox{\hyperlink{class_expert_chargement_polygone_c_o_r}{ExpertChargementPolygoneCOR}}(expert);}
+\DoxyCodeLine{65             expert = \textcolor{keyword}{new} \mbox{\hyperlink{class_expert_chargement_rond_c_o_r}{ExpertChargementRondCOR}}(expert);}
+\DoxyCodeLine{66             expert = \textcolor{keyword}{new} \mbox{\hyperlink{class_expert_chargement_triangle_c_o_r}{ExpertChargementTriangleCOR}}(expert);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68             \textcolor{comment}{// affichage des strings des formes du groupe de forme lue}}
+\DoxyCodeLine{69             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&str : words)}
+\DoxyCodeLine{70             \{}
+\DoxyCodeLine{71                 \textcolor{comment}{//cout << "{}string : "{} << str << endl;}}
+\DoxyCodeLine{72                 \mbox{\hyperlink{class_formes}{Formes}}* forme = expert-\/>\mbox{\hyperlink{class_expert_chargement_c_o_r_aa6a0dd2d63fb1dea983a38c5fa3e8753}{resoudre}}(str);}
+\DoxyCodeLine{73                 \textcolor{comment}{// groupe de forme de groupe de forme ICI}}
+\DoxyCodeLine{74                 \textcolor{keywordflow}{if} (forme != NULL)}
+\DoxyCodeLine{75                 \{}
+\DoxyCodeLine{76                     res.push\_back(forme);}
+\DoxyCodeLine{77                 \}}
+\DoxyCodeLine{78             \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80             \mbox{\hyperlink{class_groupe_formes}{GroupeFormes}} *g2 = \textcolor{keyword}{new} \mbox{\hyperlink{class_groupe_formes}{GroupeFormes}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82             \textcolor{comment}{// affichage des formes + construction du groupe de forme}}
+\DoxyCodeLine{83             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&str : res)}
+\DoxyCodeLine{84             \{}
+\DoxyCodeLine{85                 \textcolor{comment}{//cout << "{}forme : "{} << str << endl;}}
+\DoxyCodeLine{86                 g2-\/>\mbox{\hyperlink{class_groupe_formes_af899008496dbffe300d76c478acd2aee}{addForme}}(str);}
+\DoxyCodeLine{87             \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89             \textcolor{comment}{// Récupération et attribution de la couleur}}
+\DoxyCodeLine{90             \textcolor{keywordtype}{string} couleur = d.substr(lastCrochet + 1, d.size());}
+\DoxyCodeLine{91             g2-\/>setCouleur(couleur);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93             \textcolor{comment}{// Affichage du groupe de forme créé}}
+\DoxyCodeLine{94             cout << *g2 << endl;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96             \textcolor{comment}{// Retour du groupe de Forme}}
+\DoxyCodeLine{97             \textcolor{keywordflow}{return} g2;}
+\DoxyCodeLine{98         \}}
+\DoxyCodeLine{99         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{100     \};}
+\DoxyCodeLine{101 \};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJET\_EXPERTCHARGEMENTGROUPECOR\_H}}
+
+\end{DoxyCode}

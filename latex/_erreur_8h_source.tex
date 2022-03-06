@@ -1,0 +1,35 @@
+\hypertarget{_erreur_8h_source}{}\doxysection{Erreur.\+h}
+\label{_erreur_8h_source}\index{include/Erreur.h@{include/Erreur.h}}
+\mbox{\hyperlink{_erreur_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef PROJETT\_ERREUR\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define PROJETT\_ERREUR\_H}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_erreur}{Erreur}} \{}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \textcolor{keyword}{const} \textcolor{keyword}{static} \textcolor{keywordtype}{int} LONGUEURMESSAGE = 100;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{char} message[1 + LONGUEURMESSAGE];}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \mbox{\hyperlink{class_erreur}{Erreur}}();}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_erreur}{Erreur}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* messageErreur);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keyword}{operator} string() \textcolor{keyword}{const};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keyword}{friend} ostream\& operator << (ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_erreur}{Erreur}}\& erreur);}
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{inline} ostream\& operator << (ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_erreur}{Erreur}}\& erreur)}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     os << (string)erreur;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{32 \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJETT\_ERREUR\_H}}
+
+\end{DoxyCode}

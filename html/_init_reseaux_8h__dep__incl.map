@@ -1,0 +1,29 @@
+<map id="include/InitReseaux.h" name="include/InitReseaux.h">
+<area shape="rect" id="node1" title="Classe InitReseaux." alt="" coords="1816,5,1963,32"/>
+<area shape="rect" id="node2" href="$_socket_8h.html" title="Classe Socket." alt="" coords="1830,80,1949,107"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="Main." alt="" coords="1107,557,1205,584"/>
+<area shape="rect" id="node27" href="$_init_reseaux_8cpp.html" title="Implémentation de la classe InitReseaux." alt="" coords="1973,80,2110,107"/>
+<area shape="rect" id="node3" href="$_croix_8h.html" title="Classe Croix." alt="" coords="1967,229,2075,256"/>
+<area shape="rect" id="node6" href="$_formes_8h.html" title="Classe Formes." alt="" coords="1111,155,1233,181"/>
+<area shape="rect" id="node13" href="$_groupe_formes_8h.html" title="Classe GroupeFormes." alt="" coords="2031,311,2195,338"/>
+<area shape="rect" id="node15" href="$_polygone_8h.html" title="Classe Polygone." alt="" coords="434,229,566,256"/>
+<area shape="rect" id="node17" href="$_rond_8h.html" title="Classe Rond." alt="" coords="1835,229,1943,256"/>
+<area shape="rect" id="node19" href="$_triangle_8h.html" title="Classe Triangle." alt="" coords="692,229,815,256"/>
+<area shape="rect" id="node22" href="$_visiteur_librairie_awt_8h.html" title="Classe VisiteurLibrairieAwt." alt="" coords="2219,304,2375,345"/>
+<area shape="rect" id="node4" href="$_croix_8cpp.html" title="Implémentation de la classe Croix." alt="" coords="1857,311,1956,338"/>
+<area shape="rect" id="node7" href="$_chargeur_liste_formes_8h.html" title="Chargement de formes." alt="" coords="693,483,896,509"/>
+<area shape="rect" id="node8" href="$_expert_chargement_croix_c_o_r_8h.html" title="Classe ExpertChargementCroixCOR." alt="" coords="991,304,1166,345"/>
+<area shape="rect" id="node9" href="$_expert_chargement_groupe_c_o_r_8h.html" title="Classe ExpertChargementGroupeCOR." alt="" coords="582,393,757,435"/>
+<area shape="rect" id="node10" href="$_expert_chargement_polygone_c_o_r_8h.html" title="Classe ExpertChargementPolygoneCOR." alt="" coords="594,304,769,345"/>
+<area shape="rect" id="node11" href="$_expert_chargement_rond_c_o_r_8h.html" title="Classe ExpertChargementRondCOR." alt="" coords="145,304,319,345"/>
+<area shape="rect" id="node12" href="$_expert_chargement_triangle_c_o_r_8h.html" title="Classe ExpertChargementTriangleCOR." alt="" coords="343,304,518,345"/>
+<area shape="rect" id="node14" href="$_groupe_formes_8cpp.html" title="Implémentation de la classe GroupeFormes." alt="" coords="1915,401,2069,427"/>
+<area shape="rect" id="node21" href="$_visiteur_librairie_8h.html" title="Classe VisiteurLibrairie." alt="" coords="1593,229,1759,256"/>
+<area shape="rect" id="node24" href="$_visiteur_sauvegarde_8h.html" title="Classe VisiteurSauvegarde." alt="" coords="1379,229,1568,256"/>
+<area shape="rect" id="node16" href="$_polygone_8cpp.html" title="Implémentation de la classe Polygone." alt="" coords="793,311,916,338"/>
+<area shape="rect" id="node18" href="$_rond_8cpp.html" title="Implémentation de la classe Rond." alt="" coords="1735,311,1833,338"/>
+<area shape="rect" id="node20" href="$_triangle_8cpp.html" title="Implémentation de la classe Triangle." alt="" coords="1545,311,1660,338"/>
+<area shape="rect" id="node23" href="$_visiteur_librairie_awt_8cpp.html" title="Implémentation de la classe VisiteurLibrairieAwt." alt="" coords="2145,401,2325,427"/>
+<area shape="rect" id="node25" href="$_visiteur_sauvegarde_txt_8h.html" title="Classe VisiteurSauvegardeTxt." alt="" coords="1241,304,1420,345"/>
+<area shape="rect" id="node26" href="$_visiteur_sauvegarde_txt_8cpp.html" title="Implémentation de la classe VisiteurSauvegardeTxt." alt="" coords="1194,401,1393,427"/>
+</map>

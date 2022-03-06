@@ -1,0 +1,50 @@
+\hypertarget{_expert_chargement_croix_c_o_r_8h_source}{}\doxysection{Expert\+Chargement\+Croix\+COR.\+h}
+\label{_expert_chargement_croix_c_o_r_8h_source}\index{include/ExpertChargementCroixCOR.h@{include/ExpertChargementCroixCOR.h}}
+\mbox{\hyperlink{_expert_chargement_croix_c_o_r_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef PROJET\_EXPERTCHARGEMENTCROIXCOR\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define PROJET\_EXPERTCHARGEMENTCROIXCOR\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_c_o_r_8h}{ExpertChargementCOR.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_formes_8h}{Formes.h}}"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_expert_chargement_croix_c_o_r}{ExpertChargementCroixCOR}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_expert_chargement_croix_c_o_r}{ExpertChargementCroixCOR}}(\mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}} *suivant) : \mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}}(suivant) \{\}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{26     \mbox{\hyperlink{class_formes}{Formes}} *\mbox{\hyperlink{class_expert_chargement_croix_c_o_r_aa6d0549295bfd43dfdb8f324179568ad}{resoudre1}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&d)\textcolor{keyword}{ const}}
+\DoxyCodeLine{27 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{28         \textcolor{keyword}{const} \textcolor{keywordtype}{string} cherche = \textcolor{stringliteral}{"{}croix"{}};}
+\DoxyCodeLine{29         string::size\_type pos = d.find(cherche);}
+\DoxyCodeLine{30         \textcolor{keywordflow}{while} (pos != string::npos)}
+\DoxyCodeLine{31         \{}
+\DoxyCodeLine{32             \textcolor{comment}{// "{}croix"{} trouvé}}
+\DoxyCodeLine{33             vector<double> points;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35             \textcolor{comment}{// on extrait tout ce qui se trouve entre les parenthèses}}
+\DoxyCodeLine{36             \textcolor{keywordtype}{unsigned} firstParenthesis = d.find(\textcolor{stringliteral}{"{}("{}});}
+\DoxyCodeLine{37             \textcolor{keywordtype}{unsigned} lastParenthesis = d.find(\textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{38             \textcolor{keywordtype}{string} coordonnees = d.substr (firstParenthesis + 1, lastParenthesis -\/ firstParenthesis -\/ 1);}
+\DoxyCodeLine{39             istringstream is(coordonnees );}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41             \textcolor{comment}{// on enlève toutes les virgules et on stocke les nombres dans un vecteur}}
+\DoxyCodeLine{42             \textcolor{keywordtype}{string} t;}
+\DoxyCodeLine{43             \textcolor{keywordflow}{while} ( getline( is, t, \textcolor{charliteral}{','} ) ) points.push\_back(stod(t));}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45             \textcolor{comment}{// récupération de la couuleur}}
+\DoxyCodeLine{46             \textcolor{keywordtype}{string} couleur = d.substr(lastParenthesis + 1, d.size());}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48             \textcolor{comment}{// création de la forme en des données du fichier de visite}}
+\DoxyCodeLine{49             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_croix}{Croix}}(points[0], points[1], points[2], points[3], couleur);}
+\DoxyCodeLine{50         \}}
+\DoxyCodeLine{51         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{52     \};}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJET\_EXPERTCHARGEMENTCROIXCOR\_H}}
+
+\end{DoxyCode}

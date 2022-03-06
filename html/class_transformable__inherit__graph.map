@@ -1,0 +1,9 @@
+<map id="Transformable" name="Transformable">
+<area shape="rect" id="node1" title=" " alt="" coords="200,5,303,32"/>
+<area shape="rect" id="node2" href="$class_formes.html" title=" " alt="" coords="218,80,285,107"/>
+<area shape="rect" id="node3" href="$class_croix.html" title=" " alt="" coords="5,155,57,181"/>
+<area shape="rect" id="node4" href="$class_groupe_formes.html" title=" " alt="" coords="81,155,189,181"/>
+<area shape="rect" id="node5" href="$class_polygone.html" title=" " alt="" coords="213,155,289,181"/>
+<area shape="rect" id="node6" href="$class_rond.html" title=" " alt="" coords="313,155,365,181"/>
+<area shape="rect" id="node7" href="$class_triangle.html" title=" " alt="" coords="390,155,457,181"/>
+</map>

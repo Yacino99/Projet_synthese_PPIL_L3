@@ -1,0 +1,54 @@
+\hypertarget{_croix_8h_source}{}\doxysection{Croix.\+h}
+\label{_croix_8h_source}\index{include/Croix.h@{include/Croix.h}}
+\mbox{\hyperlink{_croix_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef PROJETT\_CROIX\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define PROJETT\_CROIX\_H}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_formes_8h}{Formes.h}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_socket_8h}{Socket.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vecteur2_d_8h}{Vecteur2D.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_matrice22_8h}{Matrice22.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_croix}{Croix}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_formes}{Formes}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 private :}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} a, b;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_croix}{Croix}}(\textcolor{keywordtype}{double} g, \textcolor{keywordtype}{double} h, \textcolor{keywordtype}{double} d, \textcolor{keywordtype}{double} b, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& couleur = \textcolor{stringliteral}{"{} "{}}) : \mbox{\hyperlink{class_formes_ab27ff5b1c9543f73d8a51ac1df026ae3}{Formes}}(couleur) , a(g,h),b(d,b) \{\}}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_croix}{Croix}}(\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} a, \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} b,  Socket* s, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& couleur = \textcolor{stringliteral}{"{} "{}}) : \mbox{\hyperlink{class_formes_ab27ff5b1c9543f73d8a51ac1df026ae3}{Formes}}(couleur), a(a),b(b) \{\}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{double} calculerAire()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} 0; \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \mbox{\hyperlink{class_croix_a58f138972d49673971ad092d36d4b7fe}{getCentreSymetrie}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \mbox{\hyperlink{class_croix}{Croix}}* clone()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_croix}{Croix}}(*\textcolor{keyword}{this}); \}}
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_croix}{\string~Croix}}() \{\}}
+\DoxyCodeLine{37     \textcolor{keyword}{friend} ostream\& operator << (ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_croix}{Croix}}\& m);}
+\DoxyCodeLine{38     \textcolor{keyword}{operator} string() \textcolor{keyword}{const};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_croix_a37e586bc803c88c4992d336d8ff16e62}{translation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u);}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_croix_a9c19f4945e2b449cb4ddbb56ce9cb307}{homothetie}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u,\textcolor{keywordtype}{double} k) ;}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_croix_ab05bac433153869692718db850a8bfab}{rotation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, \textcolor{keyword}{const} \textcolor{keywordtype}{double} angle );}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{class_croix_aab65be0299a3f81f3dcd8fe9f45ff9d6}{sauvegarde}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_visiteur_sauvegarde}{VisiteurSauvegarde}} * visiteur) \textcolor{keyword}{const};}
+\DoxyCodeLine{45     \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{class_croix_a023cd7abd7c076476f1fb03f01350a1b}{dessine}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_visiteur_librairie}{VisiteurLibrairie}} * visiteur, Socket * s) \textcolor{keyword}{const};}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{inline} ostream\& operator << (ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_croix}{Croix}}\& m)}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50     \textcolor{keywordflow}{return} os << (string)m;}
+\DoxyCodeLine{51 \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJETT\_CROIX\_H}}
+
+\end{DoxyCode}

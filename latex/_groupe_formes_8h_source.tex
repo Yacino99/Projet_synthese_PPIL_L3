@@ -1,0 +1,70 @@
+\hypertarget{_groupe_formes_8h_source}{}\doxysection{Groupe\+Formes.\+h}
+\label{_groupe_formes_8h_source}\index{include/GroupeFormes.h@{include/GroupeFormes.h}}
+\mbox{\hyperlink{_groupe_formes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef PROJET\_GROUPEFORMES\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define PROJET\_GROUPEFORMES\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_formes_8h}{Formes.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_socket_8h}{Socket.h}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_groupe_formes}{GroupeFormes}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_formes}{Formes}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{private}:}
+\DoxyCodeLine{20     vector<Formes*> formes;}
+\DoxyCodeLine{21     \textcolor{keywordtype}{string} couleur;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_groupe_formes_ad469607d72116560d5e262ea509decb7}{GroupeFormes}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& couleur = \textcolor{stringliteral}{"{} "{}}) : \mbox{\hyperlink{class_formes}{Formes}}(couleur)}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         this-\/>couleur = couleur;}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_groupe_formes_a4ff10bdc0a3ce0e1d3bf6f9219dbdd38}{GroupeFormes}}(vector<Formes*> shapes, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& couleur = \textcolor{stringliteral}{"{} "{}}) : \mbox{\hyperlink{class_formes}{Formes}}(couleur)}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32         this-\/>couleur = couleur;}
+\DoxyCodeLine{33         formes = shapes;}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_groupe_formes}{\string~GroupeFormes}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \mbox{\hyperlink{class_formes}{Formes}} *getForme(\textcolor{keywordtype}{int} i) \textcolor{keyword}{const};}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} setCouleur(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&color);}
+\DoxyCodeLine{40     \textcolor{keyword}{const} \textcolor{keywordtype}{string} getCouleur()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} couleur; \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \mbox{\hyperlink{class_groupe_formes}{GroupeFormes}} \&\mbox{\hyperlink{class_groupe_formes_af899008496dbffe300d76c478acd2aee}{addForme}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_formes}{Formes}} *f);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_groupe_formes_a109d9a14481c5740bae972b1c0ba8042}{translation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u) ;}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_groupe_formes_a53322e2988daf8d44965323f2a3ccf40}{homothetie}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u,\textcolor{keywordtype}{double} k) ;}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_groupe_formes_a576e1be31eadd8851f44a7aec989017f}{rotation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, \textcolor{keyword}{const} \textcolor{keywordtype}{double} angle ) ;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_groupe_formes_a7021accf523e23195982117cf1bf32c2}{appliquerTranslation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, \textcolor{keywordtype}{bool} centreSymetrie);}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_groupe_formes_ae6dd331517a936df6bbc858417785445}{appliquerHomothetie}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, \textcolor{keyword}{const} \textcolor{keywordtype}{double} k, \textcolor{keywordtype}{bool} centreSymetrie);}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_groupe_formes_ac80ca9becbcb492d093a51e960379cb4}{appliquerRotation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, \textcolor{keyword}{const} \textcolor{keywordtype}{double} angle, \textcolor{keywordtype}{bool} centreSymetrie) ;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_groupe_formes_aae6258d214c576a8d0ce8a46cf4a0448}{calculerAire}}() \textcolor{keyword}{const} ;}
+\DoxyCodeLine{59     \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} getCentreSymetrie() \textcolor{keyword}{const};}
+\DoxyCodeLine{60     \textcolor{keyword}{operator} string() \textcolor{keyword}{const}  ;}
+\DoxyCodeLine{61     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_groupe_formes}{GroupeFormes}}* clone()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_groupe_formes_ad469607d72116560d5e262ea509decb7}{GroupeFormes}}(*\textcolor{keyword}{this});\}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keyword}{const} \textcolor{keywordtype}{double} sommeAires() \textcolor{keyword}{const};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \mbox{\hyperlink{class_groupe_formes_a31c34c05e05c2e73ff72e8462f91f75c}{sauvegarde}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_visiteur_sauvegarde}{VisiteurSauvegarde}} * visiteur) \textcolor{keyword}{const};}
+\DoxyCodeLine{66     \textcolor{keyword}{const} \textcolor{keywordtype}{void} * \mbox{\hyperlink{class_groupe_formes_af7e367a5365fc4371327fd26540775b2}{dessine}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_visiteur_librairie}{VisiteurLibrairie}} * visiteur, Socket * s) \textcolor{keyword}{const};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keyword}{friend} ostream\& operator << (ostream\& os,\textcolor{keyword}{const} \mbox{\hyperlink{class_groupe_formes}{GroupeFormes}} \&g);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{keyword}{inline} ostream\& operator << (ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_groupe_formes}{GroupeFormes}}\& g)}
+\DoxyCodeLine{73 \{}
+\DoxyCodeLine{74     os << (string)(g);}
+\DoxyCodeLine{75     \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{76 \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJET\_GROUPEFORMES\_H}}
+
+\end{DoxyCode}

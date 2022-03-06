@@ -1,0 +1,197 @@
+\hypertarget{class_polygone}{}\doxysection{Polygone Class Reference}
+\label{class_polygone}\index{Polygone@{Polygone}}
+Inheritance diagram for Polygone\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_polygone}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_polygone_a5fa28beb4f77b102c3bd99a3ac4769df}\label{class_polygone_a5fa28beb4f77b102c3bd99a3ac4769df}} 
+{\bfseries Polygone} (const string \&couleur=\char`\"{} \char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructeur ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_polygone_ae1076198e2b1c4c610558d6c48237c0c}\label{class_polygone_ae1076198e2b1c4c610558d6c48237c0c}} 
+{\bfseries Polygone} (vector$<$ \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} $\ast$ $>$ vect, const string \&couleur=\char`\"{} \char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructeur ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_polygone}{Polygone}} $\ast$ \mbox{\hyperlink{class_polygone_aadd28a0ed89728b444fc7513f5fe8d7d}{clone}} () const
+\item 
+void \mbox{\hyperlink{class_polygone_a132257d97dd7a32ee27d0ed10dfc26a1}{translation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u)
+\begin{DoxyCompactList}\small\item\em Opération de translation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygone_a613eff173cbe3347c56e901f894b072a}{homothetie}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, double k)
+\begin{DoxyCompactList}\small\item\em Opération d\textquotesingle{}homothétie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygone_a1be7d2261b9fc701b5b69b84aa7ed55b}{rotation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, const double angle)
+\begin{DoxyCompactList}\small\item\em Opération de rotation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \mbox{\hyperlink{class_polygone_a37150647eefcdfeee76dbfb811db625b}{get\+Centre\+Symetrie}} () const
+\item 
+double \mbox{\hyperlink{class_polygone_a245d2a26f8c0da7b103e37b7cff8bb42}{calculer\+Aire}} () const
+\begin{DoxyCompactList}\small\item\em Méthode qui retourne l\textquotesingle{}aire du polygone. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_polygone_abd801a84b5306df8021f1571d82deafd}{operator string}} () const
+\item 
+\mbox{\hyperlink{class_polygone}{Polygone}} \& \mbox{\hyperlink{class_polygone_a8cb08e4bd2b44d3b3325a2917ff4a31c}{add\+Point}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} $\ast$v)
+\begin{DoxyCompactList}\small\item\em Méthode qui ajoute un point au polygone. \end{DoxyCompactList}\item 
+const void $\ast$ \mbox{\hyperlink{class_polygone_aace29c017484cca5df08d79259cad385}{sauvegarde}} (const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$visiteur) const
+\begin{DoxyCompactList}\small\item\em Méthode du Design Pattern Visitor. \end{DoxyCompactList}\item 
+const void $\ast$ \mbox{\hyperlink{class_polygone_a2c322fcec9afaa5d0c4f7d0049126891}{dessine}} (const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$visiteur, \mbox{\hyperlink{class_socket}{Socket}} $\ast$s) const
+\begin{DoxyCompactList}\small\item\em Méthode du Design Pattern Visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_polygone_aeb35ae492358cb540f122dfcf77b577f}\label{class_polygone_aeb35ae492358cb540f122dfcf77b577f}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&os, const \mbox{\hyperlink{class_polygone}{Polygone}} \&m)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_polygone_a8cb08e4bd2b44d3b3325a2917ff4a31c}\label{class_polygone_a8cb08e4bd2b44d3b3325a2917ff4a31c}} 
+\index{Polygone@{Polygone}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!Polygone@{Polygone}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_polygone}{Polygone}} \& Polygone\+::add\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+Méthode qui ajoute un point au polygone. 
+
+\begin{DoxyReturn}{Returns}
+Un \mbox{\hyperlink{class_polygone}{Polygone}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_polygone_a245d2a26f8c0da7b103e37b7cff8bb42}\label{class_polygone_a245d2a26f8c0da7b103e37b7cff8bb42}} 
+\index{Polygone@{Polygone}!calculerAire@{calculerAire}}
+\index{calculerAire@{calculerAire}!Polygone@{Polygone}}
+\doxysubsubsection{\texorpdfstring{calculerAire()}{calculerAire()}}
+{\footnotesize\ttfamily double Polygone\+::calculer\+Aire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode qui retourne l\textquotesingle{}aire du polygone. 
+
+Cette méthode retourne la somme des aires de toutes les formes du groupe \begin{DoxyReturn}{Returns}
+Un double 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_polygone_aadd28a0ed89728b444fc7513f5fe8d7d}\label{class_polygone_aadd28a0ed89728b444fc7513f5fe8d7d}} 
+\index{Polygone@{Polygone}!clone@{clone}}
+\index{clone@{clone}!Polygone@{Polygone}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_polygone}{Polygone}} $\ast$ Polygone\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_polygone_a2c322fcec9afaa5d0c4f7d0049126891}\label{class_polygone_a2c322fcec9afaa5d0c4f7d0049126891}} 
+\index{Polygone@{Polygone}!dessine@{dessine}}
+\index{dessine@{dessine}!Polygone@{Polygone}}
+\doxysubsubsection{\texorpdfstring{dessine()}{dessine()}}
+{\footnotesize\ttfamily const void $\ast$ Polygone\+::dessine (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$}]{visiteur,  }\item[{\mbox{\hyperlink{class_socket}{Socket}} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode du Design Pattern Visitor. 
+
+Cette méthode \mbox{\hyperlink{class_polygone_a2c322fcec9afaa5d0c4f7d0049126891}{dessine()}} permet de visiter cette forme et d\textquotesingle{}appliquer l\textquotesingle{}opération de dessin associée à celle-\/ci grâce au Design Pattern Visitor. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$visiteur} & instance de \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} \\
+\hline
+{\em $\ast$s} & socket permettant de dessiner en C++ avec un Client TCP/\+IP \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_formes_a53ea87cfeffb370da0bd2ae88a42ff5a}{Formes}}.
+
+\mbox{\Hypertarget{class_polygone_a37150647eefcdfeee76dbfb811db625b}\label{class_polygone_a37150647eefcdfeee76dbfb811db625b}} 
+\index{Polygone@{Polygone}!getCentreSymetrie@{getCentreSymetrie}}
+\index{getCentreSymetrie@{getCentreSymetrie}!Polygone@{Polygone}}
+\doxysubsubsection{\texorpdfstring{getCentreSymetrie()}{getCentreSymetrie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} Polygone\+::get\+Centre\+Symetrie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_polygone_a613eff173cbe3347c56e901f894b072a}\label{class_polygone_a613eff173cbe3347c56e901f894b072a}} 
+\index{Polygone@{Polygone}!homothetie@{homothetie}}
+\index{homothetie@{homothetie}!Polygone@{Polygone}}
+\doxysubsubsection{\texorpdfstring{homothetie()}{homothetie()}}
+{\footnotesize\ttfamily void Polygone\+::homothetie (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération d\textquotesingle{}homothétie. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_a3c768569c25cae25d237582dc2f443e4}{Formes}}.
+
+\mbox{\Hypertarget{class_polygone_abd801a84b5306df8021f1571d82deafd}\label{class_polygone_abd801a84b5306df8021f1571d82deafd}} 
+\index{Polygone@{Polygone}!operator string@{operator string}}
+\index{operator string@{operator string}!Polygone@{Polygone}}
+\doxysubsubsection{\texorpdfstring{operator string()}{operator string()}}
+{\footnotesize\ttfamily Polygone\+::operator string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_polygone_a1be7d2261b9fc701b5b69b84aa7ed55b}\label{class_polygone_a1be7d2261b9fc701b5b69b84aa7ed55b}} 
+\index{Polygone@{Polygone}!rotation@{rotation}}
+\index{rotation@{rotation}!Polygone@{Polygone}}
+\doxysubsubsection{\texorpdfstring{rotation()}{rotation()}}
+{\footnotesize\ttfamily void Polygone\+::rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{const double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération de rotation. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_ae3959ecc4aecaa88086a15d4be006647}{Formes}}.
+
+\mbox{\Hypertarget{class_polygone_aace29c017484cca5df08d79259cad385}\label{class_polygone_aace29c017484cca5df08d79259cad385}} 
+\index{Polygone@{Polygone}!sauvegarde@{sauvegarde}}
+\index{sauvegarde@{sauvegarde}!Polygone@{Polygone}}
+\doxysubsubsection{\texorpdfstring{sauvegarde()}{sauvegarde()}}
+{\footnotesize\ttfamily const void $\ast$ Polygone\+::sauvegarde (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$}]{visiteur }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode du Design Pattern Visitor. 
+
+Cette méthode \mbox{\hyperlink{class_polygone_aace29c017484cca5df08d79259cad385}{sauvegarde()}} permet de visiter cette forme et d\textquotesingle{}appliquer l\textquotesingle{}opération de sauvegarde associée à celle-\/ci grâce au Design Pattern Visitor. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$visiteur} & instance de \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_formes_a80a34354727d0a57aec870afe74d7297}{Formes}}.
+
+\mbox{\Hypertarget{class_polygone_a132257d97dd7a32ee27d0ed10dfc26a1}\label{class_polygone_a132257d97dd7a32ee27d0ed10dfc26a1}} 
+\index{Polygone@{Polygone}!translation@{translation}}
+\index{translation@{translation}!Polygone@{Polygone}}
+\doxysubsubsection{\texorpdfstring{translation()}{translation()}}
+{\footnotesize\ttfamily void Polygone\+::translation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération de translation. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_afb2f76884ca35ca70f843af59d8cbe2a}{Formes}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_polygone_8h}{Polygone.\+h}}\item 
+src/\mbox{\hyperlink{_polygone_8cpp}{Polygone.\+cpp}}\end{DoxyCompactItemize}

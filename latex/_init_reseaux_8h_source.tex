@@ -1,0 +1,50 @@
+\hypertarget{_init_reseaux_8h_source}{}\doxysection{Init\+Reseaux.\+h}
+\label{_init_reseaux_8h_source}\index{include/InitReseaux.h@{include/InitReseaux.h}}
+\mbox{\hyperlink{_init_reseaux_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef PROJETT\_INITRESEAUX\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define PROJETT\_INITRESEAUX\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define \_WINSOCK\_DEPRECATED\_NO\_WARNINGS}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <WinSock2.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_erreur_8h}{Erreur.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_init_reseaux}{InitReseaux}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 \textcolor{keyword}{private}:}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} r;}
+\DoxyCodeLine{21     WSADATA wsadata;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \mbox{\hyperlink{class_init_reseaux}{InitReseaux}}() : r(WSAStartup(MAKEWORD(2, 0), \&wsadata))}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         \textcolor{comment}{// tester le r puis faire seulement un throw}}
+\DoxyCodeLine{26         \textcolor{keywordflow}{if} (r) \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_erreur}{Erreur}}(\textcolor{stringliteral}{"{}L'initialisation de la connexion a echoué"{}});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_init_reseaux}{\string~InitReseaux}}()}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         WSACleanup();}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{static} \mbox{\hyperlink{class_init_reseaux}{InitReseaux}}* initiateur;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keywordtype}{int} getR() \{ \textcolor{keywordflow}{return} r; \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keyword}{static} \mbox{\hyperlink{class_init_reseaux}{InitReseaux}}* getInitReseaux()}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         \textcolor{keywordflow}{if} (initiateur == NULL)}
+\DoxyCodeLine{44             initiateur = \textcolor{keyword}{new} \mbox{\hyperlink{class_init_reseaux}{InitReseaux}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{keywordflow}{return} initiateur;}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJETT\_INITRESEAUX\_H}}
+
+\end{DoxyCode}

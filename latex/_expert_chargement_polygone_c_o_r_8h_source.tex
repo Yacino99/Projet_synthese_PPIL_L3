@@ -1,0 +1,57 @@
+\hypertarget{_expert_chargement_polygone_c_o_r_8h_source}{}\doxysection{Expert\+Chargement\+Polygone\+COR.\+h}
+\label{_expert_chargement_polygone_c_o_r_8h_source}\index{include/ExpertChargementPolygoneCOR.h@{include/ExpertChargementPolygoneCOR.h}}
+\mbox{\hyperlink{_expert_chargement_polygone_c_o_r_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef PROJET\_EXPERTCHARGEMENTPOLYGONECOR\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define PROJET\_EXPERTCHARGEMENTPOLYGONECOR\_H}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_chargement_c_o_r_8h}{ExpertChargementCOR.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_formes_8h}{Formes.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_polygone_8h}{Polygone.h}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_expert_chargement_polygone_c_o_r}{ExpertChargementPolygoneCOR}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_expert_chargement_polygone_c_o_r}{ExpertChargementPolygoneCOR}}(\mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}} *suivant) : \mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}}(suivant) \{\}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{28     \mbox{\hyperlink{class_formes}{Formes}} *\mbox{\hyperlink{class_expert_chargement_polygone_c_o_r_aff799843bf1c83910d66290d0a77511e}{resoudre1}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&d)\textcolor{keyword}{ const}}
+\DoxyCodeLine{29 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{30         \textcolor{keyword}{const} \textcolor{keywordtype}{string} cherche = \textcolor{stringliteral}{"{}polygone"{}};}
+\DoxyCodeLine{31         string::size\_type pos = d.find(cherche);}
+\DoxyCodeLine{32         \textcolor{keywordflow}{while} (pos != string::npos)}
+\DoxyCodeLine{33         \{}
+\DoxyCodeLine{34             \textcolor{comment}{// "{}polygone"{} trouvé}}
+\DoxyCodeLine{35             vector<double> points;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37             \textcolor{comment}{// on extrait tout ce qui se trouve entre les parenthèses}}
+\DoxyCodeLine{38             \textcolor{keywordtype}{unsigned} firstParenthesis = d.find(\textcolor{stringliteral}{"{}("{}});}
+\DoxyCodeLine{39             \textcolor{keywordtype}{unsigned} lastParenthesis = d.find(\textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{40             \textcolor{keywordtype}{string} coordonnees = d.substr (firstParenthesis + 1, lastParenthesis -\/ firstParenthesis -\/ 1);}
+\DoxyCodeLine{41             istringstream is(coordonnees );}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43             \textcolor{comment}{// on enlève toutes les virgules et on stocke les nombres dans un vecteur}}
+\DoxyCodeLine{44             \textcolor{keywordtype}{string} t;}
+\DoxyCodeLine{45             \textcolor{keywordflow}{while} ( getline( is, t, \textcolor{charliteral}{','} ) ) points.push\_back(stod(t));}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47             \textcolor{comment}{// tab de vecteurs}}
+\DoxyCodeLine{48             vector<Vecteur2D*> vecteurs;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} x=0, y=1; y < points.size(); x+=2, y+=2)}
+\DoxyCodeLine{51                 vecteurs.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}(points[x], points[y]));}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53             \textcolor{comment}{// récupération de la couuleur}}
+\DoxyCodeLine{54             \textcolor{keywordtype}{string} couleur = d.substr(lastParenthesis + 1, d.size());}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56             \textcolor{comment}{// création de la forme en des données du fichier de visite}}
+\DoxyCodeLine{57             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_polygone}{Polygone}}(vecteurs, couleur);}
+\DoxyCodeLine{58         \}}
+\DoxyCodeLine{59         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{60     \};}
+\DoxyCodeLine{61 \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJET\_EXPERTCHARGEMENTPOLYGONECOR\_H}}
+
+\end{DoxyCode}

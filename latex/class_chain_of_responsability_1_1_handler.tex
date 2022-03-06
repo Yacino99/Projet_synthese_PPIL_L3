@@ -1,0 +1,55 @@
+\hypertarget{class_chain_of_responsability_1_1_handler}{}\doxysection{Chain\+Of\+Responsability.\+Handler Class Reference}
+\label{class_chain_of_responsability_1_1_handler}\index{ChainOfResponsability.Handler@{ChainOfResponsability.Handler}}
+Inheritance diagram for Chain\+Of\+Responsability.\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.025641cm]{class_chain_of_responsability_1_1_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract boolean \mbox{\hyperlink{class_chain_of_responsability_1_1_handler_a47a088495b5870759de64eacc3beec0f}{handle}} (String message, \mbox{\hyperlink{class_chain_of_responsability_1_1_cadre_dessin}{Cadre\+Dessin}} cadre\+Dessin)  throws Interrupted\+Exception
+\item 
+\mbox{\Hypertarget{class_chain_of_responsability_1_1_handler_aecbce92a385054c656cf4cf5e32bba21}\label{class_chain_of_responsability_1_1_handler_aecbce92a385054c656cf4cf5e32bba21}} 
+void {\bfseries set\+Next\+Chain} (\mbox{\hyperlink{class_chain_of_responsability_1_1_handler}{Handler}} next\+Chain)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_chain_of_responsability_1_1_handler_a12723e95bc67c2b5aabbc74630124648}\label{class_chain_of_responsability_1_1_handler_a12723e95bc67c2b5aabbc74630124648}} 
+boolean {\bfseries handle\+Next} (String message, \mbox{\hyperlink{class_chain_of_responsability_1_1_cadre_dessin}{Cadre\+Dessin}} cadre\+Dessin)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_chain_of_responsability_1_1_handler_a6e37f47acaa275f1a4eec80c943aa4b8}\label{class_chain_of_responsability_1_1_handler_a6e37f47acaa275f1a4eec80c943aa4b8}} 
+Buffered\+Reader {\bfseries flux\+Entrant}
+\item 
+\mbox{\Hypertarget{class_chain_of_responsability_1_1_handler_a8c4b41c0551da8c9728ca065b736f7dd}\label{class_chain_of_responsability_1_1_handler_a8c4b41c0551da8c9728ca065b736f7dd}} 
+Print\+Stream {\bfseries flux\+Sortant}
+\item 
+\mbox{\Hypertarget{class_chain_of_responsability_1_1_handler_a830a072b3597dd5c2d3ad5cb5268d681}\label{class_chain_of_responsability_1_1_handler_a830a072b3597dd5c2d3ad5cb5268d681}} 
+Frame {\bfseries f1\+AR}
+\item 
+\mbox{\Hypertarget{class_chain_of_responsability_1_1_handler_ae38583b216bf36bc0b4ff91f64a200b6}\label{class_chain_of_responsability_1_1_handler_ae38583b216bf36bc0b4ff91f64a200b6}} 
+Hash\+Map$<$ String, Color $>$ {\bfseries map} =new Hash\+Map$<$String,Color$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_chain_of_responsability_1_1_handler_a47a088495b5870759de64eacc3beec0f}\label{class_chain_of_responsability_1_1_handler_a47a088495b5870759de64eacc3beec0f}} 
+\index{ChainOfResponsability.Handler@{ChainOfResponsability.Handler}!handle@{handle}}
+\index{handle@{handle}!ChainOfResponsability.Handler@{ChainOfResponsability.Handler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily abstract boolean Chain\+Of\+Responsability.\+Handler.\+handle (\begin{DoxyParamCaption}\item[{String}]{message,  }\item[{\mbox{\hyperlink{class_chain_of_responsability_1_1_cadre_dessin}{Cadre\+Dessin}}}]{cadre\+Dessin }\end{DoxyParamCaption}) throws Interrupted\+Exception\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_chain_of_responsability_1_1_draw_circle_handler_a50a8b723c087d78770a5dbc61d02b856}{Chain\+Of\+Responsability.\+Draw\+Circle\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Serveur/src/\+Chain\+Of\+Responsability/Handler.\+java\end{DoxyCompactItemize}

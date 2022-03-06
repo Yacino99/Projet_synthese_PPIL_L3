@@ -1,0 +1,8 @@
+<map id="VisiteurLibrairie::visite" name="VisiteurLibrairie::visite">
+<area shape="rect" id="node1" title="Méthode visite() du Design Pattern Visitor." alt="" coords="215,99,333,141"/>
+<area shape="rect" id="node2" href="$class_croix.html#a023cd7abd7c076476f1fb03f01350a1b" title="Méthode du Design Pattern Visitor." alt="" coords="33,5,139,32"/>
+<area shape="rect" id="node3" href="$class_groupe_formes.html#af7e367a5365fc4371327fd26540775b2" title="Méthode du Design Pattern Visitor." alt="" coords="5,56,167,83"/>
+<area shape="rect" id="node4" href="$class_polygone.html#a2c322fcec9afaa5d0c4f7d0049126891" title="Méthode du Design Pattern Visitor." alt="" coords="21,107,151,133"/>
+<area shape="rect" id="node5" href="$class_rond.html#a6af0dd4a7bf0d68a9db88f2289b34d88" title="Méthode du Design Pattern Visitor." alt="" coords="33,157,139,184"/>
+<area shape="rect" id="node6" href="$class_triangle.html#a4c2aa57b2d72801309a5720cc0f02c3a" title="Méthode du Design Pattern Visitor." alt="" coords="26,208,146,235"/>
+</map>

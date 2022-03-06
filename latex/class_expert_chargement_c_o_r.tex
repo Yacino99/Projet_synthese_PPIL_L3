@@ -1,0 +1,58 @@
+\hypertarget{class_expert_chargement_c_o_r}{}\doxysection{Expert\+Chargement\+COR Class Reference}
+\label{class_expert_chargement_c_o_r}\index{ExpertChargementCOR@{ExpertChargementCOR}}
+Inheritance diagram for Expert\+Chargement\+COR\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.647059cm]{class_expert_chargement_c_o_r}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_expert_chargement_c_o_r_adaa14937d417718d0bace4e50efbfce1}\label{class_expert_chargement_c_o_r_adaa14937d417718d0bace4e50efbfce1}} 
+{\bfseries Expert\+Chargement\+COR} (\mbox{\hyperlink{class_expert_chargement_c_o_r}{Expert\+Chargement\+COR}} $\ast$suivant)
+\item 
+\mbox{\hyperlink{class_formes}{Formes}} $\ast$ \mbox{\hyperlink{class_expert_chargement_c_o_r_aa6a0dd2d63fb1dea983a38c5fa3e8753}{resoudre}} (const string \&d) const
+\begin{DoxyCompactList}\small\item\em Méthode du Design Pattern Chain of Responsibility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_formes}{Formes}} $\ast$ \mbox{\hyperlink{class_expert_chargement_c_o_r_a51bee94c8be668f6c47c62e140f619f1}{resoudre1}} (const string \&d) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_expert_chargement_c_o_r_aa6a0dd2d63fb1dea983a38c5fa3e8753}\label{class_expert_chargement_c_o_r_aa6a0dd2d63fb1dea983a38c5fa3e8753}} 
+\index{ExpertChargementCOR@{ExpertChargementCOR}!resoudre@{resoudre}}
+\index{resoudre@{resoudre}!ExpertChargementCOR@{ExpertChargementCOR}}
+\doxysubsubsection{\texorpdfstring{resoudre()}{resoudre()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_formes}{Formes}} $\ast$ Expert\+Chargement\+COR\+::resoudre (\begin{DoxyParamCaption}\item[{const string \&}]{d }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Méthode du Design Pattern Chain of Responsibility. 
+
+Cette méthode \mbox{\hyperlink{class_expert_chargement_c_o_r_aa6a0dd2d63fb1dea983a38c5fa3e8753}{resoudre()}} permet de céterminer la forme lue en le passant à l\textquotesingle{}expert adéquat grâce au Design Pattern Chain of Responsibility. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$d} & le problème à résoudre, ici une ligne lue depuis le fichier de sauvegarde réprésentant une forme \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_expert}{Expert}}.
+
+\mbox{\Hypertarget{class_expert_chargement_c_o_r_a51bee94c8be668f6c47c62e140f619f1}\label{class_expert_chargement_c_o_r_a51bee94c8be668f6c47c62e140f619f1}} 
+\index{ExpertChargementCOR@{ExpertChargementCOR}!resoudre1@{resoudre1}}
+\index{resoudre1@{resoudre1}!ExpertChargementCOR@{ExpertChargementCOR}}
+\doxysubsubsection{\texorpdfstring{resoudre1()}{resoudre1()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_formes}{Formes}} $\ast$ Expert\+Chargement\+COR\+::resoudre1 (\begin{DoxyParamCaption}\item[{const string \&}]{d }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_expert_chargement_croix_c_o_r_aa6d0549295bfd43dfdb8f324179568ad}{Expert\+Chargement\+Croix\+COR}}, \mbox{\hyperlink{class_expert_chargement_groupe_c_o_r_ada0f84fcff06d1a40a645a37487c7e91}{Expert\+Chargement\+Groupe\+COR}}, \mbox{\hyperlink{class_expert_chargement_polygone_c_o_r_aff799843bf1c83910d66290d0a77511e}{Expert\+Chargement\+Polygone\+COR}}, \mbox{\hyperlink{class_expert_chargement_rond_c_o_r_a9e98484e5879ad34ab9cee5b62d3293a}{Expert\+Chargement\+Rond\+COR}}, and \mbox{\hyperlink{class_expert_chargement_triangle_c_o_r_a8391194d14a6cae8c676e4f93423e041}{Expert\+Chargement\+Triangle\+COR}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_expert_chargement_c_o_r_8h}{Expert\+Chargement\+COR.\+h}}\end{DoxyCompactItemize}

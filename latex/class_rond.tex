@@ -1,0 +1,182 @@
+\hypertarget{class_rond}{}\doxysection{Rond Class Reference}
+\label{class_rond}\index{Rond@{Rond}}
+Inheritance diagram for Rond\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_rond}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rond_a616077a13d36f00a8132a2e7d80f8668}\label{class_rond_a616077a13d36f00a8132a2e7d80f8668}} 
+{\bfseries Rond} (int x, int y, double rayon, const string \&color=\char`\"{} \char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructeur ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_rond_ab94257c836c251b1201c0072a6cb6f19}\label{class_rond_ab94257c836c251b1201c0072a6cb6f19}} 
+{\bfseries Rond} (\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} v, double rayon, const string \&color=\char`\"{} \char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructeur ~\newline
+ \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_rond_a7b9105f7c1db6114efa56dc838d4f03d}{calculer\+Aire}} () const
+\begin{DoxyCompactList}\small\item\em Méthode qui retourne l\textquotesingle{}aire du rond. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \mbox{\hyperlink{class_rond_a0567a429d7bb82b17046dcd8f52abceb}{get\+Centre\+Symetrie}} () const
+\item 
+\mbox{\hyperlink{class_rond}{Rond}} $\ast$ \mbox{\hyperlink{class_rond_aee1c8633ee6375e74f21deb3be9aed66}{clone}} () const
+\item 
+void \mbox{\hyperlink{class_rond_a1ab5879b2c4286bf69096851fd66d3b4}{rotation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, const double angle)
+\begin{DoxyCompactList}\small\item\em Opération de rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rond_a788fe30088e379767941c52abe163691}{translation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u)
+\begin{DoxyCompactList}\small\item\em Opération de translation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rond_acdd9e5be3181b7cc90cb78e2346b4f21}{homothetie}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, double k)
+\begin{DoxyCompactList}\small\item\em Opération d\textquotesingle{}homothétie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rond_adda0efab803f12e34275304c0f30da83}{operator string}} () const
+\item 
+const void $\ast$ \mbox{\hyperlink{class_rond_abc9e35b419b26dae24518c040e260a5d}{sauvegarde}} (const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$visiteur) const
+\begin{DoxyCompactList}\small\item\em Méthode du Design Pattern Visitor. \end{DoxyCompactList}\item 
+const void $\ast$ \mbox{\hyperlink{class_rond_a6af0dd4a7bf0d68a9db88f2289b34d88}{dessine}} (const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$visiteur, \mbox{\hyperlink{class_socket}{Socket}} $\ast$s) const
+\begin{DoxyCompactList}\small\item\em Méthode du Design Pattern Visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rond_a72fc1cf3638a5c559a84cbe95314fecb}\label{class_rond_a72fc1cf3638a5c559a84cbe95314fecb}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&os, const \mbox{\hyperlink{class_rond}{Rond}} \&m)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rond_a7b9105f7c1db6114efa56dc838d4f03d}\label{class_rond_a7b9105f7c1db6114efa56dc838d4f03d}} 
+\index{Rond@{Rond}!calculerAire@{calculerAire}}
+\index{calculerAire@{calculerAire}!Rond@{Rond}}
+\doxysubsubsection{\texorpdfstring{calculerAire()}{calculerAire()}}
+{\footnotesize\ttfamily double Rond\+::calculer\+Aire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode qui retourne l\textquotesingle{}aire du rond. 
+
+\begin{DoxyReturn}{Returns}
+Un double 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_rond_aee1c8633ee6375e74f21deb3be9aed66}\label{class_rond_aee1c8633ee6375e74f21deb3be9aed66}} 
+\index{Rond@{Rond}!clone@{clone}}
+\index{clone@{clone}!Rond@{Rond}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rond}{Rond}} $\ast$ Rond\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_rond_a6af0dd4a7bf0d68a9db88f2289b34d88}\label{class_rond_a6af0dd4a7bf0d68a9db88f2289b34d88}} 
+\index{Rond@{Rond}!dessine@{dessine}}
+\index{dessine@{dessine}!Rond@{Rond}}
+\doxysubsubsection{\texorpdfstring{dessine()}{dessine()}}
+{\footnotesize\ttfamily const void $\ast$ Rond\+::dessine (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$}]{visiteur,  }\item[{\mbox{\hyperlink{class_socket}{Socket}} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode du Design Pattern Visitor. 
+
+Cette méthode \mbox{\hyperlink{class_rond_a6af0dd4a7bf0d68a9db88f2289b34d88}{dessine()}} permet de visiter cette forme et d\textquotesingle{}appliquer l\textquotesingle{}opération de dessin associée à celle-\/ci grâce au Design Pattern Visitor. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$visiteur} & instance de \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} \\
+\hline
+{\em $\ast$s} & socket permettant de dessiner en C++ avec un Client TCP/\+IP \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_formes_a53ea87cfeffb370da0bd2ae88a42ff5a}{Formes}}.
+
+\mbox{\Hypertarget{class_rond_a0567a429d7bb82b17046dcd8f52abceb}\label{class_rond_a0567a429d7bb82b17046dcd8f52abceb}} 
+\index{Rond@{Rond}!getCentreSymetrie@{getCentreSymetrie}}
+\index{getCentreSymetrie@{getCentreSymetrie}!Rond@{Rond}}
+\doxysubsubsection{\texorpdfstring{getCentreSymetrie()}{getCentreSymetrie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} Rond\+::get\+Centre\+Symetrie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_rond_acdd9e5be3181b7cc90cb78e2346b4f21}\label{class_rond_acdd9e5be3181b7cc90cb78e2346b4f21}} 
+\index{Rond@{Rond}!homothetie@{homothetie}}
+\index{homothetie@{homothetie}!Rond@{Rond}}
+\doxysubsubsection{\texorpdfstring{homothetie()}{homothetie()}}
+{\footnotesize\ttfamily void Rond\+::homothetie (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération d\textquotesingle{}homothétie. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_a3c768569c25cae25d237582dc2f443e4}{Formes}}.
+
+\mbox{\Hypertarget{class_rond_adda0efab803f12e34275304c0f30da83}\label{class_rond_adda0efab803f12e34275304c0f30da83}} 
+\index{Rond@{Rond}!operator string@{operator string}}
+\index{operator string@{operator string}!Rond@{Rond}}
+\doxysubsubsection{\texorpdfstring{operator string()}{operator string()}}
+{\footnotesize\ttfamily Rond\+::operator string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_rond_a1ab5879b2c4286bf69096851fd66d3b4}\label{class_rond_a1ab5879b2c4286bf69096851fd66d3b4}} 
+\index{Rond@{Rond}!rotation@{rotation}}
+\index{rotation@{rotation}!Rond@{Rond}}
+\doxysubsubsection{\texorpdfstring{rotation()}{rotation()}}
+{\footnotesize\ttfamily void Rond\+::rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{const double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération de rotation. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_ae3959ecc4aecaa88086a15d4be006647}{Formes}}.
+
+\mbox{\Hypertarget{class_rond_abc9e35b419b26dae24518c040e260a5d}\label{class_rond_abc9e35b419b26dae24518c040e260a5d}} 
+\index{Rond@{Rond}!sauvegarde@{sauvegarde}}
+\index{sauvegarde@{sauvegarde}!Rond@{Rond}}
+\doxysubsubsection{\texorpdfstring{sauvegarde()}{sauvegarde()}}
+{\footnotesize\ttfamily const void $\ast$ Rond\+::sauvegarde (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$}]{visiteur }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode du Design Pattern Visitor. 
+
+Cette méthode \mbox{\hyperlink{class_rond_abc9e35b419b26dae24518c040e260a5d}{sauvegarde()}} permet de visiter cette forme et d\textquotesingle{}appliquer l\textquotesingle{}opération de sauvegarde associée à celle-\/ci grâce au Design Pattern Visitor. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$visiteur} & instance de \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_formes_a80a34354727d0a57aec870afe74d7297}{Formes}}.
+
+\mbox{\Hypertarget{class_rond_a788fe30088e379767941c52abe163691}\label{class_rond_a788fe30088e379767941c52abe163691}} 
+\index{Rond@{Rond}!translation@{translation}}
+\index{translation@{translation}!Rond@{Rond}}
+\doxysubsubsection{\texorpdfstring{translation()}{translation()}}
+{\footnotesize\ttfamily void Rond\+::translation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération de translation. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_afb2f76884ca35ca70f843af59d8cbe2a}{Formes}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_rond_8h}{Rond.\+h}}\item 
+src/\mbox{\hyperlink{_rond_8cpp}{Rond.\+cpp}}\end{DoxyCompactItemize}

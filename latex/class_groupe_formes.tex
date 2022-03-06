@@ -1,0 +1,223 @@
+\hypertarget{class_groupe_formes}{}\doxysection{Groupe\+Formes Class Reference}
+\label{class_groupe_formes}\index{GroupeFormes@{GroupeFormes}}
+Inheritance diagram for Groupe\+Formes\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_groupe_formes}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_groupe_formes_ad469607d72116560d5e262ea509decb7}\label{class_groupe_formes_ad469607d72116560d5e262ea509decb7}} 
+{\bfseries Groupe\+Formes} (const string \&couleur=\char`\"{} \char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructeur ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_groupe_formes_a4ff10bdc0a3ce0e1d3bf6f9219dbdd38}\label{class_groupe_formes_a4ff10bdc0a3ce0e1d3bf6f9219dbdd38}} 
+{\bfseries Groupe\+Formes} (vector$<$ \mbox{\hyperlink{class_formes}{Formes}} $\ast$ $>$ shapes, const string \&couleur=\char`\"{} \char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructeur ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_groupe_formes_a8a3953ee80c0d1d34922db56b5d34162}\label{class_groupe_formes_a8a3953ee80c0d1d34922db56b5d34162}} 
+\mbox{\hyperlink{class_formes}{Formes}} $\ast$ {\bfseries get\+Forme} (int i) const
+\item 
+\mbox{\Hypertarget{class_groupe_formes_a7565a72f2e8ff82bc37488762353c677}\label{class_groupe_formes_a7565a72f2e8ff82bc37488762353c677}} 
+void {\bfseries set\+Couleur} (const string \&color)
+\item 
+\mbox{\Hypertarget{class_groupe_formes_af0cad7a0e049bb0debe4bdc6f4e94fd7}\label{class_groupe_formes_af0cad7a0e049bb0debe4bdc6f4e94fd7}} 
+const string {\bfseries get\+Couleur} () const
+\item 
+\mbox{\hyperlink{class_groupe_formes}{Groupe\+Formes}} \& \mbox{\hyperlink{class_groupe_formes_af899008496dbffe300d76c478acd2aee}{add\+Forme}} (const \mbox{\hyperlink{class_formes}{Formes}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Méthode qui ajoute une forme au groupe actuel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_groupe_formes_a109d9a14481c5740bae972b1c0ba8042}{translation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u)
+\begin{DoxyCompactList}\small\item\em Opération de translation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_groupe_formes_a53322e2988daf8d44965323f2a3ccf40}{homothetie}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, double k)
+\begin{DoxyCompactList}\small\item\em Opération d\textquotesingle{}homothétie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_groupe_formes_a576e1be31eadd8851f44a7aec989017f}{rotation}} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, const double angle)
+\begin{DoxyCompactList}\small\item\em Opération de rotation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_groupe_formes_a7021accf523e23195982117cf1bf32c2}\label{class_groupe_formes_a7021accf523e23195982117cf1bf32c2}} 
+void {\bfseries appliquer\+Translation} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, bool centre\+Symetrie)
+\begin{DoxyCompactList}\small\item\em Opération de translation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_groupe_formes_ae6dd331517a936df6bbc858417785445}\label{class_groupe_formes_ae6dd331517a936df6bbc858417785445}} 
+void {\bfseries appliquer\+Homothetie} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, const double k, bool centre\+Symetrie)
+\begin{DoxyCompactList}\small\item\em Opération d\textquotesingle{}homothétie. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_groupe_formes_ac80ca9becbcb492d093a51e960379cb4}\label{class_groupe_formes_ac80ca9becbcb492d093a51e960379cb4}} 
+void {\bfseries appliquer\+Rotation} (const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, const double angle, bool centre\+Symetrie)
+\begin{DoxyCompactList}\small\item\em Opération de rotation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_groupe_formes_aae6258d214c576a8d0ce8a46cf4a0448}{calculer\+Aire}} () const
+\begin{DoxyCompactList}\small\item\em Méthode qui retourne la somme des aires. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \mbox{\hyperlink{class_groupe_formes_a7880125e1ad88cb3ec9a18d0b58377e2}{get\+Centre\+Symetrie}} () const
+\item 
+\mbox{\hyperlink{class_groupe_formes_a911fb68b814865c8b53906d3aeefe4fa}{operator string}} () const
+\item 
+virtual \mbox{\hyperlink{class_groupe_formes}{Groupe\+Formes}} $\ast$ \mbox{\hyperlink{class_groupe_formes_ae943d9c953dd5a799c50e0c0e313a8f8}{clone}} () const
+\item 
+\mbox{\Hypertarget{class_groupe_formes_a579cdcf7a8c8d98366d66069823ea8a4}\label{class_groupe_formes_a579cdcf7a8c8d98366d66069823ea8a4}} 
+const double {\bfseries somme\+Aires} () const
+\item 
+const void $\ast$ \mbox{\hyperlink{class_groupe_formes_a31c34c05e05c2e73ff72e8462f91f75c}{sauvegarde}} (const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$visiteur) const
+\begin{DoxyCompactList}\small\item\em Méthode du Design Pattern Visitor. \end{DoxyCompactList}\item 
+const void $\ast$ \mbox{\hyperlink{class_groupe_formes_af7e367a5365fc4371327fd26540775b2}{dessine}} (const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$visiteur, \mbox{\hyperlink{class_socket}{Socket}} $\ast$s) const
+\begin{DoxyCompactList}\small\item\em Méthode du Design Pattern Visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_groupe_formes_a6c6c0f1f3dbb337dee406024ff0146db}\label{class_groupe_formes_a6c6c0f1f3dbb337dee406024ff0146db}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&os, const \mbox{\hyperlink{class_groupe_formes}{Groupe\+Formes}} \&g)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_groupe_formes_af899008496dbffe300d76c478acd2aee}\label{class_groupe_formes_af899008496dbffe300d76c478acd2aee}} 
+\index{GroupeFormes@{GroupeFormes}!addForme@{addForme}}
+\index{addForme@{addForme}!GroupeFormes@{GroupeFormes}}
+\doxysubsubsection{\texorpdfstring{addForme()}{addForme()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_groupe_formes}{Groupe\+Formes}} \& Groupe\+Formes\+::add\+Forme (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_formes}{Formes}} $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Méthode qui ajoute une forme au groupe actuel. 
+
+Cette méthode ajoute une nouvelle forme au groupe de forme actuel. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$f} & la forme à ajouté \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un \mbox{\hyperlink{class_groupe_formes}{Groupe\+Formes}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_groupe_formes_aae6258d214c576a8d0ce8a46cf4a0448}\label{class_groupe_formes_aae6258d214c576a8d0ce8a46cf4a0448}} 
+\index{GroupeFormes@{GroupeFormes}!calculerAire@{calculerAire}}
+\index{calculerAire@{calculerAire}!GroupeFormes@{GroupeFormes}}
+\doxysubsubsection{\texorpdfstring{calculerAire()}{calculerAire()}}
+{\footnotesize\ttfamily double Groupe\+Formes\+::calculer\+Aire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode qui retourne la somme des aires. 
+
+Cette méthode retourne la somme des aires de toutes les formes du groupe \begin{DoxyReturn}{Returns}
+Un double 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_groupe_formes_ae943d9c953dd5a799c50e0c0e313a8f8}\label{class_groupe_formes_ae943d9c953dd5a799c50e0c0e313a8f8}} 
+\index{GroupeFormes@{GroupeFormes}!clone@{clone}}
+\index{clone@{clone}!GroupeFormes@{GroupeFormes}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_groupe_formes}{Groupe\+Formes}} $\ast$ Groupe\+Formes\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_groupe_formes_af7e367a5365fc4371327fd26540775b2}\label{class_groupe_formes_af7e367a5365fc4371327fd26540775b2}} 
+\index{GroupeFormes@{GroupeFormes}!dessine@{dessine}}
+\index{dessine@{dessine}!GroupeFormes@{GroupeFormes}}
+\doxysubsubsection{\texorpdfstring{dessine()}{dessine()}}
+{\footnotesize\ttfamily const void $\ast$ Groupe\+Formes\+::dessine (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} $\ast$}]{visiteur,  }\item[{\mbox{\hyperlink{class_socket}{Socket}} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode du Design Pattern Visitor. 
+
+Cette méthode \mbox{\hyperlink{class_groupe_formes_af7e367a5365fc4371327fd26540775b2}{dessine()}} permet de visiter cette forme et d\textquotesingle{}appliquer l\textquotesingle{}opération de dessin associée à celle-\/ci grâce au Design Pattern Visitor. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$visiteur} & instance de \mbox{\hyperlink{class_visiteur_librairie}{Visiteur\+Librairie}} \\
+\hline
+{\em $\ast$s} & socket permettant de dessiner en C++ avec un Client TCP/\+IP \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_formes_a53ea87cfeffb370da0bd2ae88a42ff5a}{Formes}}.
+
+\mbox{\Hypertarget{class_groupe_formes_a7880125e1ad88cb3ec9a18d0b58377e2}\label{class_groupe_formes_a7880125e1ad88cb3ec9a18d0b58377e2}} 
+\index{GroupeFormes@{GroupeFormes}!getCentreSymetrie@{getCentreSymetrie}}
+\index{getCentreSymetrie@{getCentreSymetrie}!GroupeFormes@{GroupeFormes}}
+\doxysubsubsection{\texorpdfstring{getCentreSymetrie()}{getCentreSymetrie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} Groupe\+Formes\+::get\+Centre\+Symetrie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_groupe_formes_a53322e2988daf8d44965323f2a3ccf40}\label{class_groupe_formes_a53322e2988daf8d44965323f2a3ccf40}} 
+\index{GroupeFormes@{GroupeFormes}!homothetie@{homothetie}}
+\index{homothetie@{homothetie}!GroupeFormes@{GroupeFormes}}
+\doxysubsubsection{\texorpdfstring{homothetie()}{homothetie()}}
+{\footnotesize\ttfamily void Groupe\+Formes\+::homothetie (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération d\textquotesingle{}homothétie. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_a3c768569c25cae25d237582dc2f443e4}{Formes}}.
+
+\mbox{\Hypertarget{class_groupe_formes_a911fb68b814865c8b53906d3aeefe4fa}\label{class_groupe_formes_a911fb68b814865c8b53906d3aeefe4fa}} 
+\index{GroupeFormes@{GroupeFormes}!operator string@{operator string}}
+\index{operator string@{operator string}!GroupeFormes@{GroupeFormes}}
+\doxysubsubsection{\texorpdfstring{operator string()}{operator string()}}
+{\footnotesize\ttfamily Groupe\+Formes\+::operator string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_formes}{Formes}}.
+
+\mbox{\Hypertarget{class_groupe_formes_a576e1be31eadd8851f44a7aec989017f}\label{class_groupe_formes_a576e1be31eadd8851f44a7aec989017f}} 
+\index{GroupeFormes@{GroupeFormes}!rotation@{rotation}}
+\index{rotation@{rotation}!GroupeFormes@{GroupeFormes}}
+\doxysubsubsection{\texorpdfstring{rotation()}{rotation()}}
+{\footnotesize\ttfamily void Groupe\+Formes\+::rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u,  }\item[{const double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération de rotation. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_ae3959ecc4aecaa88086a15d4be006647}{Formes}}.
+
+\mbox{\Hypertarget{class_groupe_formes_a31c34c05e05c2e73ff72e8462f91f75c}\label{class_groupe_formes_a31c34c05e05c2e73ff72e8462f91f75c}} 
+\index{GroupeFormes@{GroupeFormes}!sauvegarde@{sauvegarde}}
+\index{sauvegarde@{sauvegarde}!GroupeFormes@{GroupeFormes}}
+\doxysubsubsection{\texorpdfstring{sauvegarde()}{sauvegarde()}}
+{\footnotesize\ttfamily const void $\ast$ Groupe\+Formes\+::sauvegarde (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} $\ast$}]{visiteur }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Méthode du Design Pattern Visitor. 
+
+Cette méthode \mbox{\hyperlink{class_groupe_formes_a31c34c05e05c2e73ff72e8462f91f75c}{sauvegarde()}} permet de visiter cette forme et d\textquotesingle{}appliquer l\textquotesingle{}opération de sauvegarde associée à celle-\/ci grâce au Design Pattern Visitor. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$visiteur} & instance de \mbox{\hyperlink{class_visiteur_sauvegarde}{Visiteur\+Sauvegarde}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_formes_a80a34354727d0a57aec870afe74d7297}{Formes}}.
+
+\mbox{\Hypertarget{class_groupe_formes_a109d9a14481c5740bae972b1c0ba8042}\label{class_groupe_formes_a109d9a14481c5740bae972b1c0ba8042}} 
+\index{GroupeFormes@{GroupeFormes}!translation@{translation}}
+\index{translation@{translation}!GroupeFormes@{GroupeFormes}}
+\doxysubsubsection{\texorpdfstring{translation()}{translation()}}
+{\footnotesize\ttfamily void Groupe\+Formes\+::translation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Opération de translation. 
+
+
+
+Implements \mbox{\hyperlink{class_formes_afb2f76884ca35ca70f843af59d8cbe2a}{Formes}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_groupe_formes_8h}{Groupe\+Formes.\+h}}\item 
+src/\mbox{\hyperlink{_groupe_formes_8cpp}{Groupe\+Formes.\+cpp}}\end{DoxyCompactItemize}

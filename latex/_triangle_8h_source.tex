@@ -1,0 +1,50 @@
+\hypertarget{_triangle_8h_source}{}\doxysection{Triangle.\+h}
+\label{_triangle_8h_source}\index{include/Triangle.h@{include/Triangle.h}}
+\mbox{\hyperlink{_triangle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef PROJETT\_TRIANGLE\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define PROJETT\_TRIANGLE\_H}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_formes_8h}{Formes.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vecteur2_d_8h}{Vecteur2D.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_socket_8h}{Socket.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_triangle}{Triangle}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_formes}{Formes}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} a, b, c;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27     \mbox{\hyperlink{class_triangle_a01beded10818ee2c37beca6119efb022}{Triangle}}(\textcolor{keywordtype}{int} a1, \textcolor{keywordtype}{int} a2 ,\textcolor{keywordtype}{int} b1,\textcolor{keywordtype}{int} b2 , \textcolor{keywordtype}{int} c1 , \textcolor{keywordtype}{int} c2 , \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& color = \textcolor{stringliteral}{"{} "{}}) : \mbox{\hyperlink{class_formes}{Formes}}(color), a(a1,a2), b(b1,b2), c(c1,c2) \{\}}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_triangle_a48e847475f1ea640c419d431a30d9ff0}{Triangle}}(\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} a, \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} b,\mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} c, \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& color = \textcolor{stringliteral}{"{} "{}}) : \mbox{\hyperlink{class_formes}{Formes}}(color), a(a), b(b) , c(c) \{\}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_triangle_a129c42d1f01fb66f514e9657c6dcb4e9}{calculerAire}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} getCentreSymetrie() \textcolor{keyword}{const};}
+\DoxyCodeLine{33     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_triangle}{\string~Triangle}}() \{\}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \mbox{\hyperlink{class_triangle}{Triangle}}* clone()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_triangle_a01beded10818ee2c37beca6119efb022}{Triangle}}(*\textcolor{keyword}{this}); \}}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_triangle_af8a84983a02a8f68e2ca6df4402eea8d}{homothetie}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u,\textcolor{keywordtype}{double} k) ;}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_triangle_adeb2366249edf23cf87c33475a8d7825}{rotation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \&u, \textcolor{keyword}{const} \textcolor{keywordtype}{double} angle );}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_triangle_a7d14e9ca958fa9989334477de0a8cbe6}{translation}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u);}
+\DoxyCodeLine{42     \textcolor{keyword}{explicit} \textcolor{keyword}{operator} string() \textcolor{keyword}{const override};}
+\DoxyCodeLine{43     \textcolor{keyword}{friend} ostream\& operator << (ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_triangle}{Triangle}}\& m);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{class_triangle_a7e34180b12ce2eb4e5a8f54ca037ef0e}{sauvegarde}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_visiteur_sauvegarde}{VisiteurSauvegarde}} * visiteur) \textcolor{keyword}{const};}
+\DoxyCodeLine{46     \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{class_triangle_a4c2aa57b2d72801309a5720cc0f02c3a}{dessine}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_visiteur_librairie}{VisiteurLibrairie}} * visiteur, Socket * s) \textcolor{keyword}{const};}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{inline} ostream\& operator << (ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_triangle}{Triangle}}\& m)}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51     \textcolor{keywordflow}{return} os << (string)m;}
+\DoxyCodeLine{52 \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJETT\_TRIANGLE\_H}}
+
+\end{DoxyCode}

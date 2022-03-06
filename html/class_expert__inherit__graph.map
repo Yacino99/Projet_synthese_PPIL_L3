@@ -1,0 +1,9 @@
+<map id="Expert" name="Expert">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,65,133"/>
+<area shape="rect" id="node2" href="$class_expert_chargement_c_o_r.html" title=" " alt="" coords="113,107,272,133"/>
+<area shape="rect" id="node3" href="$class_expert_chargement_croix_c_o_r.html" title=" " alt="" coords="332,5,520,32"/>
+<area shape="rect" id="node4" href="$class_expert_chargement_groupe_c_o_r.html" title=" " alt="" coords="326,56,526,83"/>
+<area shape="rect" id="node5" href="$class_expert_chargement_polygone_c_o_r.html" title=" " alt="" coords="320,107,532,133"/>
+<area shape="rect" id="node6" href="$class_expert_chargement_rond_c_o_r.html" title=" " alt="" coords="332,157,520,184"/>
+<area shape="rect" id="node7" href="$class_expert_chargement_triangle_c_o_r.html" title=" " alt="" coords="325,208,527,235"/>
+</map>

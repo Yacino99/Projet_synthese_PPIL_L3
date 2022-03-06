@@ -1,0 +1,35 @@
+\hypertarget{_expert_chargement_c_o_r_8h_source}{}\doxysection{Expert\+Chargement\+COR.\+h}
+\label{_expert_chargement_c_o_r_8h_source}\index{include/ExpertChargementCOR.h@{include/ExpertChargementCOR.h}}
+\mbox{\hyperlink{_expert_chargement_c_o_r_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_expert_8h}{Expert.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef PROJET\_EXPERTCHARGEMENTCOR\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define PROJET\_EXPERTCHARGEMENTCOR\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_expert}{Expert}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}}* \_suivant;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 protected :}
+\DoxyCodeLine{16     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_formes}{Formes}} *resoudre1(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&d) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 public :}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}}(\mbox{\hyperlink{class_expert_chargement_c_o_r}{ExpertChargementCOR}}* suivant) : \_suivant(suivant) \{\}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{26     \mbox{\hyperlink{class_formes}{Formes}}* \mbox{\hyperlink{class_expert_chargement_c_o_r_aa6a0dd2d63fb1dea983a38c5fa3e8753}{resoudre}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& d)\textcolor{keyword}{ const}}
+\DoxyCodeLine{27 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{28         \mbox{\hyperlink{class_formes}{Formes}} * forme = resoudre1(d);}
+\DoxyCodeLine{29         \textcolor{keywordflow}{if} (forme != NULL)}
+\DoxyCodeLine{30             \textcolor{keywordflow}{return} forme;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keywordflow}{if} (\_suivant != NULL)}
+\DoxyCodeLine{33             \textcolor{keywordflow}{return} \_suivant-\/>\mbox{\hyperlink{class_expert_chargement_c_o_r_aa6a0dd2d63fb1dea983a38c5fa3e8753}{resoudre}}(d);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJET\_EXPERTCHARGEMENTCOR\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,42 @@
+\hypertarget{_matrice22_8h_source}{}\doxysection{Matrice22.\+h}
+\label{_matrice22_8h_source}\index{include/Matrice22.h@{include/Matrice22.h}}
+\mbox{\hyperlink{_matrice22_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef PROJETT\_MATRICE22\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define PROJETT\_MATRICE22\_H}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vecteur2_d_8h}{Vecteur2D.h}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_matrice22}{Matrice22}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} u,v;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_matrice22_a61d7f3ed9d26c88511bee19c9471d0a8}{Matrice22}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& m11 = 0, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& m12 = 0, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& m21 = 0, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \& m22 = 0);}
+\DoxyCodeLine{30     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_matrice22_a61d7f3ed9d26c88511bee19c9471d0a8}{Matrice22}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& u,\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}}\& v);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{34     \textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} \mbox{\hyperlink{class_matrice22_a7298cf9b9e8d2a4248bd0bf5f2ff6100}{operator + }}(\textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} \& m) \textcolor{keyword}{const};}
+\DoxyCodeLine{35     \textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} \mbox{\hyperlink{class_matrice22_adcf8a36c3851342ac2bd9dec9212961e}{operator -\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} \& m) \textcolor{keyword}{const};}
+\DoxyCodeLine{36     \textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} operator * (\textcolor{keyword}{const} \textcolor{keywordtype}{double} \& a) \textcolor{keyword}{const};}
+\DoxyCodeLine{37     \textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} operator * (\textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} \& m) \textcolor{keyword}{const};}
+\DoxyCodeLine{38     \mbox{\hyperlink{class_matrice22}{Matrice22}}\& operator = (\textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}}\& m) ;}
+\DoxyCodeLine{39     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} operator == (\textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} \& m) \textcolor{keyword}{const};}
+\DoxyCodeLine{40     \textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} operator * (\textcolor{keyword}{const} \mbox{\hyperlink{class_vecteur2_d}{Vecteur2D}} \& vec) \textcolor{keyword}{const};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keyword}{const} \textcolor{keywordtype}{double} determinant() \textcolor{keyword}{const};}
+\DoxyCodeLine{43     \textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} inverse() \textcolor{keyword}{const} ;}
+\DoxyCodeLine{44     \textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} comatrice() \textcolor{keyword}{const};}
+\DoxyCodeLine{46     \textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} \mbox{\hyperlink{class_matrice22_adcf8a36c3851342ac2bd9dec9212961e}{operator -\/ }}() \textcolor{keyword}{const};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keyword}{operator} string() \textcolor{keyword}{const};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keyword}{friend} ostream \& operator << (ostream \& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_matrice22}{Matrice22}} \& m);}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//PROJETT\_MATRICE22\_H}}
+
+\end{DoxyCode}
