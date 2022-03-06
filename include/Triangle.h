@@ -39,6 +39,11 @@ public:
     void rotation(const Vecteur2D &u, const double angle );
     /**  \brief  Opération de translation */
     void translation(const Vecteur2D& u);
+
+    Vecteur2D getMinXMinY() const ;
+    Vecteur2D getMaxXMaxY() const ;
+
+
     explicit operator string() const override;
     friend ostream& operator << (ostream& os, const Triangle& m);
 

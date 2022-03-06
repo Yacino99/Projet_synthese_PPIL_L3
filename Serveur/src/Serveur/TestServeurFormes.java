@@ -1,17 +1,21 @@
 package Serveur;
 
 import ChainOfResponsability.*;
-import Serveur.Convertisseur.Config;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * @brief : classe main qui appelles la classe interlocteur et la chaine de responsabilite
+ */
 public class TestServeurFormes {
 
     public static void main(String[] args) {
 
         try{
+
+            // initialisation de la chaine de responsabilite
 
             Handler h1 = new DrawCircleHandler();
             Handler h2 = new DrawLineHandler();
@@ -31,16 +35,14 @@ public class TestServeurFormes {
                 Socket socket = serveur.accept();
                 System.out.println("connexion reussi avec le client numero "+noClient);
                 
-                //on cree un cadre dessin pour chaque client
-                CadreDessin cadreDessin = new CadreDessin("cadre dessin",60,60, Config.LARGEUR,Config.HAUTEUR);
-                cadreDessin.setResizable(false);
-                Interlocuteur interlocuteur = new Interlocuteur(socket, noClient,cadreDessin,h1 );
-                System.out.println("----------c bon-----------------");
+                //on cree un cadre dessin pour chaque requete
+                Interlocuteur interlocuteur = new Interlocuteur(socket, noClient,h1 );
+                System.out.println("----------debut requete : -----------------");
                 ++noClient;
                 interlocuteur.start();
 
             }
-        }catch (IOException | InterruptedException e){
+        }catch (IOException  e){
             e.printStackTrace();
         }
 

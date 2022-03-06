@@ -51,7 +51,12 @@ void Segment::homothetie(const Vecteur2D &u, double k)
  */
 void Segment::rotation(const Vecteur2D &u, const double angle)
 {
-    Matrice22 M(Vecteur2D(cos(angle),-sin(angle)) , Vecteur2D(sin(angle), cos(angle)));
+    double m11 = cos(angle);
+    double m21 = sin(angle);
+    double m12 = -m21;
+    double m22 = m11;
+
+    Matrice22 M(m11,m12,m21,m22);
     b =  M * (b - u) + u ;
     a =  M * (a - u) + u ;
 }
@@ -77,4 +82,18 @@ const void *Segment::sauvegarde(const VisiteurSauvegarde *visiteur) const
 const void *Segment::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
 {
     return visiteur->visite(this, s);
+}
+
+Vecteur2D Segment::getMinXMinY() const {
+
+    double minX = a.x < b.x ? a.x : b.x;
+    double minY = a.y < b.y ? a.y : b.y;
+    return Vecteur2D(minX,minY);
+}
+
+Vecteur2D Segment::getMaxXMaxY() const {
+
+    double maxX = a.x > b.x ? a.x : b.x;
+    double maxY = a.y > b.y ? a.y : b.y;
+    return Vecteur2D(maxX,maxY);
 }

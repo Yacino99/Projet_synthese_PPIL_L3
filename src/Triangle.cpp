@@ -50,11 +50,12 @@ double Triangle::calculerAire() const
 void Triangle::rotation(const Vecteur2D &u, const double angle)
 {
     double m11 = cos(angle);
-    double m12 = -sin(angle);
     double m21 = sin(angle);
-    double m22 = cos(angle);
+    double m12 = -m21;
+    double m22 = m11;
 
     Matrice22 M(m11,m12,m21,m22);
+
 
     a =  M * (a - u) + u ;
     b =  M * (b - u) + u ;
@@ -88,4 +89,27 @@ const void *Triangle::sauvegarde(const VisiteurSauvegarde *visiteur) const
 const void *Triangle::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
 {
     return visiteur->visite(this, s);
+}
+
+Vecteur2D Triangle::getMinXMinY() const {
+
+
+    double temp = a.x < b.x ? a.x : b.x;
+    double maxX = c.x < temp ? c.x : temp;
+
+    temp = a.y < b.y ? a.y : b.y;
+    double maxY = c.y < temp ? c.y : temp;
+
+    return Vecteur2D(maxX,maxY);
+}
+
+Vecteur2D Triangle::getMaxXMaxY() const {
+
+    double temp = a.x > b.x ? a.x : b.x;
+    double minX = c.x > temp ? c.x : temp;
+
+    temp = a.y > b.y ? a.y : b.y;
+    double minY = c.y > temp ? c.y : temp;
+
+    return Vecteur2D(minX,minY);
 }
