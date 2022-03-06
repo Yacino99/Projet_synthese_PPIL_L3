@@ -80,6 +80,49 @@ void testDistVect()
     cout << "aire = " << aires << endl;
 }
 
+void testMinMaxXMinMaxY(){
+    Formes * f3 =  new Triangle(Vecteur2D(30,200)
+            , Vecteur2D(90,240),
+            Vecteur2D(45,50), "green");
+
+    // minXMinY doit etre egale a ( 30 , 50 )
+    // maXMaxY doit etre egale a ( 90 , 240 )
+
+    cout << "Triangle minXminY = " << f3->getMinXMinY()<< "  maxXmaxY = " << f3->getMaxXMaxY() << endl;
+
+    Formes * f1 = new Rond (300, 200, 30.0, "blue") ;
+    // minXMinY doit etre egale a ( 270 , 170 )
+    // maXMaxY doit etre egale a ( 330 , 230 )
+
+    cout << "Rond minXminY = " << f1->getMinXMinY()<< "  maxXmaxY = " << f1->getMaxXMaxY() << endl;
+
+    Formes *f2 = new Segment(30, 100, 100, 30, "red");
+
+
+    cout << "Segment minXminY = " << f2->getMinXMinY()<< "  maxXmaxY = " << f2->getMaxXMaxY() << endl;
+
+
+    Polygone * p = new Polygone();
+    p->addPoint(new Vecteur2D(175,135))
+    .addPoint(new Vecteur2D(270,200))
+    .addPoint(new Vecteur2D(200,220))
+    .addPoint(new Vecteur2D(130,180));
+
+    // minXMinY doit etre egale a ( 130,135 )   POLYGONE BON
+    // maXMaxY doit etre egale a ( 270 , 220 ) POLYGONE BON
+
+
+    cout << "Polygone minXminY = " << p->getMinXMinY()<< "  maxXmaxY = " << p->getMaxXMaxY() << endl;
+
+    GroupeFormes *g = new GroupeFormes();
+    g->addForme(f1).addForme(f2).addForme(f3).addForme(p);
+
+    cout << "groupe minXminY = " << g->getMinXMinY()<< "  maxXmaxY = " << g->getMaxXMaxY() << endl;
+
+    // minXMinY cense etre ( 30 ,30 )
+    // maXMaxY doit etre ( 330 , 240 )
+}
+
 /**
  *  \fn int main ()
  */
@@ -205,7 +248,7 @@ int main()
         .addPoint(new Vecteur2D(200,220)).addPoint(new Vecteur2D(130,180));//.addPoint(&e);
         p->rotation(p->getCentreSymetrie(),M_PIl/2);
         cout << "aire = " << p->calculerAire() << endl;
-        //p->dessine(new VisiteurLibrairieAwt, s);
+        p->dessine(new VisiteurLibrairieAwt, s);
 
 
         Vecteur2D aa(175,135);
@@ -270,6 +313,7 @@ int main()
         //g2->dessinerFormes(s,600,300); // defini rect '    pBasGauche'=(0,300) , pHautDroit' = (600,0)
 
         // Formes * grb = new GroupeFormes();
+
 
         int nnn;
         cout << "type any character -:" ;

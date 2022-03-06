@@ -13,7 +13,7 @@
 
 /**
  * \brief      Méthode qui retourne l'aire du polygone
- * \details    Cette méthode retourne la somme des aires de toutes les formes du groupe
+ * \details    Cette méthode retourne l'aire d'un polygone en le divisant en plusieurs triangles
  * \return     Un double
  */
 double Polygone::calculerAire() const
@@ -92,9 +92,9 @@ void Polygone::homothetie(const Vecteur2D& u, double k)
 void Polygone::rotation(const Vecteur2D &u, const double angle)
 {
     double m11 = cos(angle);
-    double m12 = -sin(angle);
     double m21 = sin(angle);
-    double m22 = cos(angle);
+    double m12 = -m21;
+    double m22 = m11;
 
     Matrice22 M(m11,m12,m21,m22);
 
@@ -138,4 +138,27 @@ const void *Polygone::sauvegarde(const VisiteurSauvegarde *visiteur) const
 const void *Polygone::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
 {
     return visiteur->visite(this, s);
+}
+
+Vecteur2D Polygone::getMinXMinY() const {
+
+    double minX = tab_vect[0]->x , minY = tab_vect[0]->y;
+
+    for(int i = 0 ; i < tab_vect.size() ; i++){
+        if ( tab_vect[i]->x < minX ) minX =tab_vect[i]->x;
+        if ( tab_vect[i]->y < minY ) minY =tab_vect[i]->y;
+    }
+
+    return Vecteur2D(minX,minY);
+}
+
+Vecteur2D Polygone::getMaxXMaxY() const {
+    double maxX = tab_vect[0]->x , maxY = tab_vect[0]->y;
+
+    for(int i = 0 ; i < tab_vect.size() ; i++){
+        if ( tab_vect[i]->x > maxX ) maxX =tab_vect[i]->x;
+        if ( tab_vect[i]->y > maxY ) maxY =tab_vect[i]->y;
+    }
+
+    return Vecteur2D(maxX,maxY);
 }

@@ -1,6 +1,5 @@
 package ChainOfResponsability;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -48,19 +47,18 @@ public class CadreDessin extends Frame
         h = Math.min(hauteur, he - bordSuperieur);
         this.setBounds(bordGauche, bordSuperieur, l, h);
 
-//this.setBounds(ox, oy, largeur, hauteur);
-
 
         this.setVisible(true);
 
 //------------------------- initialisation de l'active rendering -----------------------
 
         this.setIgnoreRepaint(true);
-
         int nombreBuffers = 2;
         this.createBufferStrategy(nombreBuffers);
         Thread.sleep(100);   // il faut attendre un minimum de 50 ms pour que le buffer soit operationnel
         this.graphics = this.getBufferStrategy().getDrawGraphics();
+
+        //----------permet la fermeture de la fenetre quand on appuie sur la croix---------
 
         addWindowListener (new WindowAdapter() {
             public void windowClosing (WindowEvent e) {
@@ -68,47 +66,9 @@ public class CadreDessin extends Frame
             }
         });
 
-        addComponentListener(new ComponentAdapter(){
-            public void componentResized(ComponentEvent componentEvent) {
-                // do stuff
-                //System.out.println("x = " + this.getWidth() + ", y = " + this.getHeight());
-                System.out.println("redimentionnement");
-                //drawElements(taframe);
-            }
-        });
 
     }
 
 
-
-
-
-    //----adapter la largeur
-    public void setLargeur(int largeur)  {
-        this.setSize(largeur,this.getHeight());
-
-        try {
-            Thread.sleep(150);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        //this.setBounds(bordGauche, bordSuperieur, largeur, this.getHeight());
-       // this.getBufferStrategy().show();
-
-    }
-
-    //----adapter la longueur
-   public  void setLongueur(int longeur){
-        this.setSize(this.getWidth(),longeur);
-       try {
-           Thread.sleep(150);
-       } catch (InterruptedException e) {
-           e.printStackTrace();
-       }
-       //this.setBounds(bordGauche, bordSuperieur, this.getWidth(), longeur);
-        //this.getBufferStrategy().show();
-
-    }
 }
 

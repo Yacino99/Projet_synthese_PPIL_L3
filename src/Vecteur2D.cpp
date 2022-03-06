@@ -84,7 +84,6 @@ const double Vecteur2D::distance(const Vecteur2D &b) const
 {
     double opg = (b.x-x)*(b.x-x);
     double opd = (b.y-y)*(b.y-y);
-    //double opg = pow(b.x-x,2);
-    //double opd =  pow(b.y-y,2);
+
     return sqrt(opg + opd);
 }

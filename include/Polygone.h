@@ -38,6 +38,18 @@ public:
     /**  \brief  Opération de rotation */
     void rotation(const Vecteur2D &u, const double angle );
 
+    /** \brief
+    * Avoir le point X minimal et point Y minimal  du plan selon la figure
+    * @return un vecteur2D qui contient le le point min x et le point min Y
+    */
+    Vecteur2D getMinXMinY() const ;
+    /** \brief
+     * Avoir le point X maximal et point Y maximal  du plan selon la figure
+     * @return un vecteur2D qui contient le le point max x et le point max Y
+     */
+    Vecteur2D getMaxXMaxY() const ;
+
+
     Vecteur2D getCentreSymetrie() const;
     double calculerAire() const;
     virtual ~Polygone() {};

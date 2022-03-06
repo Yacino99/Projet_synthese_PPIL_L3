@@ -1,5 +1,7 @@
 package Serveur.Convertisseur;
 
+import java.util.ArrayList;
+
 /**
  * Classe Vecteur2D
  */
@@ -21,6 +23,31 @@ public class Vecteur2D {
     public Vecteur2D(Vecteur2D v) {
         this.x = v.x;
         this.y = v.y;
+    }
+
+    /**
+     * Constructeur
+     * @param vect : une chaine de caractere cense etre sous la forme de (double , double ) ou double est un nombre
+     */
+    public Vecteur2D(String vect) {
+
+        try {
+            int parOuvrante = vect.indexOf('(');
+            int parFermante = vect.indexOf(')');
+            if(parOuvrante == -1 || parFermante == -1) throw new Exception() ;
+
+            String XY = vect.substring(parOuvrante+1,parFermante);
+
+            String tabXY[] = XY.split(",");
+
+            this.x = Double.parseDouble(tabXY[0].trim());
+            this.y = Double.parseDouble(tabXY[1].trim());
+
+        }catch (Exception e)
+        {
+            System.err.println("pas de parenthese ouvrante ou fermante, forme vecteur errone");
+        }
+
     }
 
     // Getters
@@ -81,77 +108,12 @@ public class Vecteur2D {
 
 
 
-    private double lambda;
-    private double E1,E2;
-    private double a,b;
 
     /**
-     * initialiser lambda E1,E2,a et b selon min et max
-     * @param min
-     * @param max
+     * retourne la distance entre deux points ou vecteurs dans un plan
+     * @param b : vecteur b pour faire la distance
+     * @return un double qui est la distance entre deux vecteurs dans un plan
      */
-    private void initConversion(Vecteur2D min, Vecteur2D max){
-
-        Vecteur2D P1,P2;
-        Vecteur2D C1,C2;
-        // Determiner P1
-        P1 = new Vecteur2D(min);
-        P1.setX(P1.getX() - 15);
-        P1.setY(P1.getY() - 15);
-        // Determiner P2
-        P2 = new Vecteur2D(max);
-        P2.setX(P2.getX() + 20);
-        P2.setY(P2.getY() + 20);
-
-        // Determiner lambda
-        lambda = Math.min(Math.abs(Config.LARGEUR)/Math.abs(P2.getX() - P1.getX()),Math.abs(- Config.HAUTEUR )/Math.abs(P2.getY() - P1.getY()));
-
-        // Determiner E1
-        if(((Config.LARGEUR) > 0 && (P2.getX() - P1.getX()) > 0) ||((Config.LARGEUR) < 0 && (P2.getX() - P1.getX()) < 0))
-            E1 = 1;
-        else
-            E1 = -1;
-        // Determiner E2
-        if(((0-Config.HAUTEUR) >0 && (P2.getY() - P1.getY()) >0) || ((0-Config.HAUTEUR) <0 && (P2.getY() - P1.getY()) <0))
-            E2 = 1;
-        else
-            E2 = -1;
-        // Determiner C'
-        C1 = new Vecteur2D((Config.LARGEUR)/2,(Config.HAUTEUR)/2);
-        // Determiner C
-        C2 = new Vecteur2D((P2.getX() + P1.getX())/2,(P2.getY() + P1.getY())/2);
-        // Determiner a
-        a = C1.getX()- lambda * E1* C2.getX();
-        // Determiner b
-        b = C1.getY() - lambda * E2* C2.getY();
-
-
-    }
-
-
-
-    /**
-     * convertie les repere monde en repere ecran en fonction de min et max
-     * @param min
-     * @param max
-     * @return Vecteur2D
-     */
-    public Vecteur2D convertirRepereMondeToRepereEcran(Vecteur2D min,Vecteur2D max) {
-        initConversion(min, max);
-        return new Vecteur2D((lambda*E1*x + a),(lambda * E2 * y + b));
-    }
-
-    /**
-     * Converti les reperes ecran en repere monde selon min et max
-     * @param min
-     * @param max
-     * @return
-     */
-    public Vecteur2D convertirRepereEcranToRepereMonde(Vecteur2D min,Vecteur2D max) {
-        initConversion(min, max);
-        return new Vecteur2D((x-a)/(lambda*E1),(y-b)/(lambda*E2));
-    }
-
 
     public double distance( Vecteur2D b) {
 
@@ -161,6 +123,30 @@ public class Vecteur2D {
         return Math.sqrt(opg + opd);
     }
 
+
+    /**
+     * \brief     methode statique pour convertir deux tableaux d'entier en un ArrayList de vecteurs
+     * \details    Cette méthode pointsToVect() permet de prendre deux tableaux d'entier qui sont
+     *             cense etre un des tableaux de coordoonnes x et y , cette methde regroupe les deux
+     *             tableaux d'entier en un ArrayList de coordoones ( vecteurs )
+     * \param      int x[]  tableau d'entier cense regrouper tout les points X d'un plan
+     * \param      int y[]  tableau d'entier cense regrouper tout les points Y d'un plan
+     * @return un ArrayList<Vecteur2D> censer regrouper les deux parametres
+     */
+    static public ArrayList<Vecteur2D> pointsToVect(int x[] , int y[])
+    {
+        ArrayList <Vecteur2D> vects= new ArrayList<>();
+
+        for(int i = 0 ; i < x.length ; i++)
+            vects.add(new Vecteur2D(x[i],y[i]));
+
+        return vects;
+    }
+
+    /**
+     * \brief methode toString
+     * @return String sous forme de (v.x , v.y )
+     */
     public String toString() {
         return "("+x+","+y+")";
     }

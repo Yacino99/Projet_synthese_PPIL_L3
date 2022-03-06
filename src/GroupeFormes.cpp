@@ -50,7 +50,7 @@ GroupeFormes::operator string() const
     {
         os << formes[i] << " ; ";
     }
-    os << " ] " << this->couleur;
+    os << " ] " << this->couleur << " I " << this->getMinXMinY() << " I " << this->getMaxXMaxY();
     return os.str();
 }
 
@@ -169,4 +169,32 @@ const void *GroupeFormes::sauvegarde(const VisiteurSauvegarde *visiteur) const
 const void *GroupeFormes::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
 {
     return visiteur->visite(this, s);
+}
+
+Vecteur2D GroupeFormes::getMinXMinY() const {
+
+    double minX = formes[0]->getMinXMinY().x;
+    double minY = formes[0]->getMinXMinY().y;
+
+    for (int i = 0; i < formes.size(); ++i) {
+
+        if (formes[i]->getMinXMinY().x < minX ) minX = formes[i]->getMinXMinY().x;
+        if (formes[i]->getMinXMinY().y < minY ) minY = formes[i]->getMinXMinY().y;
+    }
+
+    return Vecteur2D(minX,minY);
+}
+
+Vecteur2D GroupeFormes::getMaxXMaxY() const {
+
+    double maxX = formes[0]->getMaxXMaxY().x;
+    double maxY = formes[0]->getMaxXMaxY().y;
+
+    for (int i = 0; i < formes.size(); ++i) {
+
+        if (formes[i]->getMaxXMaxY().x > maxX ) maxX = formes[i]->getMaxXMaxY().x;
+        if (formes[i]->getMaxXMaxY().y > maxY ) maxY = formes[i]->getMaxXMaxY().y;
+    }
+
+    return Vecteur2D(maxX,maxY);
 }

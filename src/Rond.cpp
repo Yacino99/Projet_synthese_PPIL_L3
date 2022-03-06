@@ -38,10 +38,11 @@ double Rond::calculerAire() const
 
 void Rond::rotation(const Vecteur2D &u, const double angle)
 {
+
     double m11 = cos(angle);
-    double m12 = -sin(angle);
     double m21 = sin(angle);
-    double m22 = cos(angle);
+    double m12 = -m21;
+    double m22 = m11;
 
     Matrice22 M(m11,m12,m21,m22);
 
@@ -70,3 +71,12 @@ const void *Rond::dessine(const VisiteurLibrairie *visiteur, Socket *s) const
 {
     return visiteur->visite(this, s);
 }
+
+Vecteur2D Rond::getMinXMinY() const {
+    return Vecteur2D(v.x-rayon,v.y-rayon);
+}
+
+Vecteur2D Rond::getMaxXMaxY() const {
+    return Vecteur2D(v.x+rayon,v.y+rayon);
+}
+
