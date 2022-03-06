@@ -46,7 +46,7 @@ public:
         string tmp;
         while (getline(ifs, tmp))
         {
-            cout << "ligne lue : " << tmp << endl;
+            //cout << "ligne lue : " << tmp << endl;
 
             Formes* forme = expert->resoudre(tmp);
             if (forme != NULL)

@@ -60,7 +60,7 @@ public class DrawGroupeHandler extends Handler{
 
                 CadreDessin cadreDessin2 = new CadreDessin(cadreDessin.getTitle(),cadreDessin.bordGauche,
                         cadreDessin.bordSuperieur, cadreDessin.getWidth(),cadreDessin.getHeight());
-
+                cadreDessin.dispose();
                 cadreDessin2.setResizable(false);
 
                 for (int i = 0 ; i < formes.length -1 ; i++) {

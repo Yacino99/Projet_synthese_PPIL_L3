@@ -16,7 +16,7 @@
 #include <string.h>
 #include <sstream>
 
-#define monL 200
+#define monL 2048
 
 class Socket
 {
